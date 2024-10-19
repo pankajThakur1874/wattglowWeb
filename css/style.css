@@ -341,6 +341,10 @@ body {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/carrerSolar.png) center center no-repeat;
     background-size: cover;
 }
+.page-header-news {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/blogs.png) center center no-repeat;
+    background-size: cover;
+}
 
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
