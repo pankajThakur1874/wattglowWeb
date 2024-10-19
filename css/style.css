@@ -46,7 +46,7 @@ body {
 
 .benefit i {
     font-size: 40px;
-    color: #ff7f00;
+    color: #0f9125;
     margin-bottom: 10px;
 }
 
@@ -745,4 +745,65 @@ body {
     font-weight: bold;
     margin: 0;
     padding-top: 8px; /* Space between logo and company name */
+}
+.features-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.features-section h2 {
+    font-size: 2em;
+    color: #1a2a55;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    align-items: center;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    color: #333;
+}
+.icon-container {
+    position: relative; /* Allows absolute positioning of child elements */
+    display: inline-block; /* Keeps the icons together */
+    width: 60px;
+    height: 60px;
+}
+
+.icon-container .fa-solar-panel {
+    position: absolute; /* Positioned relative to the parent */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the icon horizontally */
+    font-size: 40px;
+    color: #28a745; /* Color for the solar panel icon */
+}
+
+.icon-container .fa-water {
+    position: absolute; /* Positioned relative to the parent */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the icon horizontally */
+    font-size: 30px;
+    color: #28a745; /* Color for the water icon */
 }
