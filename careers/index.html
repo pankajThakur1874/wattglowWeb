@@ -70,7 +70,8 @@
                     </ul>
                 </li>
                 <a href="../service/index.html" class="nav-item nav-link">Service</a>
-                <a href="index.html" class="nav-item nav-link active">Contact</a>
+                <a href="index.html" class="nav-item nav-link active">Careers</a>
+                <a href="../contact/index.html" class="nav-item nav-link ">Contact</a>
             </div>
         </div>
     </nav>
@@ -78,23 +79,34 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5">
+    <div class="container-fluid page-header-carrer py-5 mb-5">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">We are Glad You are here!</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Careers</h1>
+            <h4 class="text-white">Be a part of India’s growing renewable energy company</h4>
         </div>
     </div>
     <!-- Page Header End -->
 
+<!-- Page Content Start -->
+    <div class="career-section body-carrer" >
+        <div class="career-card">
+            <h3>Intern & Freshers</h3>
+            <p>Full-time opportunities to students & recent graduates. We seek students that are committed to excellence and constant learning.</p>
+        </div>
+        <div class="career-card">
+            <h3>Experienced Professionals</h3>
+            <p>Are you looking to fast-track your career path? Be a part of a fast-paced work environment that constantly challenges you to push your limits, enhance your skillsets, and learn further.</p>
+        </div>
+    </div>
 
-    <!-- Career Start -->
+<!-- contact form start -->
     <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
         <div class="container contact px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 ps-lg-0">
-                        <h1 class="mb-4">Feel Free To Contact Us</h1>
-                        <p class="mb-4">At WattGlow Power Private Limited, we are committed to providing exceptional service and support. Whether you have questions about our products, need assistance, or simply want to learn more about how we can help, we're here for you. Don’t hesitate to reach out—our team is always ready to guide you!</p>
-                        <form id="contactForm">
+                        <h1 class="mb-4">WattGlow Power Private Limited</h1>
+                        <form id="contactForm" onsubmit="submitForm(event)">
                             <div class="row g-3">
                                 <!-- Name Field -->
                                 <div class="col-md-6">
@@ -113,22 +125,15 @@
                                 <!-- Subject Field -->
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Agenda" required>
+                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Phone No." required>
                                         <label for="subject">Agenda</label>
                                     </div>
                                 </div>
                                 <!-- Company Field -->
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="company" name="company" placeholder="Your Company" required>
+                                        <input type="text" class="form-control" id="company" name="company" placeholder="City" required>
                                         <label for="company">Your Company</label>
-                                    </div>
-                                </div>
-                                <!-- Address Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="address" name="address" placeholder="Your Address" required>
-                                        <label for="address">Address</label>
                                     </div>
                                 </div>
                                 <!-- Country Field -->
@@ -143,55 +148,31 @@
                                 <!-- State Field -->
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-control" id="state" name="state" required>
-                                            <option value="" disabled selected>Select your state</option>
-                                            <option value="Gujarat">Gujarat</option>
-                                            <option value="Delhi">Delhi</option>
-                                            <option value="Rajasthan">Rajasthan</option>
-                                            <option value="Mumbai">Mumbai</option>
+                                        <select class="form-control" id="referredBy" name="referredBy" required>
+                                            <option value="" disabled selected>Were you referred by an existing employee</option>
+                                            <option value="YES">Yes</option>
+                                            <option value="NO">No</option>
                                         </select>
-                                        <label for="state">State</label>
+                                        <label for="referredBy">ReferredBy</label>
                                     </div>
                                 </div>
                                 <!-- Pincode Field -->
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Your PinCode" required pattern="^\d{6}$" title="Please enter a valid 6-digit pin code">
-                                        <label for="pincode">PinCode</label>
-                                    </div>
-                                </div>
-                                <!-- Phone Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone" required pattern="^\d{10}$" title="Please enter a valid 10-digit phone number">
-                                        <label for="phone">Phone</label>
-                                    </div>
-                                </div>
-                                <!-- Type Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-control" id="type" name="type" required>
-                                            <option value="" disabled selected>Select type</option>
-                                            <option value="Ground Mounted">Ground Mounted</option>
-                                            <option value="Commercial & Industrial">Commercial & Industrial</option>
-                                            <option value="Floating Solar">Floating Solar</option>
-                                            <option value="Residential">Residential</option>
-                                            <option value="Operation & Maintenance">Operation & Maintenance</option>
-                                            <option value="Transmission Lines & Substations">Transmission Lines & Substations</option>
-                                        </select>
-                                        <label for="type">Type</label>
+                                        <input type="text" class="form-control" id="resumeLink" name="resumeLink" placeholder="Share Resume Link">
+                                        <label for="resumeLink">ResumeLink</label>
                                     </div>
                                 </div>
                                 <!-- Message Field -->
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
-                                        <label for="message">Message</label>
+                                        <label for="message">Additional Information</label>
                                     </div>
                                 </div>
                                 <!-- Submit Button -->
                                 <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Apply</button>
                                 </div>
                             </div>
                         </form>
@@ -209,6 +190,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Footer Start -->
     <div class="container-fluid footer mt-5 pt-4">
@@ -230,7 +213,7 @@
                         <a class="btn btn-outline-dark btn-square btn-social" href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                     <!-- Contact Us Button -->
-                    <a href="index.html" class="btn btn-lg btn-contact-us">Contact Us →</a>
+                    <a href="../contact/index.html" class="btn btn-lg btn-contact-us">Contact Us →</a>
                 </div>
             </div>
         </div>
@@ -255,23 +238,30 @@
 </html>
 
 <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent the default form submission
+    function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
 
-        const formData = new FormData(this);
+        const form = document.getElementById('contactForm');
+        const formData = new FormData(form);
 
-        fetch('https://script.google.com/macros/s/AKfycbz_WX_ThuQ-2717vJHflJYL0iY_elQLN8cncOZ0_9cncMl8rfpkqkABNelTl4Bnu42Q/exec', { // Replace with your web app URL
+        const data = {};
+        formData.forEach((value, key) => (data[key] = value));
+
+        // Replace with your Google Apps Script URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyyoXdLw-WJ_k1uJQGf6BQyML_Qb_v4DJTFp8JF443QQ0Z59qkauLCYS9_bsFvBDnuZVA/exec';
+
+        fetch(scriptURL, {
             method: 'POST',
-            body: formData,
+            body: new URLSearchParams(formData),
         })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => {
-                alert('Message sent successfully!');
-                this.reset(); // Reset form fields
+                if (data.status === "success") {
+                    alert("Form submitted successfully!");
+                } else {
+                    alert("There was an error submitting the form.");
+                }
             })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error sending your message. Please try again.');
-            });
-    });
+            .catch(error => console.error('Error!', error.message));
+    }
 </script>

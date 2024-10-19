@@ -337,6 +337,11 @@ body {
     background-size: cover;
 }
 
+.page-header-carrer {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/carrerSolar.png) center center no-repeat;
+    background-size: cover;
+}
+
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
@@ -823,4 +828,37 @@ body {
     transform: translateX(-50%); /* Centers the icon horizontally */
     font-size: 30px;
     color: #28a745; /* Color for the water icon */
+}
+.career-section {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Optional: Adds space between the cards */
+}
+
+.career-card {
+    flex: 1; /* Allows cards to grow and fill space */
+    max-width: 600px; /* Optional: Limits card width */
+    text-align: center; /* Centers text within the card */
+    border: 1px solid #ccc; /* Optional: Adds a border to the cards */
+    padding: 20px; /* Optional: Adds padding inside the cards */
+    border-radius: 8px; /* Optional: Rounds the corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow effect */
+}
+
+.career-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.career-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    width: 640px;
 }
