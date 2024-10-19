@@ -5,6 +5,17 @@
     --dark: #1A2A36;
 }
 
+.img-500{
+    height: 500px!important;
+}
+
+.img-300{
+    height: 300px!important;
+}
+.center-text {
+    text-align: center;
+}
+
 body {
     font-weight: 900 !important;
     color: #15664e !important;
@@ -41,7 +52,7 @@ body {
 }
 
 .benefit:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
 }
 
 .benefit i {
@@ -764,6 +775,12 @@ body {
     gap: 40px;
     justify-items: center;
     align-items: center;
+}
+
+.features-grid :hover{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgb(223, 247, 220);
+    border-radius: 10%;
 }
 
 .feature-item {
