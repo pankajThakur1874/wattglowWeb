@@ -402,6 +402,12 @@
 
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
+    <script>
+        // Redirect script to remove .html extensions
+        if (window.location.pathname.endsWith('.html')) {
+            window.location.href = window.location.pathname.replace('index.html', '');
+        }
+    </script>
 </body>
 
 </html>
