@@ -30,6 +30,12 @@
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
+    <script>
+        // Redirect script to remove .html extensions
+        if (window.location.pathname.endsWith('.html')) {
+            window.location.href = window.location.pathname.replace('index.html', '');
+        }
+    </script>
 </head>
 
 <body>
