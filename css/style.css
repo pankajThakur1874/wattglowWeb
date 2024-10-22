@@ -346,6 +346,11 @@ body {
     background-size: cover;
     min-height: 350px;
 }
+.page-header-sus {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/sus.png) center center no-repeat;
+    background-size: cover;
+    min-height: 350px;
+}
 .page-header-news {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/blogs.png) center center no-repeat;
     background-size: cover;
