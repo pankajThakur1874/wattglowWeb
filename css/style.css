@@ -352,6 +352,12 @@ body {
     background-size: cover;
     min-height: 350px;
 }
+
+.page-header-about {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/wattglowLo.jpeg) center center no-repeat;
+    background-size: cover;
+    min-height: 400px;
+}
 .page-header-sus {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/sus.png) center center no-repeat;
     background-size: cover;
