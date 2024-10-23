@@ -11,6 +11,7 @@
 
 .img-300{
     height: 300px!important;
+    width: 100%!important;
 }
 .center-text {
     text-align: center;
@@ -19,6 +20,59 @@
 body {
     font-weight: 900 !important;
     color: #113b5b !important;
+}
+
+.advantages-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.advantages-list li {
+    position: relative; /* Position relative for the pseudo-element */
+    padding-left: 25px; /* Add padding to make space for the tick */
+}
+
+.advantages-list li::before {
+    content: '✔'; /* Unicode for tick */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align to the left */
+    color: green; /* Tick color */
+    font-size: 18px; /* Size of the tick */
+}
+.icon-text {
+display: flex; /* Flexbox for icon and text */
+align-items: center; /* Center icon and text vertically */
+}
+
+.icon-text i {
+margin-right: 10px; /* Space between icon and text */
+color: green; /* Optional: change icon color */
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.table-container {
+    display: flex;
+    /* Use flexbox for centering */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
 }
 
 .benefits-section {
