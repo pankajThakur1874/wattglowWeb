@@ -964,7 +964,6 @@ tr:nth-child(even) {
 .career-card:hover {
     background-color: #eaf8fa !important;
     border-radius: 10%;
-    .iconCareer
 }
 .iconCareer {
     font-size: 20px;
