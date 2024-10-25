@@ -411,6 +411,9 @@ tr:nth-child(even) {
     background-size: cover;
     min-height: 350px;
 }
+.bg-Div-light {
+    background-color: #eaf8fa !important;
+}
 .page-header-commercial {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
