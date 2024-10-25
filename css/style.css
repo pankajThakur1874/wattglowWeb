@@ -949,17 +949,32 @@ tr:nth-child(even) {
 .career-section {
     display: flex; /* Use Flexbox for horizontal alignment */
     justify-content: center; /* Center items horizontally */
-    gap: 20px; /* Optional: Adds space between the cards */
+    gap: 10px; /* Optional: Adds space between the cards */
 }
 
 .career-card {
     flex: 1; /* Allows cards to grow and fill space */
     max-width: 600px; /* Optional: Limits card width */
     text-align: center; /* Centers text within the card */
-    border: 1px solid #ccc; /* Optional: Adds a border to the cards */
-    padding: 20px; /* Optional: Adds padding inside the cards */
+    /*border: 1px solid #ccc; !* Optional: Adds a border to the cards *!*/
+    padding: 30px; /* Optional: Adds padding inside the cards */
     border-radius: 8px; /* Optional: Rounds the corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow effect */
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); !* Optional: Adds a shadow effect *!*/
+}
+.career-card:hover {
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2);
+    background-color: #eaf8fa !important;
+    border-radius: 10%;
+    .iconCareer
+}
+.iconCareer {
+    font-size: 20px;
+    color: #263f54; /* Default color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+/* Change color on hover */
+.iconCareer:hover {
+    color: #0f9125; /* Color after hover */
 }
 
 .career-card h3 {
