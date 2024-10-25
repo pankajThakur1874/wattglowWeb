@@ -402,6 +402,36 @@ tr:nth-child(even) {
 }
 
 .page-header-ground {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/groundMounteg.png) center center no-repeat;
+    background-size: cover;
+    min-height: 350px;
+}
+.page-header-residential {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/residential.png) center center no-repeat;
+    background-size: cover;
+    min-height: 350px;
+}
+.page-header-commercial {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background-size: cover;
+    min-height: 350px;
+}
+.page-header-floating {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background-size: cover;
+    min-height: 350px;
+}
+.page-header-operation {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background-size: cover;
+    min-height: 350px;
+}
+.page-header-transmission {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background-size: cover;
+    min-height: 350px;
+}
+.page-header-ground {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
     min-height: 350px;
@@ -463,6 +493,10 @@ tr:nth-child(even) {
     border-radius: 100px;
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     transition: .5s;
+}
+
+.service-item:hover {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
 }
 
 .service-item:hover .service-icon {
@@ -857,8 +891,8 @@ tr:nth-child(even) {
 }
 
 .features-grid :hover{
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: rgb(223, 247, 220);
+    /* box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2); */
+    /* background-color: rgb(223, 247, 220); */
     border-radius: 10%;
 }
 
@@ -940,6 +974,10 @@ tr:nth-child(even) {
     padding: 20px 30px; /* Adjust padding as needed */
     max-width: 1000px;
     margin: 0 auto;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    /* font-family: Arial, sans-serif;
+    line-height: 1.6; */
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
 }
