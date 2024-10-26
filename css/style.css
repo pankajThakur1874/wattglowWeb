@@ -386,7 +386,7 @@ tr:nth-child(even) {
 }
 
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/Ground-Mounted-Solar-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -407,7 +407,7 @@ tr:nth-child(even) {
     min-height: 350px;
 }
 .page-header-residential {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/residential.png) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
@@ -452,6 +452,10 @@ tr:nth-child(even) {
 }
 .page-header-news {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/blogs.png) center center no-repeat;
+    background-size: cover;
+}
+.page-header-service {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/solar-power-plant.png) center center no-repeat;
     background-size: cover;
 }
 
