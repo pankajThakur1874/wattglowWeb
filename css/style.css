@@ -956,6 +956,10 @@ tr:nth-child(even) {
     gap: 10px; /* Optional: Adds space between the cards */
 }
 
+.cursor-pointer:hover{
+    cursor: pointer;
+}
+
 .career-card {
     flex: 1; /* Allows cards to grow and fill space */
     max-width: 600px; /* Optional: Limits card width */
