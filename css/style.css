@@ -966,7 +966,7 @@ tr:nth-child(even) {
     /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); !* Optional: Adds a shadow effect *!*/
 }
 .career-card:hover {
-    background-color: #eaf8fa !important;
+    background-color: #eedb9d !important;
     border-radius: 10%;
 }
 .iconCareer {
