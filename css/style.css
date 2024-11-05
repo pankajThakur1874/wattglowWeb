@@ -1113,3 +1113,28 @@ tr:nth-child(even) {
     color: #1a3d73; /* Adjust color as needed */
     font-weight: bold;
 }
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-item i {
+    font-size: 3em;
+    color: #113b5b; /* Adjust color as needed */
+    margin-bottom: 8px;
+}
+
+.stat-item p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #00060a; /* Adjust color as needed */
+}
