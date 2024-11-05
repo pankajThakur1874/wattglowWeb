@@ -413,6 +413,7 @@ tr:nth-child(even) {
 }
 .bg-Div-light {
     background-color: #FFFFFF !important;
+    align-items: center;
 }
 .bg-client-logo {
     background-color: #eaf8fa !important;
