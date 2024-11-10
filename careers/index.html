@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+          rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -39,305 +40,346 @@
 </head>
 
 <body class="bg-Div-light">
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-Div-light navbar-light sticky-top p-0">
+    <a href="../index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+        <img src="../img/WattGlow.png" alt="Company Logo" class="mb-2" style="width: 120px; height: auto;">
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="../index.html" class="nav-item nav-link">Home</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="../about/index.html" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">About Us</a>
+                <ul class="dropdown-menu bg-Div-light" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="../about/index.html">Why Choose Us</a></li>
+                    <li><a class="dropdown-item" href="../qhsse/index.html">QHSSE</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">Offering</a>
+                <ul class="dropdown-menu bg-Div-light" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="../offering/ground/index.html">Ground Mounted Solar</a></li>
+                    <li><a class="dropdown-item" href="../offering/residential/index.html">Residential</a></li>
+                    <li><a class="dropdown-item" href="../offering/commercial/index.html">Commercial & Industrial</a>
+                    </li>
+                    <li><a class="dropdown-item" href="../offering/floating/index.html">Floating Solar</a></li>
+                    <li><a class="dropdown-item" href="../offering/operations/index.html">Operation & Maintenance</a>
+                    </li>
+                    <li><a class="dropdown-item" href="../offering/transmission/index.html">Transmission Line &
+                        Substations</a></li>
+                </ul>
+            </li>
+            <a href="../service/index.html" class="nav-item nav-link">Service</a>
+            <li class="nav-item"><a href="../sustainability/index.html" class="nav-link">Sustainability</a></li>
+            <a href="index.html" class="nav-item nav-link active">Careers</a>
+            <a href="../news/index.html" class="nav-item nav-link">Blogs & Media</a>
+            <a href="../contact/index.html" class="nav-item nav-link ">Contact</a>
         </div>
     </div>
-    <!-- Spinner End -->
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-Div-light navbar-light sticky-top p-0">
-        <a href="../index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-            <img src="../img/WattGlow.png" alt="Company Logo" class="mb-2" style="width: 120px; height: auto;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="../index.html" class="nav-item nav-link">Home</a>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="../about/index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
-                    <ul class="dropdown-menu bg-Div-light" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../about/index.html">Why Choose Us</a></li>
-                        <li><a class="dropdown-item" href="../qhsse/index.html">QHSSE</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Offering</a>
-                    <ul class="dropdown-menu bg-Div-light" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../offering/ground/index.html">Ground Mounted Solar</a></li>
-                        <li><a class="dropdown-item" href="../offering/residential/index.html">Residential</a></li>
-                        <li><a class="dropdown-item" href="../offering/commercial/index.html">Commercial & Industrial</a></li>
-                        <li><a class="dropdown-item" href="../offering/floating/index.html">Floating Solar</a></li>
-                        <li><a class="dropdown-item" href="../offering/operations/index.html">Operation & Maintenance</a></li>
-                        <li><a class="dropdown-item" href="../offering/transmission/index.html">Transmission Line & Substations</a></li>
-                    </ul>
-                </li>
-                <a href="../service/index.html" class="nav-item nav-link">Service</a>
-                <li class="nav-item"><a href="../sustainability/index.html" class="nav-link">Sustainability</a></li>
-                <a href="index.html" class="nav-item nav-link active">Careers</a>
-                <a href="../news/index.html" class="nav-item nav-link">Blogs & Media</a>
-                <a href="../contact/index.html" class="nav-item nav-link ">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+</nav>
+<!-- Navbar End -->
 
 
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header-carrer py-5 mb-5">
-        <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Careers</h1>
-            <h4 class="text-white">Be a part of India’s growing renewable energy company</h4>
-        </div>
+<!-- Page Header Start -->
+<div class="container-fluid page-header-carrer py-5 mb-5">
+    <div class="container py-5">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Careers</h1>
+        <h4 class="text-white">Be a part of India’s growing renewable energy company</h4>
     </div>
-    <!-- Page Header End -->
+</div>
+<!-- Page Header End -->
 
 <!-- Page Content Start -->
-    <div class="career-section body-carrer  " >
-        <div class="career-card cursor-pointer" id="scrollToCareers1">
-            <div class="iconCareer">
+<div class="career-section body-carrer  ">
+    <div class="career-card cursor-pointer" id="scrollToCareers1">
+        <div class="iconCareer">
             <i class="fas fa-user-graduate fa-3x"></i>
-            </div><br>
-            <h3>Intern & Freshers</h3>
-            <p>Full-time opportunities to students & recent graduates. We seek students that are committed to excellence and constant learning.</p>
         </div>
-        <div class="career-card cursor-pointer" id="scrollToCareers2">
-            <div class="iconCareer">
+        <br>
+        <h3>Intern & Freshers</h3>
+        <p>Full-time opportunities to students & recent graduates. We seek students that are committed to excellence and
+            constant learning.</p>
+    </div>
+    <div class="career-card cursor-pointer" id="scrollToCareers2">
+        <div class="iconCareer">
             <i class="fas fa-user-tie fa-3x"></i>
+        </div>
+        <br>
+        <h3>Experienced Professionals</h3>
+        <p>Are you looking to fast-track your career path? Be a part of a fast-paced work environment that constantly
+            challenges you to push your limits, enhance your skillsets, and learn further.</p>
+    </div>
+</div>
+<br>
+
+<!-- Service Start -->
+<div class="container-xxl py-5  ">
+    <h1 align="center">Core Values and Principles</h1>
+    <div class="career-section body-carrer">
+        <div class="career-card">
+            <div class="iconCareer">
+                <i class="fas fa-user fa-2x"></i> <!-- Font Awesome icon for CUSTOMER OBSESSION -->
             </div>
             <br>
-            <h3>Experienced Professionals</h3>
-            <p>Are you looking to fast-track your career path? Be a part of a fast-paced work environment that constantly challenges you to push your limits, enhance your skillsets, and learn further.</p>
+            <h3>CUSTOMER OBSESSION</h3>
+            <p>Customers are the reason why we exist, and all our actions are directed to ensure the ultimate customer
+                delight. A happy YOU creates happiness within our company.</p>
         </div>
-    </div><br>
-
-    <!-- Service Start -->
-    <div class="container-xxl py-5  ">
-        <h1 align="center">Core Values and Principles</h1>
-        <div class="career-section body-carrer" >
-            <div class="career-card">
-                <div class="iconCareer">
-                    <i class="fas fa-user fa-2x"></i> <!-- Font Awesome icon for CUSTOMER OBSESSION -->
-                </div><br>
-                <h3>CUSTOMER OBSESSION</h3>
-                <p>Customers are the reason why we exist, and all our actions are directed to ensure the ultimate customer delight. A happy YOU creates happiness within our company.</p>
-            </div>
-            <div class="career-card">
-                <div class="iconCareer">
+        <div class="career-card">
+            <div class="iconCareer">
                 <i class="fas fa-tasks fa-2x"></i>
-                </div><br>
-                <h3>OWNERSHIP</h3>
-                <p>We take accountability for what we do, keeping organisational objectives at the forefront. It's not about my work is done", it's about reaching the final goal.</p>
             </div>
-        </div>
-        <div class="career-section body-carrer" >
-            <div class="career-card">
-                <div class="iconCareer">
-                <i class="fas fa-handshake fa-2x"></i>
-                </div><br>
-                <h3>EARN TRUST</h3>
-                <p>We listen attentively, speak candidly and treat each other with respect, driving cross functional synergies to build long term relationships. Trust and transparency remain at the core of all that we do.</p>
-            </div>
-            <div class="career-card">
-                <div class="iconCareer">
-                    <i class="fas fa-balance-scale fa-2x"></i>
-                </div><br>
-                <h3>INTEGRITY</h3>
-                <p>We conduct our business ethically, follow the law of the land, and do the right thing at all times.</p>
-            </div>
-        </div>
-        <div class="career-section body-carrer" >
-            <div class="career-card">
-                <div class="iconCareer">
-                <i class="fas fa-lightbulb fa-2x"></i>
-                </div> <br>
-                    <h3>INNOVATE & SIMPLIFY</h3>
-                <p>We believe in keeping things simple. We imagine, we invent and design better and faster ways of doing things.</p>
-            </div>
-            <div class="career-card">
-                <div class="iconCareer">
-                <i class="fas fa-star fa-2x"></i>
-                </div><br>
-                <h3>EXCELLENCE OR NOTHING</h3>
-                <p>We believe in continuously raising the bar for ourselves, setting new benchmarks and delivering the highest standards of performance.</p>
-            </div>
+            <br>
+            <h3>OWNERSHIP</h3>
+            <p>We take accountability for what we do, keeping organisational objectives at the forefront. It's not about
+                my work is done", it's about reaching the final goal.</p>
         </div>
     </div>
-    <!-- Service End -->
+    <div class="career-section body-carrer">
+        <div class="career-card">
+            <div class="iconCareer">
+                <i class="fas fa-handshake fa-2x"></i>
+            </div>
+            <br>
+            <h3>EARN TRUST</h3>
+            <p>We listen attentively, speak candidly and treat each other with respect, driving cross functional
+                synergies to build long term relationships. Trust and transparency remain at the core of all that we
+                do.</p>
+        </div>
+        <div class="career-card">
+            <div class="iconCareer">
+                <i class="fas fa-balance-scale fa-2x"></i>
+            </div>
+            <br>
+            <h3>INTEGRITY</h3>
+            <p>We conduct our business ethically, follow the law of the land, and do the right thing at all times.</p>
+        </div>
+    </div>
+    <div class="career-section body-carrer">
+        <div class="career-card">
+            <div class="iconCareer">
+                <i class="fas fa-lightbulb fa-2x"></i>
+            </div>
+            <br>
+            <h3>INNOVATE & SIMPLIFY</h3>
+            <p>We believe in keeping things simple. We imagine, we invent and design better and faster ways of doing
+                things.</p>
+        </div>
+        <div class="career-card">
+            <div class="iconCareer">
+                <i class="fas fa-star fa-2x"></i>
+            </div>
+            <br>
+            <h3>EXCELLENCE OR NOTHING</h3>
+            <p>We believe in continuously raising the bar for ourselves, setting new benchmarks and delivering the
+                highest standards of performance.</p>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
 <br>
 
 <!-- contact form start -->
-    <div class="container-xxl py-5  " id="contact-form">
-        <div class=" contact px-lg-0">
-            <div class="container row g-0 mx-lg-0">
-                <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.1s">
-                    <h1 class="mb-4">WattGlow Power Private Limited</h1>
-                    <div class="p-lg-5 ps-lg-0">
-                        <form id="contactForm" onsubmit="submitForm(event)">
-                            <div class="row g-3">
-                                <!-- Name Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <!-- Email Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <!-- Subject Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Phone No." required>
-                                        <label for="subject">Agenda</label>
-                                    </div>
-                                </div>
-                                <!-- Company Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="company" name="company" placeholder="City" required>
-                                        <label for="company">Your Company</label>
-                                    </div>
-                                </div>
-                                <!-- Country Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-control" id="country" name="country" required>
-                                            <option value="India">India</option>
-                                        </select>
-                                        <label for="country">Country</label>
-                                    </div>
-                                </div>
-                                <!-- State Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-control" id="referredBy" name="referredBy" required>
-                                            <option value="" disabled selected>Were you referred by an existing employee</option>
-                                            <option value="YES">Yes</option>
-                                            <option value="NO">No</option>
-                                        </select>
-                                        <label for="referredBy">ReferredBy</label>
-                                    </div>
-                                </div>
-                                <!-- Pincode Field -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="resumeLink" name="resumeLink" placeholder="Share Resume Link">
-                                        <label for="resumeLink">ResumeLink</label>
-                                    </div>
-                                </div>
-                                <!-- Message Field -->
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
-                                        <label for="message">Additional Information</label>
-                                    </div>
-                                </div>
-                                <!-- Submit Button -->
-                                <div class="col-12 text-center">
-                                    <button class="btn btn-primary btn-contact-us rounded-pill py-3 px-5" type="submit">Apply</button>
+<div class="container-xxl py-5  " id="contact-form">
+    <div class=" contact px-lg-0">
+        <div class="container row g-0 mx-lg-0">
+            <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="mb-4">WattGlow Power Private Limited</h1>
+                <div class="p-lg-5 ps-lg-0">
+                    <form id="contactForm" onsubmit="submitForm(event)">
+                        <div class="row g-3">
+                            <!-- Name Field -->
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name"
+                                           placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <!-- Email Field -->
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                           placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <!-- Subject Field -->
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" name="subject"
+                                           placeholder="Phone No." required>
+                                    <label for="subject">Agenda</label>
+                                </div>
+                            </div>
+                            <!-- Company Field -->
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="company" name="company"
+                                           placeholder="City" required>
+                                    <label for="company">Your Company</label>
+                                </div>
+                            </div>
+                            <!-- Country Field -->
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-control" id="country" name="country" required>
+                                        <option value="India">India</option>
+                                    </select>
+                                    <label for="country">Country</label>
+                                </div>
+                            </div>
+                            <!-- State Field -->
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-control" id="referredBy" name="referredBy" required>
+                                        <option value="" disabled selected>Were you referred by an existing employee
+                                        </option>
+                                        <option value="YES">Yes</option>
+                                        <option value="NO">No</option>
+                                    </select>
+                                    <label for="referredBy">ReferredBy</label>
+                                </div>
+                            </div>
+                            <!-- Pincode Field -->
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="resumeLink" name="resumeLink"
+                                           placeholder="Share Resume Link">
+                                    <label for="resumeLink">ResumeLink</label>
+                                </div>
+                            </div>
+                            <!-- Message Field -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message"
+                                              name="message" style="height: 100px" required></textarea>
+                                    <label for="message">Additional Information</label>
+                                </div>
+                            </div>
+                            <!-- Submit Button -->
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary btn-contact-us rounded-pill py-3 px-5" type="submit">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <!-- Google Map Section -->
-                <div class="col-lg-6 pe-lg-0" style="height: 650px;">
-                    <div class="position-relative w-100 h-100">
-                        <img class="position-absolute img-fluid w-100 !important h-100" src="../img/img_2.png"
-                             style="object-fit: cover;" alt="">
-                    </div>
+            </div>
+            <!-- Google Map Section -->
+            <div class="col-lg-6 pe-lg-0" style="height: 650px;">
+                <div class="position-relative w-100 h-100">
+                    <img class="position-absolute img-fluid w-100 !important h-100" src="../img/img_2.png"
+                         style="object-fit: cover;" alt="">
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- Footer Start -->
+<!-- Footer Start -->
 
-    <div class="footer">
-        <div class="section">
-            <h3>WattGlow Power Private Limited</h3>
-            <p>
-                WattGlow Power Private Limited is a solar EPC company focused on delivering high-quality, sustainable solar energy solutions. We specialize in end-to-end services for solar power plant projects, ensuring reliability and customer satisfaction.
-            </p>
-        </div>
-
-        <div class="section">
-            <h3>QUICK LINKS</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li><br>
-                <li><a href="about/index.html">About</a></li><br>
-                <li><a href="sustainability/index.html">Sustainability</a></li><br>
-                <li><a href="careers/index.html">Careers</a></li><br>
-                <li><a href="news/index.html">Blogs & Media</a></li><br>
-                <li><a href="contact/index.html">Contact Us</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>CONTACT US</h3>
-            <p>Flat no 302, Priyanka Arcade, Old Padra Rd, behind Bankers Heart Institute, Sukrutinagar, Diwalipura,
-                Vadodara, Gujarat - 390015
-            </p>
-            <br>
-            <p> <a href="tel:+9181608 07490">📞 +91 81608 07490</a></p>
-            <br>
-            <p>📧 <a href="mailto:info@wattglow.com">info@wattglow.com</a></p>
-            <br>
-            <p>🕒 Mon to Sat 09.00am - 06.00pm</p>
-            <br>
-        </div>
-
-        <div class="section">
-            <h3>FOLLOW US</h3>
-            <div class="social-icons social-icons-width">
-                <a href="https://www.facebook.com/profile.php?id=61564391866936"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                        alt="Facebook"></a>
-                <a href="https://www.linkedin.com/company/wattglow"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                        alt="LinkedIn"></a>
-                <a href="https://www.instagram.com/wattglowpower.re"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                                                                          alt="Instagram"></a>
-                <a href="https://www.youtube.com/channel/UCsUS2NZlAnUs3qu-qhfFA2w"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
-                                                                                        alt="YouTube"></a>
-            </div>
-            <br>
-            <h3>REVIEW US</h3>
-            <a href="https://www.google.com/maps/place/WattGlow+Power+Pvt+Ltd/@22.296735,73.1603054,17z/data=!3m1!4b1!4m6!3m5!1s0x395fc7cbc842bc0b:0x4108ae844b312b59!8m2!3d22.296735!4d73.1628803!16s%2Fg%2F11lmm0h55n?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"><img src="https://logos-world.net/wp-content/uploads/2023/12/Google-Review-Logo.png"
-                                                                                                                                                                                                                                                                                  alt="Google Reviews" style="width: 100px;"></a>
-            <br><br>
-            <br><br>
-            <a href="contact/index.html" class="btn btn-lg btn-contact-us text-white">Contact Us →</a>
-        </div>
+<div class="footer">
+    <div class="section">
+        <h3>WattGlow Power Private Limited</h3>
+        <p>
+            WattGlow Power Private Limited is a solar EPC company focused on delivering high-quality, sustainable solar
+            energy solutions. We specialize in end-to-end services for solar power plant projects, ensuring reliability
+            and customer satisfaction.
+        </p>
     </div>
-    <div class="top-0 sticky-top p-1 text-center bg-footer-color">
-        <p class="text-white">WattGlow Power Private Limited | All Rights Reserved</p>
+
+    <div class="section">
+        <h3>QUICK LINKS</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <br>
+            <li><a href="about/index.html">About</a></li>
+            <br>
+            <li><a href="sustainability/index.html">Sustainability</a></li>
+            <br>
+            <li><a href="careers/index.html">Careers</a></li>
+            <br>
+            <li><a href="news/index.html">Blogs & Media</a></li>
+            <br>
+            <li><a href="contact/index.html">Contact Us</a></li>
+        </ul>
     </div>
-    <!-- Footer End -->
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/wow/wow.min.js"></script>
-    <script src="../lib/easing/easing.min.js"></script>
-    <script src="../lib/waypoints/waypoints.min.js"></script>
-    <script src="../lib/counterup/counterup.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+    <div class="section">
+        <h3>CONTACT US</h3>
+        <p>Flat no 302, Priyanka Arcade, Old Padra Rd, behind Bankers Heart Institute, Sukrutinagar, Diwalipura,
+            Vadodara, Gujarat - 390015
+        </p>
+        <br>
+        <p><a href="tel:+9181608 07490">📞 +91 81608 07490</a></p>
+        <br>
+        <p>📧 <a href="mailto:info@wattglow.com">info@wattglow.com</a></p>
+        <br>
+        <p>🕒 Mon to Sat 09.00am - 06.00pm</p>
+        <br>
+    </div>
 
-    <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
+    <div class="section">
+        <h3>FOLLOW US</h3>
+        <div class="social-icons social-icons-width">
+            <a href="https://www.facebook.com/profile.php?id=61564391866936"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                    alt="Facebook"></a>
+            <a href="https://www.linkedin.com/company/wattglow"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                    alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/wattglowpower.re"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                    alt="Instagram"></a>
+            <a href="https://www.youtube.com/channel/UCsUS2NZlAnUs3qu-qhfFA2w"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
+                    alt="YouTube"></a>
+        </div>
+        <br>
+        <h3>REVIEW US</h3>
+        <a href="https://www.google.com/maps/place/WattGlow+Power+Pvt+Ltd/@22.296735,73.1603054,17z/data=!3m1!4b1!4m6!3m5!1s0x395fc7cbc842bc0b:0x4108ae844b312b59!8m2!3d22.296735!4d73.1628803!16s%2Fg%2F11lmm0h55n?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"><img
+                src="https://logos-world.net/wp-content/uploads/2023/12/Google-Review-Logo.png"
+                alt="Google Reviews" style="width: 100px;"></a>
+        <br><br>
+        <br><br>
+        <a href="contact/index.html" class="btn btn-lg btn-contact-us text-white">Contact Us →</a>
+    </div>
+</div>
+<div class="top-0 sticky-top p-1 text-center bg-footer-color">
+    <p class="text-white">WattGlow Power Private Limited | All Rights Reserved</p>
+</div>
+<!-- Footer End -->
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../lib/wow/wow.min.js"></script>
+<script src="../lib/easing/easing.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../lib/isotope/isotope.pkgd.min.js"></script>
+<script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="../js/main.js"></script>
 </body>
 
 </html>
@@ -369,12 +411,13 @@
             })
             .catch(error => console.error('Error!', error.message));
     }
-    document.getElementById('scrollToCareers1').addEventListener('click', function() {
+
+    document.getElementById('scrollToCareers1').addEventListener('click', function () {
         const section2 = document.getElementById('contact-form');
-        section2.scrollIntoView({ behavior: 'smooth' });
-        });
-    document.getElementById('scrollToCareers2').addEventListener('click', function() {
+        section2.scrollIntoView({behavior: 'smooth'});
+    });
+    document.getElementById('scrollToCareers2').addEventListener('click', function () {
         const section2 = document.getElementById('contact-form');
-        section2.scrollIntoView({ behavior: 'smooth' });
+        section2.scrollIntoView({behavior: 'smooth'});
     });
 </script>
