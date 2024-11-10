@@ -1027,6 +1027,7 @@ tr:nth-child(even) {
     color: #1a1a1a;
     padding: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-around;
     border-top: 1px solid #ddd;
 }
@@ -1139,5 +1140,42 @@ tr:nth-child(even) {
 .stat-item p {
     margin-top: 5px;
     font-size: 1em;
-    color: #00060a; /* Adjust color as needed */
+    color: #ffffff; /* Adjust color as needed */
+}
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
+}
+
+.whatsapp-icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+}
+
+.whatsapp-icon:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #ffffff;
+    color: #41464bf2;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 60px; /* Position it above the icon */
+    right: 0;
+    white-space: nowrap;
+    font-size: 15px;
+    transition: opacity 0.3s;
 }
