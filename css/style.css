@@ -1107,6 +1107,7 @@ tr:nth-child(even) {
     /*color: #2e3d49;*/
     margin: 0;
     padding-right: 50px; /* Adjust the padding as needed */
+    padding-left: 0px; /* Adjust the padding as needed */
 }
 
 .text span {
