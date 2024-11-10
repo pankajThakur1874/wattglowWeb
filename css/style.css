@@ -1023,7 +1023,7 @@ tr:nth-child(even) {
 }
 
 .footer {
-    background-color: #ffffff;
+    background-color: #f6f7f8;
     color: #1a1a1a;
     padding: 20px;
     display: flex;
@@ -1033,13 +1033,14 @@ tr:nth-child(even) {
 
 .footer h3 {
     color: #1a3d73;
+    --body-text-color: #00060a;
     font-size: 16px;
     margin-bottom: 10px;
 }
 
 .footer p, .footer li, .footer a {
     font-size: 14px;
-    color: #666;
+    color: #41464bf2;
     line-height: 1.6;
     text-decoration: none;
 }
@@ -1050,6 +1051,7 @@ tr:nth-child(even) {
 
 .footer .section {
     width: 20%;
+    color: #00060a !important;
 }
 .social-icons-width {
     max-width: 105%; /* Ensure logo fits well within the box */
