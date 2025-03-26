@@ -386,28 +386,28 @@ tr:nth-child(even) {
 }
 
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
 }
 
 .page-header-carrer {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/carrerSolar.png) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/carrerSolar.png) center center no-repeat;
     background-size: cover;
 }
 
 .page-header-qhsse {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/qhss.png) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(../img/qhss.png) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
 
 .page-header-ground {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/groundMounteg.png) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/groundMounteg.png) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
 .page-header-residential {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
@@ -422,47 +422,47 @@ tr:nth-child(even) {
     background-color: #113b5b !important;
 }
 .page-header-commercial {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
 .page-header-floating {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
 .page-header-operation {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
 .page-header-transmission {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
 .page-header-ground {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/head2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/head2.jpg) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
 
 .page-header-about {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/wattglowLo.jpeg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/wattglowLo.jpeg) center center no-repeat;
     background-size: cover;
     min-height: 400px;
 }
 .page-header-sus {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/sus.png) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/sus.png) center center no-repeat;
     background-size: cover;
     min-height: 350px;
 }
 .page-header-news {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/blogs.png) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/blogs.png) center center no-repeat;
     background-size: cover;
 }
 .page-header-service {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/solar-power-plant.png) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/solar-power-plant.png) center center no-repeat;
     background-size: cover;
 }
 
@@ -1185,4 +1185,10 @@ tr:nth-child(even) {
     height: 100%;
     object-fit: cover; /* Ensures the video covers the container just like an image */
     display: block;
+}
+.imageStyle{
+    object-fit: cover;
+    border-radius: 5%;
+    height: 90%;
+    width: 100%;
 }
