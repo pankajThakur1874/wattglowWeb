@@ -1,0 +1,213 @@
+/**
+ * WattGlow Animation Library
+ * Unified, consistent animations across entire website
+ * Uses design system variables for perfect consistency
+ */
+
+/* Note: Core variables imported from design-system.css */
+
+/* ==========================================
+   SCROLL-TRIGGERED ANIMATIONS
+   Single animation style used everywhere
+   ========================================== */
+
+/* Primary Scroll Animation - Fade + Slide Up */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-slide-up,
+.animate-on-scroll {
+    animation: fadeSlideUp var(--duration-slower) var(--ease-primary) forwards;
+    opacity: 0;
+}
+
+/* Staggered delays for sequential animations - Consistent timing */
+.stagger-1, .delay-1 { animation-delay: 100ms; }
+.stagger-2, .delay-2 { animation-delay: 200ms; }
+.stagger-3, .delay-3 { animation-delay: 300ms; }
+.stagger-4, .delay-4 { animation-delay: 400ms; }
+.stagger-5, .delay-5 { animation-delay: 500ms; }
+.stagger-6, .delay-6 { animation-delay: 600ms; }
+
+/* ==========================================
+   CONTINUOUS ANIMATIONS
+   Subtle, non-distracting effects
+   ========================================== */
+
+/* Gentle Float - For decorative elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.float {
+    animation: float 6s var(--ease-primary) infinite;
+}
+
+/* Subtle Pulse - For attention elements */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 183, 77, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 183, 77, 0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s var(--ease-primary) infinite;
+}
+
+/* ==========================================
+   SPECIAL EFFECTS - Used Sparingly
+   ========================================== */
+
+/* Gradient text - For emphasis only */
+.text-gradient {
+    background: linear-gradient(
+        135deg,
+        var(--color-accent-dark) 0%,
+        var(--color-accent) 50%,
+        var(--color-info) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================
+   COMPONENT-SPECIFIC ANIMATIONS
+   Consistent with design system
+   ========================================== */
+
+/* Testimonial Card Center Effect */
+.testimonial-carousel .owl-item.active.center .testimonial-item {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* Image Hover Zoom - For project cards */
+.zoom-on-hover {
+    overflow: hidden;
+    border-radius: var(--card-radius);
+}
+
+.zoom-on-hover img {
+    transition: transform var(--duration-slow) var(--ease-primary);
+}
+
+.zoom-on-hover:hover img {
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   SCROLL PROGRESS BAR
+   ========================================== */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--color-accent) 0%,
+        var(--color-accent-light) 50%,
+        var(--color-info) 100%
+    );
+    z-index: var(--z-fixed);
+    transition: width 0.1s ease-out;
+    box-shadow: 0 2px 8px rgba(255, 183, 77, 0.4);
+}
+
+/* ==========================================
+   ICON ANIMATIONS - Consistent Everywhere
+   ========================================== */
+
+/* Icon Hover - Slight rotation */
+.icon-hover {
+    transition: transform var(--duration-normal) var(--ease-primary);
+}
+
+.icon-hover:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Icon Glow - For star ratings, etc */
+.icon-glow {
+    transition: var(--transition-all);
+}
+
+.icon-glow:hover {
+    filter: drop-shadow(0 0 8px var(--color-accent));
+    transform: scale(1.2);
+}
+
+/* ==========================================
+   TESTIMONIAL SPECIFIC ANIMATIONS
+   ========================================== */
+
+.testimonial-item {
+    transition: var(--transition-all);
+}
+
+.testimonial-img img {
+    transition: var(--transition-all);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.testimonial-item:hover .testimonial-img img {
+    transform: scale(1.05);
+    border-color: var(--color-accent);
+}
+
+/* Star rating */
+.icon-star i {
+    display: inline-block;
+    transition: var(--transition-transform);
+    color: var(--color-accent);
+}
+
+.icon-star i:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* ==========================================
+   ACCESSIBILITY & RESPONSIVE
+   ========================================== */
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Simpler animations on mobile */
+@media (max-width: 768px) {
+    .card:hover {
+        transform: translateY(-4px);
+    }
+
+    .float {
+        animation: none;
+    }
+}
