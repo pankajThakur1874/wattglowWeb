@@ -10,6 +10,20 @@
     <meta name="description" content="WattGlow Power is a leading Solar EPC company providing high-quality solar energy solutions including floating solar, residential & commercial installations.">
     <link rel="canonical" href="https://www.wattglow.com/">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.wattglow.com/">
+    <meta property="og:title" content="WATTGLOW - Leading Solar EPC Company | Sustainable Energy Solutions">
+    <meta property="og:description" content="WattGlow Power is a leading Solar EPC company providing high-quality solar energy solutions including floating solar, residential & commercial installations.">
+    <meta property="og:image" content="https://www.wattglow.com/img/WattGlow.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.wattglow.com/">
+    <meta name="twitter:title" content="WATTGLOW - Leading Solar EPC Company | Sustainable Energy Solutions">
+    <meta name="twitter:description" content="WattGlow Power is a leading Solar EPC company providing high-quality solar energy solutions including floating solar, residential & commercial installations.">
+    <meta name="twitter:image" content="https://www.wattglow.com/img/WattGlow.png">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D37DX4WNX8"></script>
     <script>
@@ -43,27 +57,50 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.default.min.css"/>
-
-    <!-- jQuery and Owl Carousel JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         // Redirect script to remove .html extensions
         if (window.location.pathname.endsWith('.html')) {
             window.location.href = window.location.pathname.replace('index.html', '');
         }
     </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WattGlow Power Private Limited",
+      "description": "Leading Solar EPC Company providing sustainable energy solutions",
+      "url": "https://www.wattglow.com",
+      "logo": "https://www.wattglow.com/img/WattGlow.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "telephone": "+91-81608-07490",
+        "email": "info@wattglow.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pancham Highstreet, 303, Old Padra Rd, Vidyutnagar Colony, IOC Nagar, Akota",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "postalCode": "390020",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61564391866936",
+        "https://www.linkedin.com/company/wattglow",
+        "https://www.instagram.com/wattglowpower.re",
+        "https://www.youtube.com/channel/UCsUS2NZlAnUs3qu-qhfFA2w"
+      ]
+    }
+    </script>
 </head>
 
 <body class="bg-Div-light">
+<!-- Skip to Content Link for Accessibility -->
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
 <!-- Spinner Start -->
 <div id="spinner"
      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -73,52 +110,16 @@
 </div>
 <!-- Spinner End -->
 
-<!-- Navbar Start -->
-<nav class=" top-0 navbar navbar-expand-lg navbar-light sticky-top p-1 bg-Div-light">
-    <a href="./" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-        <img src="img/WattGlow.png" alt="Company Logo" class="mb-2" style="width: 120px; height: auto;">
-    </a>
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ms-auto p-4 p-lg-0">
-            <li class="nav-item"><a href="./" class="nav-link active">Home</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="./about" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">About Us</a>
-                <ul class="dropdown-menu bg-Div-light" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="./about">Why Choose Us</a></li>
-                    <li><a class="dropdown-item" href="./qhsse">QHSSE</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">Offering</a>
-                <ul class="dropdown-menu bg-Div-light" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="./offering/ground">Ground Mounted Solar</a></li>
-                    <li><a class="dropdown-item" href="./offering/residential">Residential</a></li>
-                    <li><a class="dropdown-item" href="./offering/commercial">Commercial & Industrial</a></li>
-                    <li><a class="dropdown-item" href="./offering/floating">Floating Solar</a></li>
-                    <li><a class="dropdown-item" href="./offering/operations">Operation & Maintenance</a></li>
-                    <li><a class="dropdown-item" href="./offering/transmission">Transmission Line &
-                        Substations</a></li>
-                </ul>
-            </li>
-            <li class="nav-item"><a href="./service" class="nav-link">Service</a></li>
-            <li class="nav-item"><a href="./sustainability" class="nav-link">Sustainability</a></li>
-            <li class="nav-item"><a href="./careers" class="nav-link">Careers</a></li>
-            <li class="nav-item"><a href="./news" class="nav-link">Blogs & Media</a></li>
-            <li class="nav-item"><a href="./contact" class="nav-link">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+<!-- Navbar Placeholder -->
+<div id="navbar-placeholder"></div>
 <!-- Navbar End -->
 
+<!-- Main Content -->
+<main id="main-content">
 
 <!-- Carousel Start -->
 <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="owl-carousel header-carousel position-relative">
+    <div class="owl-carousel header-carousel position-relative" role="region" aria-label="Hero carousel featuring solar energy solutions">
         <div class="owl-carousel-item position-relative" data-dot="<img src='img/Ground-Mounted-Solar-1.jpg'>">
             <video id="myVideo" class="video-fluid img-500" autoplay muted playsinline>
                 <source src="img/watt.mp4" type="video/mp4">
@@ -136,9 +137,9 @@
                 </div>
             </div>
         </div>
-<!--        <div class="owl-carousel-item position-relative" data-dot="<img src='img/IMG_2414.jpg'>">-->
-        <div class="owl-carousel-item position-relative" data-dot="<img src='img/IMG_20240421_114238.jpg'>">
-            <img class="img-fluid img-500" src="img/IMG_20240421_114238.jpg" alt="">
+<!--        <div class="owl-carousel-item position-relative" data-dot="<img src='img/IMG_2414.jpg' alt='Solar installation'>">-->
+        <div class="owl-carousel-item position-relative" data-dot="<img src='img/IMG_20240421_114238.jpg' alt='Solar project'>">
+            <img class="img-fluid img-500" src="img/IMG_20240421_114238.jpg" alt="WattGlow solar power plant installation project">
             <div class="owl-carousel-inner">
                 <div class="container">
                     <div class="row justify-content-start">
@@ -151,8 +152,8 @@
                 </div>
             </div>
         </div>
-        <div class="owl-carousel-item position-relative" data-dot="<img src='img/floating.png'>">
-            <img class="img-fluid img-500" src="img/floating.png" alt="">
+        <div class="owl-carousel-item position-relative" data-dot="<img src='img/floating.png' alt='Floating solar'>">
+            <img class="img-fluid img-500" src="img/floating.png" alt="Floating solar photovoltaic (FSPV) system on water">
             <div class="owl-carousel-inner">
                 <div class="container">
                     <div class="row justify-content-start">
@@ -165,9 +166,9 @@
                 </div>
             </div>
         </div>
-        <div class="owl-carousel-item position-relative" data-dot="<img src='img/IMG_2414.jpg'>">
-<!--        <div class="owl-carousel-item position-relative" data-dot="<img src='img/floating.png'>">-->
-            <img class="img-fluid img-500" src="img/IMG_2414.jpg" alt="">
+        <div class="owl-carousel-item position-relative" data-dot="<img src='img/IMG_2414.jpg' alt='Solar panels'>">
+<!--        <div class="owl-carousel-item position-relative" data-dot="<img src='img/floating.png' alt='Floating solar'>">-->
+            <img class="img-fluid img-500" src="img/IMG_2414.jpg" alt="Large-scale solar panel array for commercial solar installation">
             <div class="owl-carousel-inner">
                 <div class="container">
                     <div class="row justify-content-start">
@@ -192,7 +193,7 @@
             <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
                     <img class="position-absolute img-fluid w-100 h-100 rounded" src="img/wattGlowIm1.jpg" style="object-fit: cover;"
-                         alt="">
+                         alt="WattGlow Power team working on solar installation" loading="lazy">
                 </div>
             </div>
             <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -221,7 +222,7 @@
         <div class="row g-4">
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid img-300" src="img/groundMounteg.png" alt="">
+                    <img class="img-fluid img-300" src="img/groundMounteg.png" alt="Ground mounted solar power plant installation" loading="lazy">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
                             <i class="fa fa-solar-panel fa-3x"></i>
@@ -234,7 +235,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid img-300" src="img/comercial.png" alt="">
+                    <img class="img-fluid img-300" src="img/comercial.png" alt="Commercial and industrial solar installation" loading="lazy">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
                             <div class="icon-container fa-3x">
@@ -249,7 +250,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid img-300" src="img/floating.png" alt="">
+                    <img class="img-fluid img-300" src="img/floating.png" alt="Floating solar photovoltaic system" loading="lazy">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
                             <!--                                <div class="icon-container">-->
@@ -264,7 +265,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid img-300" src="img/residential.png" alt="">
+                    <img class="img-fluid img-300" src="img/residential.png" alt="Residential rooftop solar panel installation" loading="lazy">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
                             <i class="fa fa-home fa-3x"></i>
@@ -277,7 +278,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid img-300" src="img/operationAndMaintenance.png" alt="">
+                    <img class="img-fluid img-300" src="img/operationAndMaintenance.png" alt="Solar panel operation and maintenance services" loading="lazy">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
                             <i class="fa fa-tools fa-3x"></i>
@@ -290,7 +291,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid img-300" src="img/transmission.png" alt="">
+                    <img class="img-fluid img-300" src="img/transmission.png" alt="Transmission line and substation infrastructure" loading="lazy">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
                             <i class="fa fa-bolt fa-3x"></i>
@@ -714,130 +715,29 @@
 </div>
 <!-- What Our Clients Say End -->
 
-<div class="footer">
-    <div class="section">
-        <h3>WattGlow Power Private Limited</h3>
-        <p>
-            WattGlow Power Private Limited is a solar EPC company focused on delivering high-quality, sustainable solar
-            energy solutions. We specialize in end-to-end services for solar power plant projects, ensuring reliability
-            and customer satisfaction.
-        </p>
-    </div>
+</main>
+<!-- End Main Content -->
 
-    <div class="section">
-        <h3>QUICK LINKS</h3>
-        <ul>
-            <li><a href="./">Home</a></li>
-            <br>
-            <li><a href="./about">About</a></li>
-            <br>
-            <li><a href="./sustainability">Sustainability</a></li>
-            <br>
-            <li><a href="./careers">Careers</a></li>
-            <br>
-            <li><a href="./news">Blogs & Media</a></li>
-            <br>
-            <li><a href="./contact">Contact Us</a></li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>CONTACT US</h3>
-        <p>
-            <a href="https://www.google.com/maps/place/WattGlow+Power+Pvt+Ltd/@22.2975816,73.1626638,17z/data=!3m1!4b1!4m6!3m5!1s0x395fc7cbc842bc0b:0x4108ae844b312b59!8m2!3d22.2975767!4d73.1652387!16s%2Fg%2F11lmm0h55n!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDMxNi4wIKXMDSoJLDEwMjExNjM5SAFQAw%3D%3D" target="_blank">
-            Pancham Highstreet, 303, Old Padra Rd, Vidyutnagar Colony, IOC Nagar, Akota, Vadodara, Gujarat - 390020
-        </a>
-        </p>
-        <br>
-        <p>
-            📞 <a href="tel:+918160807490">+91 81608 07490</a>
-        </p>
-        <br>
-        <p>
-            📧 <a href="mailto:info@wattglow.com">info@wattglow.com</a>
-        </p>
-        <br>
-        <p>🕒 Mon to Sat 09:00 AM - 06:00 PM</p>
-        <br>
-    </div>
-
-    <div class="section">
-        <h3>FOLLOW US</h3>
-        <div class="social-icons social-icons-width">
-            <a href="https://www.facebook.com/profile.php?id=61564391866936"><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                    alt="Facebook"></a>
-            <a href="https://www.linkedin.com/company/wattglow"><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                    alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/wattglowpower.re"><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                    alt="Instagram"></a>
-            <a href="https://www.youtube.com/channel/UCsUS2NZlAnUs3qu-qhfFA2w"><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
-                    alt="YouTube"></a>
-        </div>
-        <br>
-        <h3>REVIEW US</h3>
-        <a href="https://www.google.com/maps/place/WattGlow+Power+Pvt+Ltd/@22.296735,73.1603054,17z/data=!3m1!4b1!4m6!3m5!1s0x395fc7cbc842bc0b:0x4108ae844b312b59!8m2!3d22.296735!4d73.1628803!16s%2Fg%2F11lmm0h55n?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"><img
-                src="https://logos-world.net/wp-content/uploads/2023/12/Google-Review-Logo.png"
-                alt="Google Reviews" style="width: 100px;"></a>
-        <br><br>
-        <br><br>
-        <a href="./contact" class="btn btn-lg btn-contact-us text-white">Contact Us →</a>
-    </div>
-</div>
-<div class="top-2 sticky-top p-1 bg-footer-color justify-content-md-around text-center">
-    <p class="text-white mb-0">© 2024 WattGlow Power Pvt. Ltd. | All rights reserved | Privacy Policy</p>
-    <p class="text-white mb-0">
-        Powered by <a href="https://www.ascendons.com">Ascendons</a>
-    </p>
-</div>
-
-<a href="https://api.whatsapp.com/send?phone=917383760478" class="whatsapp-icon" target="_blank" aria-label="Contact us on WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
-    <span class="tooltip-text">Chat with us on WhatsApp</span>
-</a>
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+<!-- Footer End -->
 
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/isotope/isotope.pkgd.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/wow/wow.min.js" defer></script>
+<script src="lib/easing/easing.min.js" defer></script>
+<script src="lib/waypoints/waypoints.min.js" defer></script>
+<script src="lib/counterup/counterup.min.js" defer></script>
+<script src="lib/owlcarousel/owl.carousel.min.js" defer></script>
+<script src="lib/isotope/isotope.pkgd.min.js" defer></script>
+<script src="lib/lightbox/js/lightbox.min.js" defer></script>
+
+<!-- Component Loader -->
+<script src="js/components.js"></script>
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
 </body>
 
 </html>
-
-<script>
-    $(document).ready(function () {
-        $(".logo-carousel").owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: false,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                576: {
-                    items: 2
-                },
-                768: {
-                    items: 3
-                },
-                992: {
-                    items: 4
-                }
-            }
-        });
-    });
-</script>
