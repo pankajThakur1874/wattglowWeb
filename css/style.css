@@ -22,19 +22,19 @@
     --gradient-start: var(--wg-9-blue-light);
     --gradient-end: var(--wg-3-primary-blue);
     
-    /* Solar Energy Gradient Colors - Darker for better visibility */
-    --solar-light-green: #c8e6c9;
-    --solar-light-blue: #bbdefb;
-    --solar-light-yellow: #fff59d;
+    /* Solar Energy Gradient Colors - Very light colors for subtle effect */
+    --solar-light-green: #f7fbf8;
+    --solar-light-blue: #f8fcff;
+    --solar-light-yellow: #fffef8;
 }
 
 /* Animated solar energy gradient background - Applied to html for full coverage */
 html {
     background: linear-gradient(
         135deg,
-        var(--solar-light-green) 0%,      /* Light green - solar panels/energy (darker) */
-        var(--solar-light-blue) 25%,     /* Light blue - sky (darker) */
-        var(--solar-light-yellow) 50%,   /* Light yellow - sunlight (darker) */
+        var(--solar-light-green) 0%,      /* Light green - solar panels/energy */
+        var(--solar-light-blue) 25%,     /* Light blue - sky */
+        var(--solar-light-yellow) 50%,   /* Light yellow - sunlight */
         var(--solar-light-green) 75%,    /* Light green */
         var(--solar-light-blue) 100%     /* Light blue */
     );
@@ -758,7 +758,7 @@ footer .bg-footer-color.sticky-top {
     }
 }
 
-/* Enhanced decorative pattern overlay - Solar energy theme (darker) - Optimized */
+/* Enhanced decorative pattern overlay - Solar energy theme (very light) - Optimized */
 body::before {
     content: '';
     position: fixed;
@@ -767,11 +767,11 @@ body::before {
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.12) 0%, transparent 50%),   /* Darker green - solar energy */
-        radial-gradient(circle at 80% 80%, rgba(33, 150, 243, 0.12) 0%, transparent 50%),  /* Darker blue - sky */
-        radial-gradient(circle at 40% 20%, rgba(255, 235, 59, 0.10) 0%, transparent 50%),   /* Darker yellow - sunlight */
-        radial-gradient(circle at 60% 70%, rgba(76, 175, 80, 0.10) 0%, transparent 50%),  /* Darker green */
-        radial-gradient(circle at 90% 30%, rgba(33, 150, 243, 0.10) 0%, transparent 50%);  /* Darker blue */
+        radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.03) 0%, transparent 50%),   /* Very light green - solar energy */
+        radial-gradient(circle at 80% 80%, rgba(33, 150, 243, 0.03) 0%, transparent 50%),  /* Very light blue - sky */
+        radial-gradient(circle at 40% 20%, rgba(255, 235, 59, 0.025) 0%, transparent 50%),   /* Very light yellow - sunlight */
+        radial-gradient(circle at 60% 70%, rgba(76, 175, 80, 0.025) 0%, transparent 50%),  /* Very light green */
+        radial-gradient(circle at 90% 30%, rgba(33, 150, 243, 0.025) 0%, transparent 50%);  /* Very light blue */
     pointer-events: none;
     z-index: 0;
     animation: patternFloat 25s ease-in-out infinite; /* Slower for better performance */
@@ -800,10 +800,7 @@ body > * {
 }
 
 /* Ensure content sections maintain readability over gradient - Optimized */
-.container:not(.page-header):not(.page-header-ground):not(.page-header-residential),
-.container-fluid:not(.bg-footer-color):not(.page-header):not(.page-header-ground):not(.page-header-residential) {
-    /* Removed backdrop-filter for better performance - causes repaints */
-}
+/* Removed backdrop-filter for better performance - causes repaints */
 
 /* Cards and content boxes maintain full white background for contrast */
 .card,
@@ -867,8 +864,8 @@ footer {
 }
 
 .footer-bottom-bar p {
-    font-size: 1.1rem; /* Increased font size */
-    margin: 0.5rem 0; /* Added margin between paragraphs */
+    font-size: 1.25rem; /* Increased from 1.1rem */
+    margin: 0.75rem 0; /* Increased margin between paragraphs */
 }
 
 /* Ensure footer is at bottom and doesn't overlap */
@@ -889,11 +886,13 @@ footer .section {
     color: var(--wg-7-primary-yellow) !important;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 1.25rem; /* Increased to match footer text */
 }
 
 .footer-bottom-bar a.text-white {
     color: #ffffff !important;
     text-decoration: underline;
+    font-size: 1.25rem; /* Increased to match footer text */
 }
 
 .footer-bottom-bar a:hover {
@@ -1672,15 +1671,15 @@ footer div.top-2.bg-footer-color {
 .footer h3 {
     color: #1a3d73;
     --body-text-color: #00060a;
-    font-size: 1.5rem; /* Increased from 16px */
-    margin-bottom: 1.25rem; /* Increased from 10px */
+    font-size: 1.75rem; /* Increased from 1.5rem */
+    margin-bottom: 1.5rem; /* Increased from 1.25rem */
     font-weight: 700;
 }
 
 .footer p, .footer li, .footer a {
-    font-size: 1.1rem; /* Increased from 14px */
+    font-size: 1.25rem; /* Increased from 1.1rem */
     color: #41464bf2;
-    line-height: 1.8; /* Increased from 1.6 */
+    line-height: 1.9; /* Increased from 1.8 */
     text-decoration: none;
 }
 
@@ -2103,17 +2102,17 @@ p {
 .footer h3 {
     color: #ffffff;
     font-weight: 700;
-    font-size: 1.5rem; /* Increased size */
+    font-size: 1.75rem; /* Increased from 1.5rem */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    margin-bottom: 1.25rem; /* Increased spacing */
+    margin-bottom: 1.5rem; /* Increased from 1.25rem */
 }
 
 .footer p,
 .footer a {
     color: #e0e0e0;
-    font-size: 1.1rem; /* Increased size */
+    font-size: 1.25rem; /* Increased from 1.1rem */
     transition: color 0.3s ease;
-    line-height: 1.8; /* Increased line height */
+    line-height: 1.9; /* Increased from 1.8 */
 }
 
 .footer a:hover {
