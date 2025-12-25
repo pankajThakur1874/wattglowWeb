@@ -56,13 +56,13 @@
     animation: float 6s var(--ease-primary) infinite;
 }
 
-/* Subtle Pulse - For attention elements */
+/* Subtle Pulse - For attention elements - Using WattGlow Orange */
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(255, 183, 77, 0.4);
+        box-shadow: 0 0 0 0 rgba(244, 121, 37, 0.4);  /* wg-5-orange */
     }
     50% {
-        box-shadow: 0 0 0 10px rgba(255, 183, 77, 0);
+        box-shadow: 0 0 0 10px rgba(244, 121, 37, 0);  /* wg-5-orange */
     }
 }
 
@@ -70,21 +70,90 @@
     animation: pulse 2s var(--ease-primary) infinite;
 }
 
+/* Enhanced Pulse Glow - Using WattGlow Yellow */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 186, 0, 0.5), 0 0 20px rgba(255, 186, 0, 0.3);  /* wg-7-primary-yellow */
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(255, 186, 0, 0), 0 0 30px rgba(255, 186, 0, 0.1);
+    }
+}
+
+.pulse-glow {
+    animation: pulseGlow 2.5s var(--ease-primary) infinite;
+}
+
+/* Color Wave Animation - For backgrounds */
+@keyframes colorWave {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.color-wave {
+    background: linear-gradient(
+        90deg,
+        rgba(33, 41, 107, 0.1) 0%,      /* wg-1-deep-blue */
+        rgba(0, 68, 181, 0.1) 25%,       /* wg-3-primary-blue */
+        rgba(255, 186, 0, 0.1) 50%,     /* wg-7-primary-yellow */
+        rgba(244, 121, 37, 0.1) 75%,    /* wg-5-orange */
+        rgba(0, 148, 100, 0.1) 100%      /* wg-8-green */
+    );
+    background-size: 200% 200%;
+    animation: colorWave 8s ease infinite;
+}
+
 /* ==========================================
    SPECIAL EFFECTS - Used Sparingly
    ========================================== */
 
-/* Gradient text - For emphasis only */
+/* Gradient text - For emphasis only - Using WattGlow colors */
 .text-gradient {
     background: linear-gradient(
         135deg,
-        var(--color-accent-dark) 0%,
-        var(--color-accent) 50%,
-        var(--color-info) 100%
+        var(--wg-1-deep-blue) 0%,      /* Deep blue */
+        var(--wg-3-primary-blue) 25%,   /* Primary blue */
+        var(--wg-7-primary-yellow) 50%, /* Primary yellow */
+        var(--wg-5-orange) 75%,         /* Orange */
+        var(--wg-8-green) 100%           /* Green */
     );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: var(--font-weight-bold);
+}
+
+/* Animated gradient text */
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.text-gradient-animated {
+    background: linear-gradient(
+        90deg,
+        var(--wg-1-deep-blue) 0%,
+        var(--wg-3-primary-blue) 25%,
+        var(--wg-7-primary-yellow) 50%,
+        var(--wg-5-orange) 75%,
+        var(--wg-8-green) 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s ease infinite;
     font-weight: var(--font-weight-bold);
 }
 
@@ -125,13 +194,15 @@
     height: 3px;
     background: linear-gradient(
         90deg,
-        var(--color-accent) 0%,
-        var(--color-accent-light) 50%,
-        var(--color-info) 100%
+        var(--wg-1-deep-blue) 0%,
+        var(--wg-3-primary-blue) 25%,
+        var(--wg-7-primary-yellow) 50%,
+        var(--wg-5-orange) 75%,
+        var(--wg-8-green) 100%
     );
     z-index: var(--z-fixed);
     transition: width 0.1s ease-out;
-    box-shadow: 0 2px 8px rgba(255, 183, 77, 0.4);
+    box-shadow: 0 2px 8px rgba(244, 121, 37, 0.4);  /* wg-5-orange */
 }
 
 /* ==========================================
@@ -147,14 +218,22 @@
     transform: rotate(5deg) scale(1.1);
 }
 
-/* Icon Glow - For star ratings, etc */
+/* Icon Glow - For star ratings, etc - Using WattGlow Yellow */
 .icon-glow {
     transition: var(--transition-all);
 }
 
 .icon-glow:hover {
-    filter: drop-shadow(0 0 8px var(--color-accent));
+    filter: drop-shadow(0 0 8px var(--wg-7-primary-yellow));
     transform: scale(1.2);
+}
+
+/* Multi-color glow effect */
+.icon-glow-multicolor:hover {
+    filter: drop-shadow(0 0 10px rgba(33, 41, 107, 0.6))  /* wg-1-deep-blue */
+            drop-shadow(0 0 15px rgba(255, 186, 0, 0.5))  /* wg-7-primary-yellow */
+            drop-shadow(0 0 20px rgba(244, 121, 37, 0.4)); /* wg-5-orange */
+    transform: scale(1.2) rotate(5deg);
 }
 
 /* ==========================================
@@ -172,18 +251,21 @@
 
 .testimonial-item:hover .testimonial-img img {
     transform: scale(1.05);
-    border-color: var(--color-accent);
+    border-color: var(--wg-7-primary-yellow);  /* Using WattGlow yellow */
+    box-shadow: 0 0 20px rgba(255, 186, 0, 0.3);
 }
 
-/* Star rating */
+/* Star rating - Using WattGlow Yellow */
 .icon-star i {
     display: inline-block;
     transition: var(--transition-transform);
-    color: var(--color-accent);
+    color: var(--wg-7-primary-yellow);
 }
 
 .icon-star i:hover {
     transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 8px var(--wg-7-primary-yellow));
+    color: var(--wg-5-orange);  /* Changes to orange on hover */
 }
 
 /* ==========================================
