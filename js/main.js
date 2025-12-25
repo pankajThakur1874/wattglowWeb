@@ -55,19 +55,23 @@
             const navbar = document.querySelector('.navbar');
             if (!navbar || navbarInitialized) return false;
 
-            // Apply fixed positioning multiple times to ensure it sticks
+            // Apply fixed positioning once (removed redundant calls)
             applyFixedPosition(navbar);
-            setTimeout(() => applyFixedPosition(navbar), 10);
-            setTimeout(() => applyFixedPosition(navbar), 50);
-            setTimeout(() => applyFixedPosition(navbar), 100);
 
-            // Add scrolled class on scroll for enhanced styling (only once)
+            // Add scrolled class on scroll for enhanced styling (only once) - Debounced
             if (!scrollHandler) {
+                let ticking = false;
                 scrollHandler = function () {
-                    if (window.scrollY > 50) {
-                        navbar.classList.add('scrolled');
-                    } else {
-                        navbar.classList.remove('scrolled');
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            if (window.scrollY > 50) {
+                                navbar.classList.add('scrolled');
+                            } else {
+                                navbar.classList.remove('scrolled');
+                            }
+                            ticking = false;
+                        });
+                        ticking = true;
                     }
                 };
                 window.addEventListener('scroll', scrollHandler, { passive: true });
@@ -111,10 +115,8 @@
                 setTimeout(setupNavbar, 200);
             });
             
-            // Also try after delays to catch navbar when it loads
+            // Also try after a delay to catch navbar when it loads (reduced attempts)
             setTimeout(setupNavbar, 200);
-            setTimeout(setupNavbar, 500);
-            setTimeout(setupNavbar, 1000);
         }
     }
 
@@ -356,41 +358,51 @@
     }
 
     /**
-     * Add animation classes to key sections
+     * Add animation classes to key sections (optimized - only visible elements)
      */
     function addAnimationClasses() {
-        // Add animations to feature items
+        // Only add animations to elements that are likely to be visible
+        // Use IntersectionObserver to add classes only when needed
+        
+        const observerOptions = {
+            threshold: 0,
+            rootMargin: '100px' // Start animation slightly before element is visible
+        };
+
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    if (!element.classList.contains('animate-on-scroll')) {
+                        element.classList.add('animate-on-scroll');
+                    }
+                    animationObserver.unobserve(element);
+                }
+            });
+        }, observerOptions);
+
+        // Add animations to feature items (limit to first 12 for performance)
         const featureItems = document.querySelectorAll('.feature-item');
-        featureItems.forEach((item, index) => {
-            item.classList.add('animate-on-scroll');
+        Array.from(featureItems).slice(0, 12).forEach((item, index) => {
             item.style.animationDelay = `${index * 0.1}s`;
+            animationObserver.observe(item);
         });
 
-        // Add animations to benefit cards
+        // Add animations to benefit cards (limit to first 6)
         const benefitCards = document.querySelectorAll('.benefit');
-        benefitCards.forEach((card, index) => {
-            card.classList.add('animate-on-scroll');
+        Array.from(benefitCards).slice(0, 6).forEach((card, index) => {
             card.style.animationDelay = `${index * 0.15}s`;
+            animationObserver.observe(card);
         });
 
-        // Add animations to cards
+        // Add animations to cards (limit to first 9)
         const cards = document.querySelectorAll('.card, .card-premium, .career-card');
-        cards.forEach((card, index) => {
-            if (!card.classList.contains('animate-on-scroll')) {
-                card.classList.add('animate-on-scroll');
-                card.style.animationDelay = `${index * 0.1}s`;
-            }
+        Array.from(cards).slice(0, 9).forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            animationObserver.observe(card);
         });
 
-        // Add slide-in animations to alternating sections
-        const sections = document.querySelectorAll('section, .container-fluid');
-        sections.forEach((section, index) => {
-            if (index % 2 === 0) {
-                section.classList.add('slide-in-left');
-            } else {
-                section.classList.add('slide-in-right');
-            }
-        });
+        // Removed section animations - too many elements, causes performance issues
     }
 
     function init() {
@@ -414,11 +426,20 @@
         });
 
         // Also try to initialize immediately in case components are already there
-        setTimeout(function () {
-            initHeaderCarousel();
-            initTestimonialCarousel();
-            initLogoCarousel();
-        }, 100);
+        // Use requestIdleCallback for non-critical initialization
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(function () {
+                initHeaderCarousel();
+                initTestimonialCarousel();
+                initLogoCarousel();
+            }, { timeout: 2000 });
+        } else {
+            setTimeout(function () {
+                initHeaderCarousel();
+                initTestimonialCarousel();
+                initLogoCarousel();
+            }, 100);
+        }
     }
 
     // Initialize when DOM is ready
