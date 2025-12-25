@@ -28,21 +28,94 @@
     }
 
     /**
-     * Sticky Navbar - Add shadow on scroll
+     * Fixed Navbar - Always visible, enhanced on scroll
      */
     function initStickyNavbar() {
-        const stickyElement = document.querySelector('.sticky-top');
-        if (!stickyElement) return;
+        let navbarInitialized = false;
+        let scrollHandler = null;
 
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 300) {
-                stickyElement.classList.add('shadow-sm');
-                stickyElement.style.top = '0px';
-            } else {
-                stickyElement.classList.remove('shadow-sm');
-                stickyElement.style.top = '-100px';
+        // Function to apply fixed positioning to navbar
+        function applyFixedPosition(navbar) {
+            if (!navbar) return;
+            
+            navbar.style.position = 'fixed';
+            navbar.style.top = '0';
+            navbar.style.left = '0';
+            navbar.style.right = '0';
+            navbar.style.width = '100%';
+            navbar.style.zIndex = '1030';
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            
+            // Remove sticky-top class that might interfere
+            navbar.classList.remove('sticky-top');
+        }
+
+        // Function to initialize navbar when it's available
+        function setupNavbar() {
+            const navbar = document.querySelector('.navbar');
+            if (!navbar || navbarInitialized) return false;
+
+            // Apply fixed positioning multiple times to ensure it sticks
+            applyFixedPosition(navbar);
+            setTimeout(() => applyFixedPosition(navbar), 10);
+            setTimeout(() => applyFixedPosition(navbar), 50);
+            setTimeout(() => applyFixedPosition(navbar), 100);
+
+            // Add scrolled class on scroll for enhanced styling (only once)
+            if (!scrollHandler) {
+                scrollHandler = function () {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                };
+                window.addEventListener('scroll', scrollHandler, { passive: true });
             }
+
+            navbarInitialized = true;
+            return true;
+        }
+
+        // Use MutationObserver to watch for navbar being added to DOM
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1) { // Element node
+                        if (node.classList && node.classList.contains('navbar')) {
+                            setupNavbar();
+                        } else if (node.querySelector && node.querySelector('.navbar')) {
+                            setupNavbar();
+                        }
+                    }
+                });
+            });
         });
+
+        // Observe navbar placeholder for changes
+        const navbarPlaceholder = document.getElementById('navbar-placeholder');
+        if (navbarPlaceholder) {
+            observer.observe(navbarPlaceholder, {
+                childList: true,
+                subtree: true
+            });
+        }
+
+        // Try to setup immediately
+        if (!setupNavbar()) {
+            // If navbar not found, wait for components to load
+            document.addEventListener('componentsLoaded', function() {
+                setTimeout(setupNavbar, 10);
+                setTimeout(setupNavbar, 50);
+                setTimeout(setupNavbar, 100);
+                setTimeout(setupNavbar, 200);
+            });
+            
+            // Also try after delays to catch navbar when it loads
+            setTimeout(setupNavbar, 200);
+            setTimeout(setupNavbar, 500);
+            setTimeout(setupNavbar, 1000);
+        }
     }
 
     /**
@@ -264,6 +337,8 @@
         // Wait for components to load before initializing carousels
         // (they might be in dynamically loaded content)
         document.addEventListener('componentsLoaded', function () {
+            // Re-initialize navbar after components load
+            initStickyNavbar();
             initHeaderCarousel();
             initTestimonialCarousel();
             initLogoCarousel();

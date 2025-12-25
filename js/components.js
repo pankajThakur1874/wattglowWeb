@@ -100,6 +100,39 @@
             if (navbarHTML) {
                 navbarPlaceholder.innerHTML = replacePlaceholders(navbarHTML, basePath);
                 setActiveNavLink();
+                
+                // Ensure navbar is fixed immediately after loading - multiple attempts
+                function fixNavbarPosition() {
+                    const navbar = document.querySelector('.navbar');
+                    if (navbar) {
+                        // Force fixed positioning via inline styles
+                        navbar.style.position = 'fixed';
+                        navbar.style.top = '0';
+                        navbar.style.left = '0';
+                        navbar.style.right = '0';
+                        navbar.style.width = '100%';
+                        navbar.style.zIndex = '1030';
+                        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                        
+                        // Remove any conflicting classes that might interfere
+                        navbar.classList.remove('sticky-top');
+                        navbar.classList.add('navbar-fixed');
+                        
+                        return true;
+                    }
+                    return false;
+                }
+                
+                // Try immediately
+                if (!fixNavbarPosition()) {
+                    // Try after a short delay
+                    setTimeout(fixNavbarPosition, 50);
+                    setTimeout(fixNavbarPosition, 100);
+                    setTimeout(fixNavbarPosition, 200);
+                } else {
+                    // Also try again after a brief moment to ensure it sticks
+                    setTimeout(fixNavbarPosition, 100);
+                }
             } else {
                 console.error('Failed to load navbar component');
             }

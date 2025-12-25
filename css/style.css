@@ -1,10 +1,26 @@
 /********** Template CSS **********/
 :root {
-    --primary: #113b5b;
+    /* WattGlow Brand Colors */
+    --wg-1-deep-blue: #21296b;
+    --wg-2-primary-red: #d12626;
+    --wg-3-primary-blue: #0044b5;
+    --wg-4-bright-red: #fd372c;
+    --wg-5-orange: #f47925;
+    --wg-6-secondary-green-dark: #156b4c;
+    --wg-7-primary-yellow: #ffba00;
+    --wg-8-green: #009464;
+    --wg-9-blue-light: #5082f0;
+    
+    /* Core UI */
+    --background: #ffffff;
+    --foreground: #221e1f;
+    
+    /* Legacy variables - now using WattGlow colors */
+    --primary: var(--wg-1-deep-blue);
     --light: #F6F7F8;
     --dark: #1A2A36;
-    --gradient-start: #f0f9ff;
-    --gradient-end: #e0f2fe;
+    --gradient-start: var(--wg-9-blue-light);
+    --gradient-end: var(--wg-3-primary-blue);
 }
 
 /* Carousel Image Heights - Responsive */
@@ -50,7 +66,28 @@
 
 body {
     font-weight: 400;
-    color: #113b5b;
+    color: var(--wg-1-deep-blue);
+    /* Add padding-top to account for fixed navbar */
+    padding-top: 75px !important; /* Adjust based on navbar height */
+}
+
+/* Responsive padding for navbar height */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 70px !important; /* Slightly less on mobile */
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 75px !important; /* Standard height on desktop */
+    }
+}
+
+/* Ensure main content accounts for fixed navbar on home page */
+#main-content {
+    position: relative;
+    z-index: 1;
 }
 
 .advantages-list {
@@ -145,7 +182,7 @@ tr:nth-child(even) {
 
 .benefit i {
     font-size: 2.5rem;
-    color: #113b5b;
+    color: var(--wg-1-deep-blue);
     margin-bottom: 0.625rem;
 }
 
@@ -174,7 +211,7 @@ tr:nth-child(even) {
 }
 
 .highlight {
-    color: #83b934;
+    color: var(--wg-8-green);
     font-weight: bold;
 }
 
@@ -309,15 +346,110 @@ tr:nth-child(even) {
     font-weight: normal;
 }
 
-/*** Navbar ***/
-.navbar.sticky-top {
-    top: -100px;
-    transition: .5s;
+/*** Navbar - Fixed on Scroll ***/
+.navbar,
+.navbar.sticky-top,
+.navbar.navbar-expand-lg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1030 !important;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Override Bootstrap sticky-top behavior */
+}
+
+/* Override bg-Div-light background when applied to navbar */
+.navbar.bg-Div-light,
+.navbar.sticky-top.bg-Div-light {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Navbar when scrolled - Enhanced shadow and background */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(33, 41, 107, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/* Ensure navbar stays on top on all screens */
+@media (max-width: 991.98px) {
+    .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        z-index: 1030 !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        z-index: 1030 !important;
+    }
+}
+
+/* Navbar placeholder - ensure it doesn't interfere */
+#navbar-placeholder {
+    position: relative;
+    width: 100%;
+    z-index: 1030;
+    height: 0; /* Don't take up space */
+    overflow: visible;
+}
+
+/* Ensure navbar inside placeholder is fixed - Home page specific */
+#navbar-placeholder > .navbar,
+#navbar-placeholder .navbar,
+#navbar-placeholder nav.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1030 !important;
+    margin: 0 !important;
+}
+
+/* Ensure footer doesn't appear where navbar should be */
+footer,
+.footer,
+.footer-bottom-bar {
+    position: relative !important;
+    top: auto !important;
+    z-index: 1 !important;
+}
+
+/* Prevent any footer elements from being fixed at top */
+footer .sticky-top,
+.footer .sticky-top,
+footer .bg-footer-color.sticky-top {
+    position: static !important;
+    top: auto !important;
+    z-index: 1 !important;
 }
 
 .navbar .navbar-brand,
 .navbar a.btn {
     height: 4.688rem;
+}
+
+/* Ensure navbar brand logo is properly sized */
+.navbar .navbar-brand img {
+    max-height: 60px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Slightly smaller logo when scrolled */
+.navbar.scrolled .navbar-brand img {
+    max-height: 55px;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -364,6 +496,11 @@ tr:nth-child(even) {
         opacity: 0;
         visibility: hidden;
         transition: .5s;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        box-shadow: 0 8px 24px rgba(33, 41, 107, 0.15);
+        border-radius: 0.5rem;
     }
 
     .navbar .nav-item:hover .dropdown-menu {
@@ -508,7 +645,13 @@ tr:nth-child(even) {
     min-height: 350px;
 }
 .bg-Div-light {
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #ffffff 50%, #fef3c7 75%, #fef9c3 100%);
+    background: linear-gradient(135deg, 
+        rgba(80, 130, 240, 0.08) 0%,      /* wg-9-blue-light - very light */
+        rgba(0, 68, 181, 0.06) 25%,       /* wg-3-primary-blue - light */
+        #ffffff 50%,                      /* White */
+        rgba(255, 186, 0, 0.05) 75%,     /* wg-7-primary-yellow - very light */
+        rgba(244, 121, 37, 0.04) 100%    /* wg-5-orange - very light */
+    );
     background-attachment: fixed;
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
@@ -528,7 +671,7 @@ tr:nth-child(even) {
     }
 }
 
-/* Alternative: Add decorative pattern overlay */
+/* Alternative: Add decorative pattern overlay - Using WattGlow colors */
 body::before {
     content: '';
     position: fixed;
@@ -537,9 +680,10 @@ body::before {
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(17, 59, 91, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(131, 185, 52, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(255, 177, 78, 0.02) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(33, 41, 107, 0.03) 0%, transparent 50%),  /* wg-1-deep-blue */
+        radial-gradient(circle at 80% 80%, rgba(0, 148, 100, 0.03) 0%, transparent 50%),   /* wg-8-green */
+        radial-gradient(circle at 40% 20%, rgba(255, 186, 0, 0.02) 0%, transparent 50%),   /* wg-7-primary-yellow */
+        radial-gradient(circle at 60% 70%, rgba(244, 121, 37, 0.02) 0%, transparent 50%);  /* wg-5-orange */
     pointer-events: none;
     z-index: 0;
 }
@@ -548,13 +692,76 @@ body > * {
     position: relative;
     z-index: 1;
 }
+
+/* Ensure main content and footer don't overlap navbar */
+#main-content {
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 75px);
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    clear: both;
+}
 .bg-client-logo {
-    background: linear-gradient(135deg, rgba(234, 248, 250, 0.95) 0%, rgba(224, 242, 254, 0.95) 100%);
+    background: linear-gradient(135deg, 
+        rgba(80, 130, 240, 0.1) 0%,      /* wg-9-blue-light */
+        rgba(0, 68, 181, 0.08) 100%      /* wg-3-primary-blue */
+    );
     backdrop-filter: blur(10px);
-    box-shadow: inset 0 0 60px rgba(17, 59, 91, 0.05);
+    box-shadow: inset 0 0 60px rgba(33, 41, 107, 0.05);  /* wg-1-deep-blue */
 }
 .bg-footer-color {
-    background-color: #113b5b !important;
+    background-color: var(--wg-1-deep-blue) !important;
+}
+
+/* Footer bottom bar styling */
+.footer-bottom-bar {
+    background-color: var(--wg-1-deep-blue) !important;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    width: 100%;
+}
+
+/* Ensure footer is at bottom and doesn't overlap */
+footer {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+}
+
+/* Ensure footer sections don't have conflicting positioning */
+footer .footer,
+footer .section {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-bottom-bar a {
+    color: var(--wg-7-primary-yellow) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-bar a:hover {
+    color: var(--wg-5-orange) !important;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
 .page-header-commercial {
     background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/head2.jpg) center center no-repeat;
@@ -919,76 +1126,92 @@ body > * {
         padding-left: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
-.footer {
-    background-color: #99e5d6; /* Light background */
-    padding: 20px 0;
-}
-
-.footer .btn-square {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.footer .btn-square:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.footer a.btn-lg {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-
-.footer a.btn-lg:hover {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #007bff;
-}
-
-.footer img {
-    height: 40px; /* Adjust the height to fit the design */
-}
-
-.footer p {
-    font-size: 1rem;
-    color: #6c757d;
-    margin-bottom: 0;
-}
-
-@media (max-width: 992px) {
-    .footer .text-lg-end {
-        text-align: center !important;
-    }
-
-    .footer .btn-lg {
-        margin-top: 10px;
-    }
-}
+/* Removed duplicate footer styles - consolidated below */
 .btn-contact-us {
-    background-color: #113b5b; /* Green color */
+    background: linear-gradient(135deg, var(--wg-1-deep-blue) 0%, var(--wg-3-primary-blue) 100%);
     color: #fff; /* White text */
-    border-color: #113b5b; /* Green border to match */
+    border: 2px solid var(--wg-1-deep-blue);
     padding: 10px 20px;
     font-size: 1.2rem;
     border-radius: 30px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 41, 107, 0.3);
 }
 
-/* Hover effect for the button */
+/* Hover effect for the button - Enhanced with WattGlow colors */
 .btn-contact-us:hover {
-    background-color: #113b5b; /* Darker green on hover */
-    border-color: #113b5b;
+    background: linear-gradient(135deg, var(--wg-3-primary-blue) 0%, var(--wg-5-orange) 100%);
+    border-color: var(--wg-5-orange);
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 121, 37, 0.4);
 }
-.sticky-top {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Legacy sticky-top class - now using fixed navbar */
+/* Only apply to navbar, not footer or other elements */
+.navbar.sticky-top,
+nav.sticky-top,
+.navbar.sticky-top.navbar-expand-lg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1030 !important;
+}
+
+/* Footer bottom bar should NOT be fixed at top - Maximum specificity override */
+/* Target any element with bg-footer-color that might be fixed */
+.bg-footer-color.sticky-top,
+div.bg-footer-color.sticky-top,
+footer .bg-footer-color.sticky-top,
+footer div.bg-footer-color.sticky-top,
+.top-2.sticky-top.bg-footer-color,
+div.top-2.sticky-top.bg-footer-color,
+footer .top-2.sticky-top.bg-footer-color {
+    position: static !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+}
+
+/* Footer bottom bar should NOT be fixed at top - Multiple selectors for maximum specificity */
+footer .sticky-top,
+.footer .sticky-top,
+footer .footer-bottom-bar,
+.footer-bottom-bar,
+.footer-bottom-bar.bg-footer-color,
+div.footer-bottom-bar,
+footer div.footer-bottom-bar,
+footer .bg-footer-color,
+.bg-footer-color:not(.navbar):not(.navbar *),
+footer .bg-footer-color:not(.navbar):not(.navbar *) {
+    position: static !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+}
+
+/* Ensure footer-bottom-bar is never fixed - Strongest override */
+.footer-bottom-bar,
+footer .footer-bottom-bar,
+div.footer-bottom-bar.bg-footer-color,
+div.top-2.bg-footer-color,
+footer div.top-2.bg-footer-color {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 1 !important;
 }
 .dropdown-menu {
     opacity: 0;
@@ -1097,7 +1320,7 @@ body > * {
     height: 60px;
 }
 .icon-star {
-    color: #FFB14E;
+    color: var(--wg-7-primary-yellow);
 }
 
 .icon-container .fa-solar-panel {
@@ -1106,7 +1329,7 @@ body > * {
     left: 50%;
     transform: translateX(-50%); /* Centers the icon horizontally */
     font-size: 40px;
-    color: #113b5b; /* Color for the solar panel icon */
+    color: var(--wg-1-deep-blue); /* Color for the solar panel icon */
 }
 
 .icon-container .fa-water {
@@ -1115,7 +1338,7 @@ body > * {
     left: 50%;
     transform: translateX(-50%); /* Centers the icon horizontally */
     font-size: 30px;
-    color: #113b5b; /* Color for the water icon */
+    color: var(--wg-3-primary-blue); /* Color for the water icon */
 }
 .career-section {
     display: flex; /* Use Flexbox for horizontal alignment */
@@ -1141,18 +1364,21 @@ body > * {
 }
 
 .career-card:hover {
-    background: linear-gradient(135deg, rgba(238, 219, 157, 0.95) 0%, rgba(255, 247, 205, 0.95) 100%);
-    box-shadow: 0 8px 40px rgba(17, 59, 91, 0.2);
+    background: linear-gradient(135deg, 
+        rgba(255, 186, 0, 0.15) 0%,      /* wg-7-primary-yellow */
+        rgba(244, 121, 37, 0.12) 100%     /* wg-5-orange */
+    );
+    box-shadow: 0 8px 40px rgba(33, 41, 107, 0.25);  /* wg-1-deep-blue */
     transform: translateY(-6px);
 }
 .iconCareer {
     font-size: 20px;
-    color: #263f54; /* Default color */
+    color: var(--wg-1-deep-blue); /* Default color */
     transition: color 0.3s ease; /* Smooth color transition */
 }
-/* Change color on hover */
+/* Change color on hover - Using WattGlow orange */
 .iconCareer:hover {
-    color: #113b5b; /* Color after hover */
+    color: var(--wg-5-orange); /* Color after hover */
 }
 
 .career-card h3 {
@@ -1187,11 +1413,32 @@ body > * {
 .footer {
     background-color: #f6f7f8;
     color: #1a1a1a;
-    padding: 20px;
+    padding: 3rem 2rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     border-top: 1px solid #ddd;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    
+    .footer .section {
+        width: 100% !important;
+        max-width: 500px;
+    }
 }
 
 .footer h3 {
@@ -1214,7 +1461,16 @@ body > * {
 
 .footer .section {
     width: 20%;
+    min-width: 200px;
     color: #00060a !important;
+    flex: 1 1 200px;
+}
+
+@media (max-width: 768px) {
+    .footer .section {
+        width: 100% !important;
+        min-width: auto;
+    }
 }
 .social-icons-width {
     max-width: 105%; /* Ensure logo fits well within the box */
@@ -1335,6 +1591,9 @@ body > * {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     border-radius: 50%;
     box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
@@ -1344,10 +1603,6 @@ body > * {
 .whatsapp-icon:hover {
     transform: scale(1.1);
     box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
-}
-    width: 60px;
-    height: 60px;
-    z-index: 9999;
 }
 
 .whatsapp-icon img {
