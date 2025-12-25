@@ -283,6 +283,393 @@
     }
 }
 
+/* ==========================================
+   ADDITIONAL ANIMATIONS - Enhanced Variety
+   ========================================== */
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Scale in animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce {
+    animation: bounce 1s ease infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Rotate and scale on hover */
+@keyframes rotateScale {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.rotate-scale {
+    transition: transform 0.3s ease;
+}
+
+.rotate-scale:hover {
+    animation: rotateScale 0.6s ease;
+}
+
+/* Fade in with zoom */
+@keyframes fadeZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-zoom {
+    animation: fadeZoom 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Slide up with fade - Enhanced */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up-fade {
+    animation: slideUpFade 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Wobble effect */
+@keyframes wobble {
+    0%, 100% {
+        transform: translateX(0%);
+    }
+    15% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+    30% {
+        transform: translateX(10px) rotate(5deg);
+    }
+    45% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+    60% {
+        transform: translateX(10px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-5px) rotate(-2deg);
+    }
+    90% {
+        transform: translateX(5px) rotate(2deg);
+    }
+}
+
+.wobble:hover {
+    animation: wobble 0.6s ease;
+}
+
+/* Glow pulse - Enhanced */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 186, 0, 0.5),
+                    0 0 10px rgba(255, 186, 0, 0.3),
+                    0 0 15px rgba(255, 186, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 186, 0, 0.8),
+                    0 0 20px rgba(255, 186, 0, 0.6),
+                    0 0 30px rgba(255, 186, 0, 0.4);
+    }
+}
+
+.glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Flip animation */
+@keyframes flip {
+    from {
+        transform: perspective(400px) rotateY(0);
+    }
+    to {
+        transform: perspective(400px) rotateY(360deg);
+    }
+}
+
+.flip {
+    animation: flip 0.8s ease-in-out;
+}
+
+/* ==========================================
+   ENHANCED HOVER EFFECTS
+   ========================================== */
+
+/* Card lift with shadow */
+.card-animated {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-animated:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(33, 41, 107, 0.2),
+                0 10px 20px rgba(244, 121, 37, 0.15);
+}
+
+/* Button ripple effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Text reveal animation */
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        clip-path: inset(0 0 100% 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 0% 0);
+    }
+}
+
+.text-reveal {
+    animation: textReveal 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Image parallax effect */
+.parallax-img {
+    transition: transform 0.3s ease-out;
+}
+
+.parallax-img:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* Gradient border animation */
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-border {
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        var(--wg-1-deep-blue),
+        var(--wg-3-primary-blue),
+        var(--wg-7-primary-yellow),
+        var(--wg-5-orange),
+        var(--wg-8-green)
+    );
+    background-size: 200% 200%;
+    animation: gradientBorder 3s ease infinite;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.gradient-border > * {
+    background: white;
+    border-radius: 7px;
+}
+
+/* ==========================================
+   ENHANCED COLOR CONTRAST UTILITIES
+   ========================================== */
+
+/* High contrast text on dark backgrounds */
+.text-high-contrast-dark {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* High contrast text on light backgrounds */
+.text-high-contrast-light {
+    color: #1a1a1a !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Enhanced button contrast */
+.btn-high-contrast {
+    background: linear-gradient(135deg, var(--wg-1-deep-blue), var(--wg-3-primary-blue));
+    color: #ffffff !important;
+    border: 2px solid #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(33, 41, 107, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-high-contrast:hover {
+    background: linear-gradient(135deg, var(--wg-3-primary-blue), var(--wg-1-deep-blue));
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 41, 107, 0.6);
+    border-color: var(--wg-7-primary-yellow);
+}
+
+/* Card with high contrast */
+.card-high-contrast {
+    background: #ffffff;
+    border: 2px solid var(--wg-1-deep-blue);
+    box-shadow: 0 4px 15px rgba(33, 41, 107, 0.15);
+}
+
+.card-high-contrast h3,
+.card-high-contrast h4 {
+    color: var(--wg-1-deep-blue) !important;
+}
+
+.card-high-contrast p {
+    color: #2a2a2a !important;
+}
+
+/* ==========================================
+   ACCESSIBILITY & RESPONSIVE
+   ========================================== */
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 /* Simpler animations on mobile */
 @media (max-width: 768px) {
     .card:hover {
@@ -291,5 +678,10 @@
 
     .float {
         animation: none;
+    }
+    
+    .slide-in-left,
+    .slide-in-right {
+        animation: fadeSlideUp 0.6s ease-out forwards;
     }
 }
