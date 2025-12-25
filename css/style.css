@@ -800,7 +800,6 @@ body > * {
 /* Ensure content sections maintain readability over gradient */
 .container:not(.page-header):not(.page-header-ground):not(.page-header-residential),
 .container-fluid:not(.bg-footer-color):not(.page-header):not(.page-header-ground):not(.page-header-residential) {
-    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(1px);
 }
 
