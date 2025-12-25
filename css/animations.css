@@ -27,6 +27,11 @@
 .animate-on-scroll {
     animation: fadeSlideUp var(--duration-slower) var(--ease-primary) forwards;
     opacity: 0;
+    will-change: opacity, transform; /* Optimize for animation */
+}
+
+.animate-on-scroll.animated {
+    will-change: auto; /* Remove will-change after animation completes */
 }
 
 /* Staggered delays for sequential animations - Consistent timing */

@@ -126,12 +126,10 @@
                 // Try immediately
                 if (!fixNavbarPosition()) {
                     // Try after a short delay
-                    setTimeout(fixNavbarPosition, 50);
-                    setTimeout(fixNavbarPosition, 100);
-                    setTimeout(fixNavbarPosition, 200);
-                } else {
-                    // Also try again after a brief moment to ensure it sticks
-                    setTimeout(fixNavbarPosition, 100);
+                    // Optimized - single call with requestAnimationFrame
+                    requestAnimationFrame(() => {
+                        setTimeout(fixNavbarPosition, 100);
+                    });
                 }
             } else {
                 console.error('Failed to load navbar component');

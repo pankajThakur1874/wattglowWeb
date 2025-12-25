@@ -39,8 +39,9 @@ html {
         var(--solar-light-blue) 100%     /* Light blue */
     );
     background-size: 400% 400%;
-    animation: solarGradientFlow 15s ease infinite;
+    animation: solarGradientFlow 20s ease infinite; /* Slower animation for better performance */
     min-height: 100vh;
+    will-change: background-position; /* Optimize for animation */
 }
 
 /* Carousel Image Heights - Responsive */
@@ -757,7 +758,7 @@ footer .bg-footer-color.sticky-top {
     }
 }
 
-/* Enhanced decorative pattern overlay - Solar energy theme (darker) */
+/* Enhanced decorative pattern overlay - Solar energy theme (darker) - Optimized */
 body::before {
     content: '';
     position: fixed;
@@ -773,7 +774,8 @@ body::before {
         radial-gradient(circle at 90% 30%, rgba(33, 150, 243, 0.10) 0%, transparent 50%);  /* Darker blue */
     pointer-events: none;
     z-index: 0;
-    animation: patternFloat 20s ease-in-out infinite;
+    animation: patternFloat 25s ease-in-out infinite; /* Slower for better performance */
+    will-change: transform; /* Optimize for animation */
 }
 
 /* Floating pattern animation */
@@ -797,11 +799,10 @@ body > * {
     z-index: 1;
 }
 
-/* Ensure content sections maintain readability over gradient */
+/* Ensure content sections maintain readability over gradient - Optimized */
 .container:not(.page-header):not(.page-header-ground):not(.page-header-residential),
 .container-fluid:not(.bg-footer-color):not(.page-header):not(.page-header-ground):not(.page-header-residential) {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(1px);
+    /* Removed backdrop-filter for better performance - causes repaints */
 }
 
 /* Cards and content boxes maintain full white background for contrast */
