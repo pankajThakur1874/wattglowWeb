@@ -326,6 +326,73 @@
     /**
      * Initialize all functions
      */
+    /**
+     * Scroll-triggered animations
+     * Animates elements when they come into viewport
+     */
+    function initScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .fade-slide-up, .slide-in-left, .slide-in-right, .scale-in, .fade-zoom');
+        
+        if (animatedElements.length === 0) return;
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    // Remove observer after animation to improve performance
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    /**
+     * Add animation classes to key sections
+     */
+    function addAnimationClasses() {
+        // Add animations to feature items
+        const featureItems = document.querySelectorAll('.feature-item');
+        featureItems.forEach((item, index) => {
+            item.classList.add('animate-on-scroll');
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Add animations to benefit cards
+        const benefitCards = document.querySelectorAll('.benefit');
+        benefitCards.forEach((card, index) => {
+            card.classList.add('animate-on-scroll');
+            card.style.animationDelay = `${index * 0.15}s`;
+        });
+
+        // Add animations to cards
+        const cards = document.querySelectorAll('.card, .card-premium, .career-card');
+        cards.forEach((card, index) => {
+            if (!card.classList.contains('animate-on-scroll')) {
+                card.classList.add('animate-on-scroll');
+                card.style.animationDelay = `${index * 0.1}s`;
+            }
+        });
+
+        // Add slide-in animations to alternating sections
+        const sections = document.querySelectorAll('section, .container-fluid');
+        sections.forEach((section, index) => {
+            if (index % 2 === 0) {
+                section.classList.add('slide-in-left');
+            } else {
+                section.classList.add('slide-in-right');
+            }
+        });
+    }
+
     function init() {
         initSpinner();
         initAnimations();
@@ -333,6 +400,8 @@
         initBackToTop();
         initCounters();
         initPortfolio();
+        addAnimationClasses();
+        initScrollAnimations();
 
         // Wait for components to load before initializing carousels
         // (they might be in dynamically loaded content)

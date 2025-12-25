@@ -21,6 +21,26 @@
     --dark: #1A2A36;
     --gradient-start: var(--wg-9-blue-light);
     --gradient-end: var(--wg-3-primary-blue);
+    
+    /* Solar Energy Gradient Colors - Darker for better visibility */
+    --solar-light-green: #c8e6c9;
+    --solar-light-blue: #bbdefb;
+    --solar-light-yellow: #fff59d;
+}
+
+/* Animated solar energy gradient background - Applied to html for full coverage */
+html {
+    background: linear-gradient(
+        135deg,
+        var(--solar-light-green) 0%,      /* Light green - solar panels/energy (darker) */
+        var(--solar-light-blue) 25%,     /* Light blue - sky (darker) */
+        var(--solar-light-yellow) 50%,   /* Light yellow - sunlight (darker) */
+        var(--solar-light-green) 75%,    /* Light green */
+        var(--solar-light-blue) 100%     /* Light blue */
+    );
+    background-size: 400% 400%;
+    animation: solarGradientFlow 15s ease infinite;
+    min-height: 100vh;
 }
 
 /* Carousel Image Heights - Responsive */
@@ -69,6 +89,23 @@ body {
     color: var(--wg-1-deep-blue);
     /* Add padding-top to account for fixed navbar */
     padding-top: 75px !important; /* Adjust based on navbar height */
+    /* Inherit gradient from html */
+    background: transparent;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Animated flowing gradient for solar energy theme */
+@keyframes solarGradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Responsive padding for navbar height */
@@ -166,35 +203,72 @@ tr:nth-child(even) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem 1.5rem;
+    background: #ffffff;
     backdrop-filter: blur(10px);
     border-radius: 1rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 24px rgba(33, 41, 107, 0.15),
+                0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--wg-1-deep-blue);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 186, 0, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.benefit:hover::before {
+    left: 100%;
 }
 
 .benefit:hover {
-    box-shadow: 0 8px 40px rgba(17, 59, 91, 0.2);
-    transform: translateY(-4px);
+    box-shadow: 0 12px 48px rgba(33, 41, 107, 0.3),
+                0 6px 16px rgba(244, 121, 37, 0.2);
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--wg-7-primary-yellow);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 247, 230, 0.95) 100%);
 }
 
 .benefit i {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--wg-1-deep-blue);
-    margin-bottom: 0.625rem;
+    margin-bottom: 1rem;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 2px 4px rgba(33, 41, 107, 0.2));
+}
+
+.benefit:hover i {
+    color: var(--wg-5-orange);
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(244, 121, 37, 0.4));
 }
 
 .benefit h3 {
     font-size: 1.5rem;
     margin-bottom: 0.625rem;
-    font-weight: bold;
+    font-weight: 700;
+    color: var(--wg-1-deep-blue);
+    transition: color 0.3s ease;
+}
+
+.benefit:hover h3 {
+    color: var(--wg-3-primary-blue);
 }
 
 .benefit p {
     font-size: 1rem;
-    color: #666;
+    color: #2a2a2a;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 .center-image {
@@ -244,6 +318,18 @@ tr:nth-child(even) {
     }
     
   }
+
+/* 3D Shadow Effect for solarP.png images */
+img[src*="solarP.png"] {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+img[src*="solarP.png"]:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 10px 25px rgba(0, 0, 0, 0.4);
+}
 
 
 
@@ -671,7 +757,7 @@ footer .bg-footer-color.sticky-top {
     }
 }
 
-/* Alternative: Add decorative pattern overlay - Using WattGlow colors */
+/* Enhanced decorative pattern overlay - Solar energy theme (darker) */
 body::before {
     content: '';
     position: fixed;
@@ -680,17 +766,64 @@ body::before {
     width: 100%;
     height: 100%;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(33, 41, 107, 0.03) 0%, transparent 50%),  /* wg-1-deep-blue */
-        radial-gradient(circle at 80% 80%, rgba(0, 148, 100, 0.03) 0%, transparent 50%),   /* wg-8-green */
-        radial-gradient(circle at 40% 20%, rgba(255, 186, 0, 0.02) 0%, transparent 50%),   /* wg-7-primary-yellow */
-        radial-gradient(circle at 60% 70%, rgba(244, 121, 37, 0.02) 0%, transparent 50%);  /* wg-5-orange */
+        radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.12) 0%, transparent 50%),   /* Darker green - solar energy */
+        radial-gradient(circle at 80% 80%, rgba(33, 150, 243, 0.12) 0%, transparent 50%),  /* Darker blue - sky */
+        radial-gradient(circle at 40% 20%, rgba(255, 235, 59, 0.10) 0%, transparent 50%),   /* Darker yellow - sunlight */
+        radial-gradient(circle at 60% 70%, rgba(76, 175, 80, 0.10) 0%, transparent 50%),  /* Darker green */
+        radial-gradient(circle at 90% 30%, rgba(33, 150, 243, 0.10) 0%, transparent 50%);  /* Darker blue */
     pointer-events: none;
     z-index: 0;
+    animation: patternFloat 20s ease-in-out infinite;
+}
+
+/* Floating pattern animation */
+@keyframes patternFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    33% {
+        transform: translate(20px, -20px) scale(1.05);
+        opacity: 0.9;
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+        opacity: 0.9;
+    }
 }
 
 body > * {
     position: relative;
     z-index: 1;
+}
+
+/* Ensure content sections maintain readability over gradient */
+.container:not(.page-header):not(.page-header-ground):not(.page-header-residential),
+.container-fluid:not(.bg-footer-color):not(.page-header):not(.page-header-ground):not(.page-header-residential) {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(1px);
+}
+
+/* Cards and content boxes maintain full white background for contrast */
+.card,
+.card-premium,
+.benefit,
+.feature-item,
+.career-card,
+.testimonial-item,
+.project-card {
+    background: #ffffff !important;
+    backdrop-filter: none;
+}
+
+/* Page headers and footer maintain their original backgrounds */
+.page-header,
+.page-header-ground,
+.page-header-residential,
+.bg-footer-color,
+footer {
+    background: inherit !important;
+    backdrop-filter: none;
 }
 
 /* Ensure main content and footer don't overlap navbar */
@@ -720,7 +853,7 @@ footer {
 /* Footer bottom bar styling */
 .footer-bottom-bar {
     background-color: var(--wg-1-deep-blue) !important;
-    padding: 1rem;
+    padding: 1.5rem 1rem; /* Increased vertical padding */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -730,6 +863,11 @@ footer {
     z-index: 1;
     margin-top: 0;
     width: 100%;
+}
+
+.footer-bottom-bar p {
+    font-size: 1.1rem; /* Increased font size */
+    margin: 0.5rem 0; /* Added margin between paragraphs */
 }
 
 /* Ensure footer is at bottom and doesn't overlap */
@@ -752,8 +890,18 @@ footer .section {
     transition: color 0.3s ease;
 }
 
+.footer-bottom-bar a.text-white {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
 .footer-bottom-bar a:hover {
     color: var(--wg-5-orange) !important;
+    text-decoration: underline;
+}
+
+.footer-bottom-bar a.text-white:hover {
+    color: var(--wg-7-primary-yellow) !important;
     text-decoration: underline;
 }
 
@@ -1129,22 +1277,33 @@ footer .section {
 /* Removed duplicate footer styles - consolidated below */
 .btn-contact-us {
     background: linear-gradient(135deg, var(--wg-1-deep-blue) 0%, var(--wg-3-primary-blue) 100%);
-    color: #fff; /* White text */
-    border: 2px solid var(--wg-1-deep-blue);
-    padding: 10px 20px;
+    color: #ffffff !important; /* High contrast white text */
+    border: 2px solid #ffffff;
+    padding: 12px 30px;
     font-size: 1.2rem;
+    font-weight: 600;
     border-radius: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(33, 41, 107, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(33, 41, 107, 0.4),
+                0 2px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
 /* Hover effect for the button - Enhanced with WattGlow colors */
 .btn-contact-us:hover {
-    background: linear-gradient(135deg, var(--wg-3-primary-blue) 0%, var(--wg-5-orange) 100%);
-    border-color: var(--wg-5-orange);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(244, 121, 37, 0.4);
+    background: linear-gradient(135deg, var(--wg-5-orange) 0%, var(--wg-7-primary-yellow) 100%);
+    border-color: var(--wg-7-primary-yellow);
+    color: #ffffff !important;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(244, 121, 37, 0.6),
+                0 4px 12px rgba(255, 186, 0, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-contact-us:active {
+    transform: translateY(-1px) scale(1.02);
 }
 /* Legacy sticky-top class - now using fixed navbar */
 /* Only apply to navbar, not footer or other elements */
@@ -1274,7 +1433,7 @@ footer div.top-2.bg-footer-color {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 40px;
     justify-items: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 .features-grid :hover{
@@ -1289,29 +1448,96 @@ footer div.top-2.bg-footer-color {
     align-items: center;
     text-align: center;
     padding: 2rem 1rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     backdrop-filter: blur(10px);
     border-radius: 1rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 24px rgba(33, 41, 107, 0.15),
+                0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--wg-1-deep-blue);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(33, 41, 107, 0.05) 0%, 
+        rgba(255, 186, 0, 0.1) 50%,
+        rgba(244, 121, 37, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-item:hover::after {
+    opacity: 1;
 }
 
 .feature-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 40px rgba(17, 59, 91, 0.2);
-    background: linear-gradient(135deg, rgba(223, 247, 220, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 48px rgba(33, 41, 107, 0.3),
+                0 6px 16px rgba(244, 121, 37, 0.25);
+    border-color: var(--wg-7-primary-yellow);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(255, 247, 230, 0.95) 100%);
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: var(--wg-1-deep-blue);
+    margin-bottom: 1rem;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 2px 4px rgba(33, 41, 107, 0.2));
+    z-index: 1;
+    position: relative;
+}
+
+.feature-item:hover i {
+    color: var(--wg-5-orange);
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 4px 8px rgba(244, 121, 37, 0.5));
+}
+
+.feature-item h4 {
+    color: var(--wg-1-deep-blue);
+    font-weight: 700;
+    transition: color 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.feature-item:hover h4 {
+    color: var(--wg-3-primary-blue);
 }
 
 .feature-item img {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
+    transition: transform 0.4s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.feature-item:hover img {
+    transform: scale(1.15) rotate(5deg);
 }
 
 .feature-item p {
     font-size: 1.1em;
-    color: #333;
+    color: #2a2a2a;
+    font-weight: 500;
+    z-index: 1;
+    position: relative;
 }
 .icon-container {
     position: relative; /* Allows absolute positioning of child elements */
@@ -1354,6 +1580,7 @@ footer div.top-2.bg-footer-color {
     flex: 1;
     max-width: 600px;
     text-align: center;
+    margin-bottom: 10px;
     padding: 2rem;
     border-radius: 1rem;
     background: rgba(255, 255, 255, 0.95);
@@ -1413,13 +1640,13 @@ footer div.top-2.bg-footer-color {
 .footer {
     background-color: #f6f7f8;
     color: #1a1a1a;
-    padding: 3rem 2rem;
+    padding: 4rem 3rem; /* Increased from 3rem 2rem */
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     border-top: 1px solid #ddd;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 3rem; /* Increased from 2rem */
     position: relative;
     z-index: 1;
     width: 100%;
@@ -1432,26 +1659,27 @@ footer div.top-2.bg-footer-color {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 2rem 1rem;
+        padding: 3rem 2rem; /* Increased from 2rem 1rem */
     }
     
     .footer .section {
         width: 100% !important;
-        max-width: 500px;
+        max-width: 600px; /* Increased from 500px */
     }
 }
 
 .footer h3 {
     color: #1a3d73;
     --body-text-color: #00060a;
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 1.5rem; /* Increased from 16px */
+    margin-bottom: 1.25rem; /* Increased from 10px */
+    font-weight: 700;
 }
 
 .footer p, .footer li, .footer a {
-    font-size: 14px;
+    font-size: 1.1rem; /* Increased from 14px */
     color: #41464bf2;
-    line-height: 1.6;
+    line-height: 1.8; /* Increased from 1.6 */
     text-decoration: none;
 }
 
@@ -1461,9 +1689,9 @@ footer div.top-2.bg-footer-color {
 
 .footer .section {
     width: 20%;
-    min-width: 200px;
+    min-width: 250px; /* Increased from 200px */
     color: #00060a !important;
-    flex: 1 1 200px;
+    flex: 1 1 250px; /* Increased from 200px */
 }
 
 @media (max-width: 768px) {
@@ -1486,8 +1714,8 @@ footer div.top-2.bg-footer-color {
 }
 
 .footer .social-icons img {
-    width: 24px;
-    height: 24px;
+    width: 32px; /* Increased from 24px */
+    height: 32px; /* Increased from 24px */
 }
 .channel-partner-section {
     text-align: center;
@@ -1686,4 +1914,262 @@ footer div.top-2.bg-footer-color {
     margin: 2rem 1rem;
     border-radius: 1rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   ENHANCED ANIMATIONS & CONTRAST IMPROVEMENTS
+   ========================================== */
+
+/* Enhanced heading styles with better contrast */
+h1, h2, h3, h4, h5, h6 {
+    transition: color 0.3s ease;
+}
+
+h1.text-center,
+h2.text-center {
+    color: var(--wg-1-deep-blue);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+h1.text-center::after,
+h2.text-center::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--wg-1-deep-blue) 0%,
+        var(--wg-7-primary-yellow) 50%,
+        var(--wg-5-orange) 100%);
+    border-radius: 2px;
+    animation: expandLine 0.8s ease-out forwards;
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60px;
+    }
+}
+
+/* Enhanced section backgrounds with better contrast */
+section,
+.container-fluid {
+    position: relative;
+}
+
+/* Card enhancements with animations */
+.card,
+.card-premium {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.card:hover,
+.card-premium:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 48px rgba(33, 41, 107, 0.25),
+                0 6px 16px rgba(244, 121, 37, 0.15);
+    border-color: var(--wg-7-primary-yellow);
+}
+
+/* Enhanced text contrast for readability */
+p {
+    color: #2a2a2a;
+    line-height: 1.7;
+}
+
+.text-muted {
+    color: #4a4a4a !important;
+}
+
+/* Enhanced button styles - All buttons */
+.btn {
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-width: 2px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--wg-1-deep-blue), var(--wg-3-primary-blue));
+    border-color: var(--wg-1-deep-blue);
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(33, 41, 107, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--wg-3-primary-blue), var(--wg-5-orange));
+    border-color: var(--wg-5-orange);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 121, 37, 0.4);
+}
+
+/* Enhanced icon colors for better visibility */
+.fa-solar-panel,
+.fa-shield-alt,
+.fa-microchip,
+.fa-user-check,
+.fa-project-diagram,
+.fa-leaf,
+.fa-lightbulb {
+    color: var(--wg-1-deep-blue);
+    filter: drop-shadow(0 2px 4px rgba(33, 41, 107, 0.2));
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .fa-solar-panel,
+.feature-item:hover .fa-shield-alt,
+.feature-item:hover .fa-microchip,
+.feature-item:hover .fa-user-check,
+.feature-item:hover .fa-project-diagram,
+.feature-item:hover .fa-leaf,
+.feature-item:hover .fa-lightbulb {
+    color: var(--wg-5-orange);
+    filter: drop-shadow(0 4px 8px rgba(244, 121, 37, 0.5));
+}
+
+/* Scroll-triggered animation classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced career card */
+.career-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--wg-1-deep-blue);
+}
+
+.career-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 48px rgba(33, 41, 107, 0.3),
+                0 6px 16px rgba(244, 121, 37, 0.2);
+    border-color: var(--wg-7-primary-yellow);
+}
+
+.career-card h3 {
+    color: var(--wg-1-deep-blue);
+    font-weight: 700;
+}
+
+.career-card:hover h3 {
+    color: var(--wg-3-primary-blue);
+}
+
+.career-card p {
+    color: #2a2a2a;
+    font-weight: 500;
+}
+
+/* Enhanced navbar contrast */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--wg-7-primary-yellow) !important;
+    text-shadow: 0 1px 2px rgba(255, 186, 0, 0.3);
+}
+
+/* Enhanced footer contrast */
+.footer {
+    background: linear-gradient(135deg, var(--wg-1-deep-blue) 0%, #1a1f3a 100%);
+}
+
+.footer h3 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.5rem; /* Increased size */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.25rem; /* Increased spacing */
+}
+
+.footer p,
+.footer a {
+    color: #e0e0e0;
+    font-size: 1.1rem; /* Increased size */
+    transition: color 0.3s ease;
+    line-height: 1.8; /* Increased line height */
+}
+
+.footer a:hover {
+    color: var(--wg-7-primary-yellow) !important;
+    text-shadow: 0 1px 2px rgba(255, 186, 0, 0.5);
+}
+
+/* Enhanced testimonial cards */
+.testimonial-item {
+    background: #ffffff;
+    border: 2px solid var(--wg-1-deep-blue);
+    transition: all 0.4s ease;
+}
+
+.testimonial-item:hover {
+    border-color: var(--wg-7-primary-yellow);
+    box-shadow: 0 12px 48px rgba(33, 41, 107, 0.25);
+    transform: translateY(-5px);
+}
+
+/* Enhanced project cards */
+.project-card,
+.gallery-item {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.project-card:hover,
+.gallery-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 48px rgba(33, 41, 107, 0.3);
+    border-color: var(--wg-7-primary-yellow);
+}
+
+/* Loading animation for images */
+@keyframes imageLoad {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+img {
+    animation: imageLoad 0.5s ease-out;
+}
+
+/* Enhanced focus states for accessibility */
+*:focus {
+    outline: 3px solid var(--wg-7-primary-yellow);
+    outline-offset: 2px;
+}
+
+.btn:focus,
+a:focus {
+    box-shadow: 0 0 0 3px rgba(255, 186, 0, 0.4);
 }
