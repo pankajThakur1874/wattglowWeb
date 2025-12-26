@@ -107,18 +107,14 @@ export function Footer() {
         {/* Footer Bottom */}
         <div className="footer-bottom-bar">
           <div className="container">
-            <div className="row align-items-center">
-              <div className="col-md-6 text-center text-md-start mb-2 mb-md-0">
+            <div className="row">
+              <div className="col-12 text-center">
                 <p className="text-white mb-0">
                   © {currentYear} WattGlow Power Pvt. Ltd. | All rights reserved |{' '}
                   <Link to="/privacy-policy" className="text-white text-decoration-underline">
                     Privacy Policy
-                  </Link>
-                </p>
-              </div>
-              <div className="col-md-6 text-center text-md-end">
-                <p className="text-white mb-0">
-                  Powered by{' '}
+                  </Link>{' '}
+                  | Powered by{' '}
                   <a
                     href="https://www.ascendons.com"
                     target="_blank"
