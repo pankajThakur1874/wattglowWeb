@@ -15,7 +15,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <AppRoutes />
       </BrowserRouter>
     </HelmetProvider>
