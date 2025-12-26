@@ -103,7 +103,7 @@ function AboutPage() {
         <div className="career-section body-carrer">
           {whatSetsUsApart.slice(0, 3).map((item, index) => (
             <ScrollAnimation key={item.id} animation="fade-scale" delay={index}>
-              <div className="career-card">
+              <div className="career-card" style={{height: '100%'}}>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>
@@ -116,7 +116,7 @@ function AboutPage() {
         <div className="career-section body-carrer">
           {whatSetsUsApart.slice(3, 6).map((item, index) => (
             <ScrollAnimation key={item.id} animation="fade-scale" delay={index}>
-              <div className="career-card">
+              <div className="career-card" style={{height: '100%'}}>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>

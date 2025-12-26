@@ -1476,14 +1476,25 @@ footer div.top-2.bg-footer-color {
   align-items: stretch;
 }
 
-/* Grid with 4 items - equal width columns */
+/* Grid with different numbers of items - equal width columns */
+.features-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.features-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .features-grid-4 {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* Grid with 3 items - equal width columns */
-.features-grid-3 {
-  grid-template-columns: repeat(3, 1fr);
+.features-grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.features-grid-6 {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 /* Ensure equal width for feature items - all cards take equal space */
@@ -1493,18 +1504,35 @@ footer div.top-2.bg-footer-color {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
-  .features-grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .features-grid-3 {
+@media (max-width: 1400px) {
+  .features-grid-5,
+  .features-grid-6 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .features-grid-4,
+@media (max-width: 1200px) {
+  .features-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .features-grid-5,
+  .features-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
   .features-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid-2,
+  .features-grid-3,
+  .features-grid-4,
+  .features-grid-5,
+  .features-grid-6 {
     grid-template-columns: 1fr;
   }
 }
@@ -1520,7 +1548,7 @@ footer div.top-2.bg-footer-color {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2.5rem 1.5rem;
   background: #ffffff;
   backdrop-filter: blur(10px);
   border-radius: 1rem;
@@ -1532,10 +1560,36 @@ footer div.top-2.bg-footer-color {
   height: 100%;
   width: 100%;
   min-width: 0;
+  min-height: 200px;
   box-sizing: border-box;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
+}
+
+/* Ensure all cards in a row have the same height */
+.features-grid {
+  align-items: stretch;
+}
+
+.feature-item-icon {
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+
+.feature-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.feature-item-description {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
 }
 
 .feature-item::after {
@@ -1571,11 +1625,11 @@ footer div.top-2.bg-footer-color {
 .feature-item i {
   font-size: 3rem;
   color: var(--wg-1-deep-blue);
-  margin-bottom: 1rem;
   transition: all 0.4s ease;
   filter: drop-shadow(0 2px 4px rgba(33, 41, 107, 0.2));
   z-index: 1;
   position: relative;
+  display: block;
 }
 
 .feature-item:hover i {
@@ -1587,9 +1641,14 @@ footer div.top-2.bg-footer-color {
 .feature-item h4 {
   color: var(--wg-1-deep-blue);
   font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
   transition: color 0.3s ease;
   z-index: 1;
   position: relative;
+  line-height: 1.4;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .feature-item:hover h4 {
