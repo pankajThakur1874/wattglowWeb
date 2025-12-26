@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://pankajthakur1874.github.io/wattglowWeb",
+  "homepage": "https://wattglow.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
