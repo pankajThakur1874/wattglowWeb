@@ -15,7 +15,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <BrowserRouter basename="/wattglowWeb">
+      <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
     </HelmetProvider>
