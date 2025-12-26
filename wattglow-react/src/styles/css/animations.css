@@ -1,0 +1,692 @@
+/**
+ * WattGlow Animation Library
+ * Unified, consistent animations across entire website
+ * Uses design system variables for perfect consistency
+ */
+
+/* Note: Core variables imported from design-system.css */
+
+/* ==========================================
+   SCROLL-TRIGGERED ANIMATIONS
+   Single animation style used everywhere
+   ========================================== */
+
+/* Primary Scroll Animation - Fade + Slide Up */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-slide-up,
+.animate-on-scroll {
+    animation: fadeSlideUp var(--duration-slower) var(--ease-primary) forwards;
+    opacity: 0;
+    will-change: opacity, transform; /* Optimize for animation */
+}
+
+.animate-on-scroll.animated {
+    will-change: auto; /* Remove will-change after animation completes */
+}
+
+/* Staggered delays for sequential animations - Consistent timing */
+.stagger-1, .delay-1 { animation-delay: 100ms; }
+.stagger-2, .delay-2 { animation-delay: 200ms; }
+.stagger-3, .delay-3 { animation-delay: 300ms; }
+.stagger-4, .delay-4 { animation-delay: 400ms; }
+.stagger-5, .delay-5 { animation-delay: 500ms; }
+.stagger-6, .delay-6 { animation-delay: 600ms; }
+
+/* ==========================================
+   CONTINUOUS ANIMATIONS
+   Subtle, non-distracting effects
+   ========================================== */
+
+/* Gentle Float - For decorative elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.float {
+    animation: float 6s var(--ease-primary) infinite;
+}
+
+/* Subtle Pulse - For attention elements - Using WattGlow Orange */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(244, 121, 37, 0.4);  /* wg-5-orange */
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(244, 121, 37, 0);  /* wg-5-orange */
+    }
+}
+
+.pulse {
+    animation: pulse 2s var(--ease-primary) infinite;
+}
+
+/* Enhanced Pulse Glow - Using WattGlow Yellow */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 186, 0, 0.5), 0 0 20px rgba(255, 186, 0, 0.3);  /* wg-7-primary-yellow */
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(255, 186, 0, 0), 0 0 30px rgba(255, 186, 0, 0.1);
+    }
+}
+
+.pulse-glow {
+    animation: pulseGlow 2.5s var(--ease-primary) infinite;
+}
+
+/* Color Wave Animation - For backgrounds */
+@keyframes colorWave {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.color-wave {
+    background: linear-gradient(
+        90deg,
+        rgba(33, 41, 107, 0.1) 0%,      /* wg-1-deep-blue */
+        rgba(0, 68, 181, 0.1) 25%,       /* wg-3-primary-blue */
+        rgba(255, 186, 0, 0.1) 50%,     /* wg-7-primary-yellow */
+        rgba(244, 121, 37, 0.1) 75%,    /* wg-5-orange */
+        rgba(0, 148, 100, 0.1) 100%      /* wg-8-green */
+    );
+    background-size: 200% 200%;
+    animation: colorWave 8s ease infinite;
+}
+
+/* ==========================================
+   SPECIAL EFFECTS - Used Sparingly
+   ========================================== */
+
+/* Gradient text - For emphasis only - Using WattGlow colors */
+.text-gradient {
+    background: linear-gradient(
+        135deg,
+        var(--wg-1-deep-blue) 0%,      /* Deep blue */
+        var(--wg-3-primary-blue) 25%,   /* Primary blue */
+        var(--wg-7-primary-yellow) 50%, /* Primary yellow */
+        var(--wg-5-orange) 75%,         /* Orange */
+        var(--wg-8-green) 100%           /* Green */
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: var(--font-weight-bold);
+}
+
+/* Animated gradient text */
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.text-gradient-animated {
+    background: linear-gradient(
+        90deg,
+        var(--wg-1-deep-blue) 0%,
+        var(--wg-3-primary-blue) 25%,
+        var(--wg-7-primary-yellow) 50%,
+        var(--wg-5-orange) 75%,
+        var(--wg-8-green) 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s ease infinite;
+    font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================
+   COMPONENT-SPECIFIC ANIMATIONS
+   Consistent with design system
+   ========================================== */
+
+/* Testimonial Card Center Effect */
+.testimonial-carousel .owl-item.active.center .testimonial-item {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* Image Hover Zoom - For project cards */
+.zoom-on-hover {
+    overflow: hidden;
+    border-radius: var(--card-radius);
+}
+
+.zoom-on-hover img {
+    transition: transform var(--duration-slow) var(--ease-primary);
+}
+
+.zoom-on-hover:hover img {
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   SCROLL PROGRESS BAR
+   ========================================== */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--wg-1-deep-blue) 0%,
+        var(--wg-3-primary-blue) 25%,
+        var(--wg-7-primary-yellow) 50%,
+        var(--wg-5-orange) 75%,
+        var(--wg-8-green) 100%
+    );
+    z-index: var(--z-fixed);
+    transition: width 0.1s ease-out;
+    box-shadow: 0 2px 8px rgba(244, 121, 37, 0.4);  /* wg-5-orange */
+}
+
+/* ==========================================
+   ICON ANIMATIONS - Consistent Everywhere
+   ========================================== */
+
+/* Icon Hover - Slight rotation */
+.icon-hover {
+    transition: transform var(--duration-normal) var(--ease-primary);
+}
+
+.icon-hover:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Icon Glow - For star ratings, etc - Using WattGlow Yellow */
+.icon-glow {
+    transition: var(--transition-all);
+}
+
+.icon-glow:hover {
+    filter: drop-shadow(0 0 8px var(--wg-7-primary-yellow));
+    transform: scale(1.2);
+}
+
+/* Multi-color glow effect */
+.icon-glow-multicolor:hover {
+    filter: drop-shadow(0 0 10px rgba(33, 41, 107, 0.6))  /* wg-1-deep-blue */
+            drop-shadow(0 0 15px rgba(255, 186, 0, 0.5))  /* wg-7-primary-yellow */
+            drop-shadow(0 0 20px rgba(244, 121, 37, 0.4)); /* wg-5-orange */
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* ==========================================
+   TESTIMONIAL SPECIFIC ANIMATIONS
+   ========================================== */
+
+.testimonial-item {
+    transition: var(--transition-all);
+}
+
+.testimonial-img img {
+    transition: var(--transition-all);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.testimonial-item:hover .testimonial-img img {
+    transform: scale(1.05);
+    border-color: var(--wg-7-primary-yellow);  /* Using WattGlow yellow */
+    box-shadow: 0 0 20px rgba(255, 186, 0, 0.3);
+}
+
+/* Star rating - Using WattGlow Yellow */
+.icon-star i {
+    display: inline-block;
+    transition: var(--transition-transform);
+    color: var(--wg-7-primary-yellow);
+}
+
+.icon-star i:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 8px var(--wg-7-primary-yellow));
+    color: var(--wg-5-orange);  /* Changes to orange on hover */
+}
+
+/* ==========================================
+   ACCESSIBILITY & RESPONSIVE
+   ========================================== */
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================
+   ADDITIONAL ANIMATIONS - Enhanced Variety
+   ========================================== */
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Scale in animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce {
+    animation: bounce 1s ease infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Rotate and scale on hover */
+@keyframes rotateScale {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.rotate-scale {
+    transition: transform 0.3s ease;
+}
+
+.rotate-scale:hover {
+    animation: rotateScale 0.6s ease;
+}
+
+/* Fade in with zoom */
+@keyframes fadeZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-zoom {
+    animation: fadeZoom 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Slide up with fade - Enhanced */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up-fade {
+    animation: slideUpFade 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Wobble effect */
+@keyframes wobble {
+    0%, 100% {
+        transform: translateX(0%);
+    }
+    15% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+    30% {
+        transform: translateX(10px) rotate(5deg);
+    }
+    45% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+    60% {
+        transform: translateX(10px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-5px) rotate(-2deg);
+    }
+    90% {
+        transform: translateX(5px) rotate(2deg);
+    }
+}
+
+.wobble:hover {
+    animation: wobble 0.6s ease;
+}
+
+/* Glow pulse - Enhanced */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 186, 0, 0.5),
+                    0 0 10px rgba(255, 186, 0, 0.3),
+                    0 0 15px rgba(255, 186, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 186, 0, 0.8),
+                    0 0 20px rgba(255, 186, 0, 0.6),
+                    0 0 30px rgba(255, 186, 0, 0.4);
+    }
+}
+
+.glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Flip animation */
+@keyframes flip {
+    from {
+        transform: perspective(400px) rotateY(0);
+    }
+    to {
+        transform: perspective(400px) rotateY(360deg);
+    }
+}
+
+.flip {
+    animation: flip 0.8s ease-in-out;
+}
+
+/* ==========================================
+   ENHANCED HOVER EFFECTS
+   ========================================== */
+
+/* Card lift with shadow */
+.card-animated {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-animated:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(33, 41, 107, 0.2),
+                0 10px 20px rgba(244, 121, 37, 0.15);
+}
+
+/* Button ripple effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Text reveal animation */
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        clip-path: inset(0 0 100% 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 0% 0);
+    }
+}
+
+.text-reveal {
+    animation: textReveal 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Image parallax effect */
+.parallax-img {
+    transition: transform 0.3s ease-out;
+}
+
+.parallax-img:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* Gradient border animation */
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-border {
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        var(--wg-1-deep-blue),
+        var(--wg-3-primary-blue),
+        var(--wg-7-primary-yellow),
+        var(--wg-5-orange),
+        var(--wg-8-green)
+    );
+    background-size: 200% 200%;
+    animation: gradientBorder 3s ease infinite;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.gradient-border > * {
+    background: white;
+    border-radius: 7px;
+}
+
+/* ==========================================
+   ENHANCED COLOR CONTRAST UTILITIES
+   ========================================== */
+
+/* High contrast text on dark backgrounds */
+.text-high-contrast-dark {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* High contrast text on light backgrounds */
+.text-high-contrast-light {
+    color: #1a1a1a !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Enhanced button contrast */
+.btn-high-contrast {
+    background: linear-gradient(135deg, var(--wg-1-deep-blue), var(--wg-3-primary-blue));
+    color: #ffffff !important;
+    border: 2px solid #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(33, 41, 107, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-high-contrast:hover {
+    background: linear-gradient(135deg, var(--wg-3-primary-blue), var(--wg-1-deep-blue));
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 41, 107, 0.6);
+    border-color: var(--wg-7-primary-yellow);
+}
+
+/* Card with high contrast */
+.card-high-contrast {
+    background: #ffffff;
+    border: 2px solid var(--wg-1-deep-blue);
+    box-shadow: 0 4px 15px rgba(33, 41, 107, 0.15);
+}
+
+.card-high-contrast h3,
+.card-high-contrast h4 {
+    color: var(--wg-1-deep-blue) !important;
+}
+
+.card-high-contrast p {
+    color: #2a2a2a !important;
+}
+
+/* ==========================================
+   ACCESSIBILITY & RESPONSIVE
+   ========================================== */
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Simpler animations on mobile */
+@media (max-width: 768px) {
+    .card:hover {
+        transform: translateY(-4px);
+    }
+
+    .float {
+        animation: none;
+    }
+    
+    .slide-in-left,
+    .slide-in-right {
+        animation: fadeSlideUp 0.6s ease-out forwards;
+    }
+}
