@@ -4,7 +4,7 @@ import { ScrollAnimation } from '../../components/common/Animations/ScrollAnimat
 import { AnimatedCounter } from '../../components/common/Animations/AnimatedCounter';
 import { Button } from '../../components/common/UI/Button';
 import { WhatSetsUsApart } from '../../components/common/Sections/WhatSetsUsApart';
-import { SITE_URL } from '../../utils/constants';
+import { SITE_URL, getAssetPath } from '../../utils/constants';
 import { stats } from '../../data/stats';
 
 const faqs = [
@@ -52,7 +52,7 @@ function GroundMountedPage() {
               <div className="position-relative w-100 h-100">
                 <img
                   className="position-absolute img-fluid imageStyle"
-                  src="/assets/images/groundMounted1.png"
+                  src={getAssetPath('/assets/images/groundMounted1.png')}
                   style={{ objectFit: 'cover' }}
                   alt="Ground Mounted Solar"
                   loading="lazy"
@@ -132,7 +132,7 @@ function GroundMountedPage() {
               <div className="position-relative w-100 h-100">
                 <img
                   className="position-absolute img-fluid imageStyle"
-                  src="/assets/images/groundMounted2.png"
+                  src={getAssetPath('/assets/images/groundMounted2.png')}
                   style={{ objectFit: 'cover' }}
                   alt="Ground Mounted Solar How It Works"
                   loading="lazy"
@@ -152,7 +152,7 @@ function GroundMountedPage() {
               <div className="position-relative w-100 h-100">
                 <img
                   className="position-absolute img-fluid imageStyle"
-                  src="/assets/images/groundMounted3.png"
+                  src={getAssetPath('/assets/images/groundMounted3.png')}
                   style={{ objectFit: 'cover' }}
                   alt="Ground Mounted Solar Advantages"
                   loading="lazy"

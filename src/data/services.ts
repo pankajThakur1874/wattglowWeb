@@ -1,4 +1,5 @@
 import type { Service } from '../types';
+import { getAssetPath } from '../utils/constants';
 
 export const services: Service[] = [
   {
@@ -7,7 +8,7 @@ export const services: Service[] = [
     description:
       'Large-scale ground-mounted solar power plant solutions for utility and industrial applications.',
     icon: 'fa fa-solar-panel',
-    image: '/assets/images/groundMounteg.png',
+    image: getAssetPath('/assets/images/groundMounteg.png'),
     link: '/offering/ground',
   },
   {
@@ -16,7 +17,7 @@ export const services: Service[] = [
     description:
       'Commercial and industrial rooftop solar solutions for businesses to reduce operating costs.',
     icon: 'fas fa-industry',
-    image: '/assets/images/comercial.png',
+    image: getAssetPath('/assets/images/comercial.png'),
     link: '/offering/commercial',
   },
   {
@@ -24,7 +25,7 @@ export const services: Service[] = [
     title: 'Floating Solar (FSPV)',
     description: 'Innovative floating solar photovoltaic systems for water bodies and reservoirs.',
     icon: 'fas fa-solar-panel',
-    image: '/assets/images/floating.png',
+    image: getAssetPath('/assets/images/floating.png'),
     link: '/offering/floating',
   },
   {
@@ -33,7 +34,7 @@ export const services: Service[] = [
     description:
       'Affordable and efficient residential solar panel installation services for homeowners.',
     icon: 'fa fa-home',
-    image: '/assets/images/residential.png',
+    image: getAssetPath('/assets/images/residential.png'),
     link: '/offering/residential',
   },
   {
@@ -41,7 +42,7 @@ export const services: Service[] = [
     title: 'Operation & Maintenance',
     description: 'Comprehensive O&M services to maximize solar plant performance and longevity.',
     icon: 'fa fa-tools',
-    image: '/assets/images/operationAndMaintenance.png',
+    image: getAssetPath('/assets/images/operationAndMaintenance.png'),
     link: '/offering/operations',
   },
   {
@@ -49,7 +50,7 @@ export const services: Service[] = [
     title: 'Transmission Line & Substation',
     description: 'Transmission line and substation construction and maintenance services.',
     icon: 'fa fa-bolt',
-    image: '/assets/images/transmission.png',
+    image: getAssetPath('/assets/images/transmission.png'),
     link: '/offering/transmission',
   },
 ];

@@ -3,7 +3,7 @@ import type { FormEvent } from 'react';
 import { MetaTags } from '../../components/common/SEO/MetaTags';
 import { PageHeader } from '../../components/common/UI/PageHeader';
 import { ScrollAnimation } from '../../components/common/Animations/ScrollAnimation';
-import { SITE_URL } from '../../utils/constants';
+import { SITE_URL, getAssetPath } from '../../utils/constants';
 import { careerTypes, coreValues } from '../../data/careers';
 
 function CareersPage() {
@@ -271,7 +271,7 @@ function CareersPage() {
               <div className="position-relative w-100 h-100">
                 <img
                   className="position-absolute img-fluid imageStyle"
-                  src="/assets/images/img_2.png"
+                  src={getAssetPath('/assets/images/img_2.png')}
                   style={{ objectFit: 'cover' }}
                   alt="WattGlow Power"
                   loading="lazy"

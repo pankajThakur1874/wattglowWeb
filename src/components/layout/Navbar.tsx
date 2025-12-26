@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { navigationItems } from '../../data/navigation';
+import { getAssetPath } from '../../utils/constants';
 import type { NavigationItem } from '../../types';
 
 export function Navbar() {
@@ -54,7 +55,7 @@ export function Navbar() {
     <nav className="top-0 navbar navbar-expand-lg navbar-light sticky-top p-1 bg-Div-light">
       <Link to="/" className="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
         <img
-          src="/assets/images/WattGlow.png"
+          src={getAssetPath('/assets/images/WattGlow.png')}
           alt="WattGlow Power - Solar EPC Company Logo"
           className="mb-2"
           style={{ width: '120px', height: 'auto' }}

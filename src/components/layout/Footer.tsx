@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { COMPANY_INFO, CONTACT_INFO, SOCIAL_LINKS, WHATSAPP_URL } from '../../utils/constants';
+import { COMPANY_INFO, CONTACT_INFO, SOCIAL_LINKS, WHATSAPP_URL, getAssetPath } from '../../utils/constants';
 import { footerLinks } from '../../data/navigation';
 
 export function Footer() {
@@ -93,7 +93,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="google-review-badge"
               >
-                <img src="/assets/images/google-review.png" alt="Google Reviews" />
+                <img src={getAssetPath('/assets/images/google-review.png')} alt="Google Reviews" />
                 <span>Rate us on Google</span>
               </a>
 

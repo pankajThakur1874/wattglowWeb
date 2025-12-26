@@ -1,3 +1,5 @@
+import { getAssetPath } from '../utils/constants';
+
 export const offeringContent = {
   residential: {
     title: 'Residential',
@@ -6,7 +8,7 @@ export const offeringContent = {
     backgroundClass: 'page-header-residential',
     sections: [
       {
-        image: '/assets/images/residential.png',
+        image: getAssetPath('/assets/images/residential.png'),
         imagePosition: 'left',
         content: [
           'Looking to utilize your roof space?',
@@ -42,7 +44,7 @@ export const offeringContent = {
     backgroundClass: 'page-header-commercial',
     sections: [
       {
-        image: '/assets/images/commercial.png',
+        image: getAssetPath('/assets/images/commercial.png'),
         imagePosition: 'left',
         content: [
           'Does your commercial or industrial facility have large roof space or unused land?',
@@ -76,7 +78,7 @@ export const offeringContent = {
     backgroundClass: 'page-header-floating',
     sections: [
       {
-        image: '/assets/images/floating2.png',
+        image: getAssetPath('/assets/images/floating2.png'),
         imagePosition: 'left',
         content: [
           'Do you have access to water bodies like reservoirs, lakes, or ponds?',
@@ -111,7 +113,7 @@ export const offeringContent = {
     backgroundClass: 'page-header-operation',
     sections: [
       {
-        image: '/assets/images/operationAndMaintenance1.png',
+        image: getAssetPath('/assets/images/operationAndMaintenance1.png'),
         imagePosition: 'left',
         content: [
           'Solar power plants require regular maintenance to ensure optimal performance and longevity.',
@@ -145,7 +147,7 @@ export const offeringContent = {
     backgroundClass: 'page-header-transmission',
     sections: [
       {
-        image: '/assets/images/transmission.png',
+        image: getAssetPath('/assets/images/transmission.png'),
         imagePosition: 'left',
         content: [
           'Efficient power transmission is critical for delivering solar energy from generation sites to consumption points.',

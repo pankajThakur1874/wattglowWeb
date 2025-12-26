@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { SITE_URL } from '../../../utils/constants';
+import { getAssetPath } from '../../../utils/constants';
 
 interface MetaTagsProps {
   title: string;
@@ -15,7 +15,7 @@ export function MetaTags({
   description,
   keywords = 'Solar EPC, Solar Energy, Renewable Energy, Floating Solar, Solar Panel Installation',
   canonical,
-  ogImage = `${SITE_URL}/assets/images/WattGlow.png`,
+  ogImage = getAssetPath('/assets/images/WattGlow.png'),
   ogType = 'website',
 }: MetaTagsProps) {
   const fullTitle = `${title} | WattGlow Power`;

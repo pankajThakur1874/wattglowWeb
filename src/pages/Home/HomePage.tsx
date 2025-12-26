@@ -1,6 +1,6 @@
 import { MetaTags } from '../../components/common/SEO/MetaTags';
 import { StructuredData } from '../../components/common/SEO/StructuredData';
-import { STRUCTURED_DATA, SITE_URL } from '../../utils/constants';
+import { STRUCTURED_DATA, SITE_URL, getAssetPath } from '../../utils/constants';
 import { HeroCarousel } from '../../components/common/Carousel/HeroCarousel';
 import { LogoCarousel } from '../../components/common/Carousel/LogoCarousel';
 import { TestimonialCarousel } from '../../components/common/Carousel/TestimonialCarousel';
@@ -18,28 +18,28 @@ import { benefits, trustIndicators } from '../../data/benefits';
 const heroSlides = [
   {
     type: 'video' as const,
-    src: '/assets/images/watt.mp4',
+    src: getAssetPath('/assets/images/watt.mp4'),
     title: 'Empowering Sustainable Future through Innovative Renewable Solutions',
     buttonText: 'Read More',
     buttonLink: '/about',
   },
   {
     type: 'image' as const,
-    src: '/assets/images/IMG_20240421_114238.jpg',
+    src: getAssetPath('/assets/images/IMG_20240421_114238.jpg'),
     title: 'Your Partner in Renewable Energy Empowering Communities with Solar',
     buttonText: 'Read More',
     buttonLink: '/about',
   },
   {
     type: 'image' as const,
-    src: '/assets/images/floating.png',
+    src: getAssetPath('/assets/images/floating.png'),
     title: "Harnessing the Sun's Energy for a Greener Tomorrow",
     buttonText: 'Read More',
     buttonLink: '/about',
   },
   {
     type: 'image' as const,
-    src: '/assets/images/IMG_2414.jpg',
+    src: getAssetPath('/assets/images/IMG_2414.jpg'),
     title: 'Transforming Sunlight into Savings and Sustainability',
     buttonText: 'Read More',
     buttonLink: '/about',
@@ -80,7 +80,7 @@ function HomePage() {
                     ></i>
                   </div>
                   <img
-                    src="/assets/images/wattGlowIm1.jpg"
+                    src={getAssetPath('/assets/images/wattGlowIm1.jpg')}
                     alt="WattGlow Power team working on solar installation"
                     className="about-main-image"
                     loading="lazy"
@@ -208,7 +208,7 @@ function HomePage() {
 
                 <div className="about-inner-image fade-scale stagger-2" data-animate>
                   <img
-                    src="/assets/images/solarP.png"
+                    src={getAssetPath('/assets/images/solarP.png')}
                     alt="Solar panels"
                     className="about-inner-img"
                     loading="lazy"
@@ -309,7 +309,7 @@ function HomePage() {
         <h1>CHANNEL PARTNER</h1>
         <div className="content">
           <div className="logo">
-            <img src="/assets/images/pahal-solar-logo.png" alt="Pahal Solar Logo" />
+            <img src={getAssetPath('/assets/images/pahal-solar-logo.png')} alt="Pahal Solar Logo" />
           </div>
           <div className="text">
             <br />
@@ -348,7 +348,7 @@ function HomePage() {
               </div>
             </div>
             <div className="column">
-              <img src="/assets/images/solarP.png" height="100%" width="100%" alt="Solar Panels" />
+              <img src={getAssetPath('/assets/images/solarP.png')} height="100%" width="100%" alt="Solar Panels" />
             </div>
             <div className="column">
               <div className="benefits-section center-text">
