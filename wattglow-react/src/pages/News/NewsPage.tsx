@@ -18,7 +18,8 @@ function NewsPage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const url = 'https://script.google.com/macros/s/AKfycbwEZxMZFgDxc9OuIzhsvai8CEyYXu0ui8pLnXUj8-yzu1QLvhvXlBX4PDOv8ySEAVDH/exec';
+        const url =
+          'https://script.google.com/macros/s/AKfycbwEZxMZFgDxc9OuIzhsvai8CEyYXu0ui8pLnXUj8-yzu1QLvhvXlBX4PDOv8ySEAVDH/exec';
         const response = await fetch(url);
         const data = await response.json();
 
@@ -56,7 +57,11 @@ function NewsPage() {
         <div className="container">
           {loading && (
             <div className="text-center">
-              <div className="spinner-border text-primary" style={{ width: '3rem', height: '3rem' }} role="status">
+              <div
+                className="spinner-border text-primary"
+                style={{ width: '3rem', height: '3rem' }}
+                role="status"
+              >
                 <span className="sr-only">Loading...</span>
               </div>
             </div>
@@ -95,10 +100,20 @@ function NewsPage() {
                     className="col-md-6 col-lg-4"
                   >
                     <div className="service-item rounded overflow-hidden">
-                      <img className="img-fluid img-300" src={post.image} alt={post.title} loading="lazy" />
+                      <img
+                        className="img-fluid img-300"
+                        src={post.image}
+                        alt={post.title}
+                        loading="lazy"
+                      />
                       <div className="position-relative p-4 pt-0">
                         <h4 className="mb-3">{post.title}</h4>
-                        <a className="small fw-medium" href={post.link} target="_blank" rel="noopener noreferrer">
+                        <a
+                          className="small fw-medium"
+                          href={post.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Click Here <i className="fa fa-arrow-right ms-2"></i>
                         </a>
                       </div>

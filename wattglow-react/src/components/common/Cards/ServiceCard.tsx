@@ -7,7 +7,10 @@ interface ServiceCardProps {
   className?: string;
 }
 
-export const ServiceCard = memo(function ServiceCard({ service, className = '' }: ServiceCardProps) {
+export const ServiceCard = memo(function ServiceCard({
+  service,
+  className = '',
+}: ServiceCardProps) {
   return (
     <div className={`card-premium ${className}`}>
       <div className="service-icon mb-4">

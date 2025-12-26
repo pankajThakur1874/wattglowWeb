@@ -9,7 +9,10 @@ interface LogoCarouselProps {
   className?: string;
 }
 
-export const LogoCarousel = memo(function LogoCarousel({ clients, className = '' }: LogoCarouselProps) {
+export const LogoCarousel = memo(function LogoCarousel({
+  clients,
+  className = '',
+}: LogoCarouselProps) {
   const settings = {
     dots: false,
     infinite: true,
@@ -51,7 +54,13 @@ export const LogoCarousel = memo(function LogoCarousel({ clients, className = ''
               src={client.logo}
               alt={client.name}
               className="client-logo"
-              style={{ maxHeight: '80px', width: 'auto', objectFit: 'contain', margin: '0 auto', display: 'block' }}
+              style={{
+                maxHeight: '80px',
+                width: 'auto',
+                objectFit: 'contain',
+                margin: '0 auto',
+                display: 'block',
+              }}
             />
           </div>
         ))}

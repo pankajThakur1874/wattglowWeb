@@ -31,8 +31,8 @@ function ProductPage() {
                 <span className="subheading">Our Products</span>
                 <h2 className="mb-4">Quality Solar Components</h2>
                 <p>
-                  We offer a comprehensive range of high-quality solar products designed to ensure optimal performance,
-                  reliability, and longevity for your solar energy system.
+                  We offer a comprehensive range of high-quality solar products designed to ensure
+                  optimal performance, reliability, and longevity for your solar energy system.
                 </p>
               </ScrollAnimation>
             </div>

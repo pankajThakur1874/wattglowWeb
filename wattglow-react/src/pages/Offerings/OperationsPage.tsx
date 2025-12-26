@@ -3,9 +3,9 @@ import { PageHeader } from '../../components/common/UI/PageHeader';
 import { ScrollAnimation } from '../../components/common/Animations/ScrollAnimation';
 import { AnimatedCounter } from '../../components/common/Animations/AnimatedCounter';
 import { Button } from '../../components/common/UI/Button';
+import { WhatSetsUsApart } from '../../components/common/Sections/WhatSetsUsApart';
 import { SITE_URL } from '../../utils/constants';
 import { stats } from '../../data/stats';
-import { features } from '../../data/benefits';
 import { offeringContent } from '../../data/offerings';
 
 const { operations } = offeringContent;
@@ -66,7 +66,10 @@ function OperationsPage() {
         {stats.map((stat) => (
           <ScrollAnimation key={stat.id} animation="fade-scale" className="stat-item">
             <i className={`${stat.icon} fa-3x`}></i>
-            <AnimatedCounter end={typeof stat.value === 'number' ? stat.value : 0} suffix={stat.suffix} />
+            <AnimatedCounter
+              end={typeof stat.value === 'number' ? stat.value : 0}
+              suffix={stat.suffix}
+            />
             <br />
             <h3>{stat.label}</h3>
           </ScrollAnimation>
@@ -75,40 +78,7 @@ function OperationsPage() {
       <br />
 
       {/* What Sets Us Apart */}
-      <div className="container-fluid py-5">
-        <ScrollAnimation animation="fade-slide-up">
-          <h2 className="text-center">What Sets Us Apart</h2>
-        </ScrollAnimation>
-        <br />
-        <br />
-        <br />
-        <div className="features-grid">
-          {features.slice(0, 4).map((feature, index) => (
-            <ScrollAnimation key={feature.id} animation="fade-scale" delay={index}>
-              <div className="feature-item">
-                <i className={`${feature.icon} fa-3x`}></i>
-                <br />
-                <h4>{feature.title}</h4>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <div className="features-grid">
-          {features.slice(4, 7).map((feature, index) => (
-            <ScrollAnimation key={feature.id} animation="fade-scale" delay={index}>
-              <div className="feature-item">
-                <i className={`${feature.icon} fa-3x`}></i>
-                <br />
-                <h4>{feature.title}</h4>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-      </div>
+      <WhatSetsUsApart />
       <br />
       <br />
 

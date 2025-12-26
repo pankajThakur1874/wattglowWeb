@@ -14,7 +14,8 @@ function ContactPage() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyMbgMECrjOuypLPTdu7huo5wxF0pVoMG1JJcw3xI3_VJS6rPjSiMWKRt8gPXzkPBrF/exec';
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbyMbgMECrjOuypLPTdu7huo5wxF0pVoMG1JJcw3xI3_VJS6rPjSiMWKRt8gPXzkPBrF/exec';
 
     try {
       const response = await fetch(scriptURL, {
@@ -51,10 +52,10 @@ function ContactPage() {
                 <ScrollAnimation animation="fade-slide-up">
                   <h1 className="mb-4">Feel Free To Contact Us</h1>
                   <p className="mb-4">
-                    At WattGlow Power Private Limited, we are committed to providing exceptional service
-                    and support. Whether you have questions about our products, need assistance, or simply want to
-                    learn more about how we can help, we're here for you. Don't hesitate to reach out—our team is
-                    always ready to guide you!
+                    At WattGlow Power Private Limited, we are committed to providing exceptional
+                    service and support. Whether you have questions about our products, need
+                    assistance, or simply want to learn more about how we can help, we're here for
+                    you. Don't hesitate to reach out—our team is always ready to guide you!
                   </p>
                 </ScrollAnimation>
                 <form onSubmit={handleSubmit}>

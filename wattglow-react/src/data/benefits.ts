@@ -3,13 +3,15 @@ export const benefits = [
     id: '1',
     icon: 'fa fa-money-bill-alt',
     title: 'Saves money',
-    description: 'You can save a significant amount of money with your solar system since you won\'t have any electricity bills to pay.',
+    description:
+      "You can save a significant amount of money with your solar system since you won't have any electricity bills to pay.",
   },
   {
     id: '2',
     icon: 'fa fa-globe',
     title: '100% Green Power',
-    description: 'Solar energy is a clean, eco-friendly power source, allowing you to make a positive impact on tomorrow.',
+    description:
+      'Solar energy is a clean, eco-friendly power source, allowing you to make a positive impact on tomorrow.',
   },
   {
     id: '3',
@@ -21,7 +23,8 @@ export const benefits = [
     id: '4',
     icon: 'fa fa-calculator',
     title: 'Return on investment',
-    description: 'Solar panels aren\'t just an expense; they\'re a smart investment. With significant savings, the system typically pays for itself in just 4-5 years.',
+    description:
+      "Solar panels aren't just an expense; they're a smart investment. With significant savings, the system typically pays for itself in just 4-5 years.",
   },
   {
     id: '5',
@@ -34,7 +37,8 @@ export const benefits = [
     id: '6',
     icon: 'fa fa-recycle',
     title: 'Reduces CO₂ emission',
-    description: 'Most importantly, solar energy is a clean source of power, meaning no pollution or CO₂ emissions.',
+    description:
+      'Most importantly, solar energy is a clean source of power, meaning no pollution or CO₂ emissions.',
   },
 ];
 

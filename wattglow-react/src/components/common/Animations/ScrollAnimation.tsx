@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import type { ReactNode } from 'react';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 
@@ -20,11 +20,25 @@ export const ScrollAnimation = memo(function ScrollAnimation({
     freezeOnceVisible: true,
   });
 
-  const animationClass = isVisible ? animation : '';
-  const delayClass = delay > 0 ? `stagger-${delay}` : '';
+  // Memoize className to prevent unnecessary re-renders
+  const combinedClassName = useMemo(() => {
+    const classes = [];
+    if (isVisible) classes.push(animation);
+    if (delay > 0) classes.push(`stagger-${delay}`);
+    if (className) classes.push(className);
+    return classes.join(' ').trim();
+  }, [isVisible, animation, delay, className]);
 
   return (
-    <div ref={ref} className={`${animationClass} ${delayClass} ${className}`.trim()}>
+    <div
+      ref={ref}
+      className={combinedClassName}
+      style={{
+        willChange: isVisible ? 'auto' : 'transform, opacity',
+        transform: 'translateZ(0)', // Force GPU acceleration
+        backfaceVisibility: 'hidden',
+      }}
+    >
       {children}
     </div>
   );

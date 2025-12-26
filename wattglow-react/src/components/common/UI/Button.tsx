@@ -33,17 +33,13 @@ export const Button = memo(function Button({
   };
   const magneticClass = magnetic ? 'btn-magnetic' : '';
 
-  const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${magneticClass} ${className}`.trim();
+  const combinedClasses =
+    `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${magneticClass} ${className}`.trim();
 
   if (href) {
     if (external) {
       return (
-        <a
-          href={href}
-          className={combinedClasses}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={href} className={combinedClasses} target="_blank" rel="noopener noreferrer">
           {children}
         </a>
       );

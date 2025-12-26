@@ -3,25 +3,28 @@ import { PageHeader } from '../../components/common/UI/PageHeader';
 import { ScrollAnimation } from '../../components/common/Animations/ScrollAnimation';
 import { AnimatedCounter } from '../../components/common/Animations/AnimatedCounter';
 import { Button } from '../../components/common/UI/Button';
+import { WhatSetsUsApart } from '../../components/common/Sections/WhatSetsUsApart';
 import { SITE_URL } from '../../utils/constants';
 import { stats } from '../../data/stats';
-import { features } from '../../data/benefits';
 
 const faqs = [
   {
     id: 1,
     question: 'How much space does a ground-mounted solar plant require?',
-    answer: 'The space requirement for a ground-mounted solar plant varies depending on the system size and other factors.',
+    answer:
+      'The space requirement for a ground-mounted solar plant varies depending on the system size and other factors.',
   },
   {
     id: 2,
     question: 'How much electricity does a ground-mounted solar plant generate?',
-    answer: 'The amount of electricity generated depends on factors such as location, plant size, and sunlight exposure.',
+    answer:
+      'The amount of electricity generated depends on factors such as location, plant size, and sunlight exposure.',
   },
   {
     id: 3,
     question: 'Is there any subsidy available for ground-mounted solar systems in India?',
-    answer: 'Yes, subsidies are available for ground-mounted solar systems based on various state and central government policies in India.',
+    answer:
+      'Yes, subsidies are available for ground-mounted solar systems based on various state and central government policies in India.',
   },
 ];
 
@@ -63,14 +66,15 @@ function GroundMountedPage() {
                     <ul className="advantages-list">
                       <p>Have a piece of land that receives ample sunlight?</p>
                       <p>
-                        A ground-mounted solar plant is the perfect way to turn that sunshine into a powerful source
-                        of income and clean energy. These systems generate large amounts of solar power and are ideal
-                        for utility scale, commercial, or industrial applications.
+                        A ground-mounted solar plant is the perfect way to turn that sunshine into a
+                        powerful source of income and clean energy. These systems generate large
+                        amounts of solar power and are ideal for utility scale, commercial, or
+                        industrial applications.
                       </p>
                       <p>
-                        Set up on vast open spaces of land, ground-mounted systems generate more electricity than
-                        traditional rooftop systems. This translates to a higher return on investment and a faster
-                        payback period.
+                        Set up on vast open spaces of land, ground-mounted systems generate more
+                        electricity than traditional rooftop systems. This translates to a higher
+                        return on investment and a faster payback period.
                       </p>
                       <p>Sounds interesting? Want to learn more?</p>
                     </ul>
@@ -97,24 +101,24 @@ function GroundMountedPage() {
                   <div className="row g-4">
                     <ul className="advantages-list">
                       <li>
-                        Solar modules are strategically positioned, with the right tilt and orientation, to maximize
-                        sun exposure.
+                        Solar modules are strategically positioned, with the right tilt and
+                        orientation, to maximize sun exposure.
                       </li>
                       <br />
                       <li>
-                        In solar plants with tracker systems, panels can be moved in horizontal or vertical directions,
-                        as per the changing position of the sun throughout the day. This helps in maintaining sun
-                        exposure.
+                        In solar plants with tracker systems, panels can be moved in horizontal or
+                        vertical directions, as per the changing position of the sun throughout the
+                        day. This helps in maintaining sun exposure.
                       </li>
                       <br />
                       <li>
-                        The modules generate DC (Direct Current), which is converted to AC (Alternating Current) through
-                        solar inverters.
+                        The modules generate DC (Direct Current), which is converted to AC
+                        (Alternating Current) through solar inverters.
                       </li>
                       <br />
                       <li>
-                        The electricity can be fed into the grid and transmitted to the desired location. It can also be
-                        stored in a battery backup for future use.
+                        The electricity can be fed into the grid and transmitted to the desired
+                        location. It can also be stored in a battery backup for future use.
                       </li>
                     </ul>
                     <Button href="/contact" variant="contact">
@@ -161,11 +165,18 @@ function GroundMountedPage() {
                   <h1 className="mb-4">Advantage</h1>
                   <div className="row g-4">
                     <ul className="advantages-list">
-                      <li>Begin with a site analysis and grid connections to optimize efficiency.</li>
+                      <li>
+                        Begin with a site analysis and grid connections to optimize efficiency.
+                      </li>
                       <br />
-                      <li>Install a photovoltaic array onto the ground for maximum sunlight exposure.</li>
+                      <li>
+                        Install a photovoltaic array onto the ground for maximum sunlight exposure.
+                      </li>
                       <br />
-                      <li>Use efficient inverter systems, cables, and connections to convert DC to AC power.</li>
+                      <li>
+                        Use efficient inverter systems, cables, and connections to convert DC to AC
+                        power.
+                      </li>
                     </ul>
                     <Button href="/contact" variant="contact">
                       Explore More
@@ -184,7 +195,10 @@ function GroundMountedPage() {
         {stats.map((stat) => (
           <ScrollAnimation key={stat.id} animation="fade-scale" className="stat-item">
             <i className={`${stat.icon} fa-3x`}></i>
-            <AnimatedCounter end={typeof stat.value === 'number' ? stat.value : 0} suffix={stat.suffix} />
+            <AnimatedCounter
+              end={typeof stat.value === 'number' ? stat.value : 0}
+              suffix={stat.suffix}
+            />
             <br />
             <h3>{stat.label}</h3>
           </ScrollAnimation>
@@ -193,40 +207,7 @@ function GroundMountedPage() {
       <br />
 
       {/* What Sets Us Apart */}
-      <div className="container-fluid py-5">
-        <ScrollAnimation animation="fade-slide-up">
-          <h2 className="text-center">What Sets Us Apart</h2>
-        </ScrollAnimation>
-        <br />
-        <br />
-        <br />
-        <div className="features-grid">
-          {features.slice(0, 4).map((feature, index) => (
-            <ScrollAnimation key={feature.id} animation="fade-scale" delay={index}>
-              <div className="feature-item">
-                <i className={`${feature.icon} fa-3x`}></i>
-                <br />
-                <h4>{feature.title}</h4>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <div className="features-grid">
-          {features.slice(4, 7).map((feature, index) => (
-            <ScrollAnimation key={feature.id} animation="fade-scale" delay={index}>
-              <div className="feature-item">
-                <i className={`${feature.icon} fa-3x`}></i>
-                <br />
-                <h4>{feature.title}</h4>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-      </div>
+      <WhatSetsUsApart />
       <br />
       <br />
 

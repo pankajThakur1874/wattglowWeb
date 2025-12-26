@@ -1,7 +1,8 @@
 export const offeringContent = {
   residential: {
     title: 'Residential',
-    subtitle: 'Up to 80% Reduction in Monthly Electricity Bills with our Residential Rooftop Solar Solutions',
+    subtitle:
+      'Up to 80% Reduction in Monthly Electricity Bills with our Residential Rooftop Solar Solutions',
     backgroundClass: 'page-header-residential',
     sections: [
       {
@@ -19,21 +20,25 @@ export const offeringContent = {
     faqs: [
       {
         question: 'How much does a residential solar system cost?',
-        answer: 'The cost varies based on system size, quality of components, and installation complexity. Contact us for a customized quote.',
+        answer:
+          'The cost varies based on system size, quality of components, and installation complexity. Contact us for a customized quote.',
       },
       {
         question: 'What is the payback period for residential solar?',
-        answer: 'Typically 4-6 years depending on electricity consumption, system size, and available subsidies.',
+        answer:
+          'Typically 4-6 years depending on electricity consumption, system size, and available subsidies.',
       },
       {
         question: 'Are there government subsidies available?',
-        answer: 'Yes, under PM Surya Ghar Muft Bijli Yojana, residential consumers can get subsidies up to 78,000 INR.',
+        answer:
+          'Yes, under PM Surya Ghar Muft Bijli Yojana, residential consumers can get subsidies up to 78,000 INR.',
       },
     ],
   },
   commercial: {
     title: 'Commercial & Industrial (C&I)',
-    subtitle: 'Turn Your Roof into a Powerhouse with our efficient Commercial/Industrial Rooftop Solar Solutions',
+    subtitle:
+      'Turn Your Roof into a Powerhouse with our efficient Commercial/Industrial Rooftop Solar Solutions',
     backgroundClass: 'page-header-commercial',
     sections: [
       {
@@ -50,15 +55,18 @@ export const offeringContent = {
     faqs: [
       {
         question: 'What size commercial solar system do I need?',
-        answer: 'System size depends on your electricity consumption, available roof space, and budget. Our experts will help design the optimal solution.',
+        answer:
+          'System size depends on your electricity consumption, available roof space, and budget. Our experts will help design the optimal solution.',
       },
       {
         question: 'Can I sell excess electricity back to the grid?',
-        answer: 'Yes, under net metering policies, you can export excess solar power to the grid and receive credits on your electricity bill.',
+        answer:
+          'Yes, under net metering policies, you can export excess solar power to the grid and receive credits on your electricity bill.',
       },
       {
         question: 'What is the warranty on commercial solar systems?',
-        answer: 'Solar panels come with 25-year performance warranty, inverters have 5-10 year warranty, and we provide comprehensive maintenance packages.',
+        answer:
+          'Solar panels come with 25-year performance warranty, inverters have 5-10 year warranty, and we provide comprehensive maintenance packages.',
       },
     ],
   },
@@ -82,15 +90,18 @@ export const offeringContent = {
     faqs: [
       {
         question: 'What are the benefits of floating solar over ground-mounted?',
-        answer: 'Floating solar offers higher efficiency due to cooling effect, saves land, reduces water evaporation, and prevents algae growth.',
+        answer:
+          'Floating solar offers higher efficiency due to cooling effect, saves land, reduces water evaporation, and prevents algae growth.',
       },
       {
         question: 'Is floating solar safe for aquatic life?',
-        answer: 'Yes, when properly designed, FSPV systems can coexist with aquatic ecosystems and may even improve water quality.',
+        answer:
+          'Yes, when properly designed, FSPV systems can coexist with aquatic ecosystems and may even improve water quality.',
       },
       {
         question: 'What types of water bodies are suitable?',
-        answer: 'Reservoirs, irrigation canals, treatment ponds, and lakes with minimal wave action are ideal for floating solar installations.',
+        answer:
+          'Reservoirs, irrigation canals, treatment ponds, and lakes with minimal wave action are ideal for floating solar installations.',
       },
     ],
   },
@@ -113,15 +124,18 @@ export const offeringContent = {
     faqs: [
       {
         question: 'Why is regular maintenance important for solar plants?',
-        answer: 'Regular maintenance ensures optimal performance, prevents system degradation, identifies issues early, and maximizes ROI.',
+        answer:
+          'Regular maintenance ensures optimal performance, prevents system degradation, identifies issues early, and maximizes ROI.',
       },
       {
         question: 'What does your O&M service include?',
-        answer: 'Our service includes preventive maintenance, performance monitoring, panel cleaning, inverter servicing, electrical testing, and emergency repairs.',
+        answer:
+          'Our service includes preventive maintenance, performance monitoring, panel cleaning, inverter servicing, electrical testing, and emergency repairs.',
       },
       {
         question: 'How often should solar panels be cleaned?',
-        answer: 'Cleaning frequency depends on location and environmental conditions, typically every 2-4 weeks in dusty areas.',
+        answer:
+          'Cleaning frequency depends on location and environmental conditions, typically every 2-4 weeks in dusty areas.',
       },
     ],
   },
@@ -144,15 +158,18 @@ export const offeringContent = {
     faqs: [
       {
         question: 'What voltage levels do you work with?',
-        answer: 'We handle LT (Low Tension), HT (High Tension up to 33kV), and EHV (Extra High Voltage) transmission systems.',
+        answer:
+          'We handle LT (Low Tension), HT (High Tension up to 33kV), and EHV (Extra High Voltage) transmission systems.',
       },
       {
         question: 'Do you provide substation design services?',
-        answer: 'Yes, we provide complete substation design, engineering, equipment procurement, installation, and commissioning services.',
+        answer:
+          'Yes, we provide complete substation design, engineering, equipment procurement, installation, and commissioning services.',
       },
       {
         question: 'What is the typical project timeline?',
-        answer: 'Timeline varies based on project scope and complexity, typically ranging from 3-12 months for transmission projects.',
+        answer:
+          'Timeline varies based on project scope and complexity, typically ranging from 3-12 months for transmission projects.',
       },
     ],
   },

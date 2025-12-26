@@ -13,11 +13,6 @@ export function MainLayout() {
 
   return (
     <div className="bg-Div-light">
-      {/* Skip to Content Link for Accessibility */}
-      <a href="#main-content" className="skip-to-content">
-        Skip to main content
-      </a>
-
       <Navbar />
 
       <main id="main-content">

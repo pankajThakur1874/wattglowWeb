@@ -119,7 +119,12 @@ export function Footer() {
               <div className="col-md-6 text-center text-md-end">
                 <p className="text-white mb-0">
                   Powered by{' '}
-                  <a href="https://www.ascendons.com" target="_blank" rel="noopener noreferrer" className="text-white">
+                  <a
+                    href="https://www.ascendons.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white"
+                  >
                     Ascendons
                   </a>
                 </p>

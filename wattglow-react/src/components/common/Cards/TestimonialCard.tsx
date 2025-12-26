@@ -11,7 +11,7 @@ export const TestimonialCard = memo(function TestimonialCard({
   className = '',
 }: TestimonialCardProps) {
   return (
-    <div className={`card-premium testimonial-card ${className}`}>
+    <div className={`card-premium testimonial-card ${className}`} style={{ padding: '20px' }}>
       <div className="testimonial-header mb-4">
         <img
           src={testimonial.avatar}

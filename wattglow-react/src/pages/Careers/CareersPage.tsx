@@ -22,7 +22,8 @@ function CareersPage() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6ono6vU05RSIvyA_8pl9nKr--iXtMhmOghbf7B9rvj0eihnWk6hJpQWGoTrdFx2CdHw/exec';
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbw6ono6vU05RSIvyA_8pl9nKr--iXtMhmOghbf7B9rvj0eihnWk6hJpQWGoTrdFx2CdHw/exec';
 
     try {
       const response = await fetch(scriptURL, {
@@ -85,7 +86,9 @@ function CareersPage() {
       {/* Core Values and Principles */}
       <div className="container-xxl py-5">
         <ScrollAnimation animation="fade-slide-up">
-          <h1 className="text-center">Core Values and Principles</h1>
+          <h1 className="text-center" style={{ display: 'block' }}>
+            Core Values and Principles
+          </h1>
         </ScrollAnimation>
         <br />
         <div className="career-section body-carrer">

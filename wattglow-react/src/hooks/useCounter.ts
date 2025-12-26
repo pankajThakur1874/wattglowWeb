@@ -7,7 +7,12 @@ interface UseCounterOptions {
   isVisible: boolean;
 }
 
-export function useCounter({ start = 0, end, duration = 2000, isVisible }: UseCounterOptions): number {
+export function useCounter({
+  start = 0,
+  end,
+  duration = 2000,
+  isVisible,
+}: UseCounterOptions): number {
   const [count, setCount] = useState(start);
   const [hasAnimated, setHasAnimated] = useState(false);
 

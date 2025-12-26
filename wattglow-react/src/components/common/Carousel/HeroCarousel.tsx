@@ -36,18 +36,57 @@ export const HeroCarousel = memo(function HeroCarousel({ slides }: HeroCarouselP
     <div className="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
       <Slider {...settings} className="header-carousel position-relative">
         {slides.map((slide, index) => (
-          <div key={index} className="position-relative">
+          <div
+            key={index}
+            className="position-relative owl-carousel-item"
+            style={{
+              height: '600px',
+              overflow: 'hidden',
+              willChange: 'transform',
+              transform: 'translateZ(0)',
+              backfaceVisibility: 'hidden',
+            }}
+          >
             {slide.type === 'video' ? (
-              <video className="video-fluid img-500 w-100" autoPlay muted loop playsInline>
+              <video
+                className="video-fluid w-100"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  willChange: 'transform',
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden',
+                }}
+              >
                 <source src={slide.src} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             ) : (
               <img
-                className="img-fluid img-500 w-100"
+                className="img-fluid w-100"
                 src={slide.src}
                 alt={slide.title}
-                style={{ objectFit: 'cover' }}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  willChange: 'transform',
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden',
+                }}
               />
             )}
             <div className="owl-carousel-inner">
