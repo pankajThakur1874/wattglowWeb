@@ -29,6 +29,8 @@ jobs:
 
       - name: Build app
         working-directory: wattglow-react
+        env:
+          ROLLUP_NO_NATIVE: true
         run: npm run build
 
       - name: Deploy to GitHub Pages
