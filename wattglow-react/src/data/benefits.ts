@@ -1,0 +1,112 @@
+export const benefits = [
+  {
+    id: '1',
+    icon: 'fa fa-money-bill-alt',
+    title: 'Saves money',
+    description:
+      "You can save a significant amount of money with your solar system since you won't have any electricity bills to pay.",
+  },
+  {
+    id: '2',
+    icon: 'fa fa-globe',
+    title: '100% Green Power',
+    description:
+      'Solar energy is a clean, eco-friendly power source, allowing you to make a positive impact on tomorrow.',
+  },
+  {
+    id: '3',
+    icon: 'fa fa-tools',
+    title: 'Less Maintenance',
+    description: 'Install a solar system and relax. Enjoy reliable power for the next 25 years!',
+  },
+  {
+    id: '4',
+    icon: 'fa fa-calculator',
+    title: 'Return on investment',
+    description:
+      "Solar panels aren't just an expense; they're a smart investment. With significant savings, the system typically pays for itself in just 4-5 years.",
+  },
+  {
+    id: '5',
+    icon: 'fa fa-hand-holding-usd',
+    title: 'Subsidy Available',
+    description: 'Claim your subsidy under new PM Surya Ghar Muft Bijli Yojna',
+    link: 'https://pmsuryagharyojana.in/',
+  },
+  {
+    id: '6',
+    icon: 'fa fa-recycle',
+    title: 'Reduces CO₂ emission',
+    description:
+      'Most importantly, solar energy is a clean source of power, meaning no pollution or CO₂ emissions.',
+  },
+];
+
+export const features = [
+  {
+    id: '1',
+    icon: 'fa fa-solar-panel',
+    title: 'Customized Solutions',
+  },
+  {
+    id: '2',
+    icon: 'fa fa-shield-alt',
+    title: 'Quality Assurance',
+  },
+  {
+    id: '3',
+    icon: 'fa fa-microchip',
+    title: 'Technical Experience',
+  },
+  {
+    id: '4',
+    icon: 'fa fa-user-check',
+    title: 'Client-Centric Approach',
+  },
+  {
+    id: '5',
+    icon: 'fa fa-project-diagram',
+    title: 'Seamless Project Management',
+  },
+  {
+    id: '6',
+    icon: 'fa fa-leaf',
+    title: 'Commitment to Sustainability',
+  },
+  {
+    id: '7',
+    icon: 'fa fa-lightbulb',
+    title: 'Innovation and Advancements',
+  },
+];
+
+export const trustIndicators = [
+  {
+    id: '1',
+    icon: 'fas fa-award',
+    title: 'ISO Certified',
+    subtitle: 'Quality Assured',
+    color: 'var(--solar-gold)',
+  },
+  {
+    id: '2',
+    icon: 'fas fa-shield-alt',
+    title: '25 Year Warranty',
+    subtitle: 'Long-term Protection',
+    color: 'var(--sky-blue)',
+  },
+  {
+    id: '3',
+    icon: 'fas fa-headset',
+    title: '24/7 Support',
+    subtitle: 'Always Here to Help',
+    color: 'var(--earth-green)',
+  },
+  {
+    id: '4',
+    icon: 'fas fa-users',
+    title: 'Expert Team',
+    subtitle: 'Certified Professionals',
+    color: 'var(--solar-warm)',
+  },
+];

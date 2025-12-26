@@ -1,0 +1,182 @@
+export const offeringContent = {
+  residential: {
+    title: 'Residential',
+    subtitle:
+      'Up to 80% Reduction in Monthly Electricity Bills with our Residential Rooftop Solar Solutions',
+    backgroundClass: 'page-header-residential',
+    sections: [
+      {
+        image: '/assets/images/residential.png',
+        imagePosition: 'left',
+        content: [
+          'Looking to utilize your roof space?',
+          'Install a rooftop solar system that harnesses sunlight and powers your entire building with cheap and clean electricity.',
+          'Solar energy generated on your roof can power everything — from lighting, fans, and water pumps to heating systems, air conditioners and water pumps. You can also set up a battery backup and store the generated power for future use (off-grid solar).',
+          'India has introduced multiple solar schemes and policies.',
+          'It is now cheaper and easier for a residential consumer to set up a rooftop solar plant and reduce their monthly electricity bills.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'How much does a residential solar system cost?',
+        answer:
+          'The cost varies based on system size, quality of components, and installation complexity. Contact us for a customized quote.',
+      },
+      {
+        question: 'What is the payback period for residential solar?',
+        answer:
+          'Typically 4-6 years depending on electricity consumption, system size, and available subsidies.',
+      },
+      {
+        question: 'Are there government subsidies available?',
+        answer:
+          'Yes, under PM Surya Ghar Muft Bijli Yojana, residential consumers can get subsidies up to 78,000 INR.',
+      },
+    ],
+  },
+  commercial: {
+    title: 'Commercial & Industrial (C&I)',
+    subtitle:
+      'Turn Your Roof into a Powerhouse with our efficient Commercial/Industrial Rooftop Solar Solutions',
+    backgroundClass: 'page-header-commercial',
+    sections: [
+      {
+        image: '/assets/images/commercial.png',
+        imagePosition: 'left',
+        content: [
+          'Does your commercial or industrial facility have large roof space or unused land?',
+          'Installing a solar power system can significantly reduce your operational costs while contributing to environmental sustainability.',
+          'Commercial and industrial solar solutions are designed to handle high power demands, making them perfect for factories, warehouses, offices, and large commercial establishments.',
+          'Reduce your electricity bills, achieve energy independence, and enhance your corporate social responsibility.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What size commercial solar system do I need?',
+        answer:
+          'System size depends on your electricity consumption, available roof space, and budget. Our experts will help design the optimal solution.',
+      },
+      {
+        question: 'Can I sell excess electricity back to the grid?',
+        answer:
+          'Yes, under net metering policies, you can export excess solar power to the grid and receive credits on your electricity bill.',
+      },
+      {
+        question: 'What is the warranty on commercial solar systems?',
+        answer:
+          'Solar panels come with 25-year performance warranty, inverters have 5-10 year warranty, and we provide comprehensive maintenance packages.',
+      },
+    ],
+  },
+  floating: {
+    title: 'Floating Solar Photovoltaic (FSPV)',
+    subtitle: 'Generate Clean Energy on Water with FSPV Technology',
+    backgroundClass: 'page-header-floating',
+    sections: [
+      {
+        image: '/assets/images/floating2.png',
+        imagePosition: 'left',
+        content: [
+          'Do you have access to water bodies like reservoirs, lakes, or ponds?',
+          'Floating Solar Photovoltaic (FSPV) systems offer an innovative solution to generate clean energy while conserving valuable land resources.',
+          'FSPV systems are installed on water bodies, utilizing the natural cooling effect of water to enhance panel efficiency and power generation.',
+          'These systems reduce water evaporation, prevent algae growth, and can be integrated with hydroelectric facilities for hybrid power generation.',
+          'Perfect for utilities, industries, and agricultural applications where land is scarce or expensive.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What are the benefits of floating solar over ground-mounted?',
+        answer:
+          'Floating solar offers higher efficiency due to cooling effect, saves land, reduces water evaporation, and prevents algae growth.',
+      },
+      {
+        question: 'Is floating solar safe for aquatic life?',
+        answer:
+          'Yes, when properly designed, FSPV systems can coexist with aquatic ecosystems and may even improve water quality.',
+      },
+      {
+        question: 'What types of water bodies are suitable?',
+        answer:
+          'Reservoirs, irrigation canals, treatment ponds, and lakes with minimal wave action are ideal for floating solar installations.',
+      },
+    ],
+  },
+  operations: {
+    title: 'Operation and Maintenance Services',
+    subtitle: 'Ensure Peak Performance of your Solar System',
+    backgroundClass: 'page-header-operation',
+    sections: [
+      {
+        image: '/assets/images/operationAndMaintenance1.png',
+        imagePosition: 'left',
+        content: [
+          'Solar power plants require regular maintenance to ensure optimal performance and longevity.',
+          'Our comprehensive O&M services include preventive maintenance, performance monitoring, troubleshooting, and repairs to keep your solar investment running at peak efficiency.',
+          'We provide 24/7 monitoring, routine inspections, panel cleaning, electrical testing, and emergency support services.',
+          'With our expert O&M team, you can maximize energy generation, extend system lifespan, and ensure the best return on your solar investment.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Why is regular maintenance important for solar plants?',
+        answer:
+          'Regular maintenance ensures optimal performance, prevents system degradation, identifies issues early, and maximizes ROI.',
+      },
+      {
+        question: 'What does your O&M service include?',
+        answer:
+          'Our service includes preventive maintenance, performance monitoring, panel cleaning, inverter servicing, electrical testing, and emergency repairs.',
+      },
+      {
+        question: 'How often should solar panels be cleaned?',
+        answer:
+          'Cleaning frequency depends on location and environmental conditions, typically every 2-4 weeks in dusty areas.',
+      },
+    ],
+  },
+  transmission: {
+    title: 'Transmission Line & Substations',
+    subtitle: 'End-to-End Power Transmission Solutions',
+    backgroundClass: 'page-header-transmission',
+    sections: [
+      {
+        image: '/assets/images/transmission.png',
+        imagePosition: 'left',
+        content: [
+          'Efficient power transmission is critical for delivering solar energy from generation sites to consumption points.',
+          'We provide comprehensive EPC services for transmission lines and substations, ensuring reliable and efficient power delivery.',
+          'Our services include design, engineering, procurement, installation, testing, and commissioning of transmission infrastructure.',
+          'We handle HT/LT lines, substations, switchyards, and associated electrical equipment to create a robust power evacuation system.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What voltage levels do you work with?',
+        answer:
+          'We handle LT (Low Tension), HT (High Tension up to 33kV), and EHV (Extra High Voltage) transmission systems.',
+      },
+      {
+        question: 'Do you provide substation design services?',
+        answer:
+          'Yes, we provide complete substation design, engineering, equipment procurement, installation, and commissioning services.',
+      },
+      {
+        question: 'What is the typical project timeline?',
+        answer:
+          'Timeline varies based on project scope and complexity, typically ranging from 3-12 months for transmission projects.',
+      },
+    ],
+  },
+  product: {
+    title: 'Product',
+    subtitle: 'Product that we are offering for better performance',
+    backgroundClass: 'page-header-residential',
+    isProductPage: true,
+  },
+};

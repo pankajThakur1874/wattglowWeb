@@ -1,0 +1,692 @@
+/**
+ * WattGlow Design System
+ * A unified, premium design language for the entire website
+ *
+ * Philosophy: Clean, Calm, Modern, Premium
+ * Every component follows these exact rules
+ */
+
+/* ==========================================
+   DESIGN TOKENS - Single Source of Truth
+   ========================================== */
+
+:root {
+  /* ===== COLOR SYSTEM ===== */
+
+  /* WattGlow Brand Color Palette (wg- prefix) */
+  --wg-1-deep-blue: #21296b; /* R:33 G:41 B:107 - Deep professional blue */
+  --wg-2-primary-red: #d12626; /* R:209 G:38 B:38 - Primary red accent */
+  --wg-3-primary-blue: #0044b5; /* R:0 G:68 B:181 - Primary blue */
+  --wg-4-bright-red: #fd372c; /* R:253 G:55 B:44 - Bright red accent */
+  --wg-5-orange: #f47925; /* R:244 G:121 B:37 - Warm orange */
+  --wg-6-secondary-green-dark: #156b4c; /* R:21 G:107 B:76 - Dark green */
+  --wg-7-primary-yellow: #ffba00; /* R:255 G:186 B:0 - Primary yellow */
+  --wg-8-green: #009464; /* R:0 G:148 B:100 - Green accent */
+  --wg-9-blue-light: #5082f0; /* R:80 G:130 B:240 - Light blue */
+
+  /* Core UI Colors */
+  --background: #ffffff; /* White background */
+  --foreground: #221e1f; /* Very dark neutral (from palette) */
+
+  /* Primary Brand - Using WattGlow Deep Blue */
+  --color-primary: var(--wg-1-deep-blue);
+  --color-primary-light: var(--wg-9-blue-light);
+  --color-primary-dark: #1a1f4d;
+
+  /* Accent - Using WattGlow Orange & Yellow */
+  --color-accent: var(--wg-5-orange);
+  --color-accent-light: var(--wg-7-primary-yellow);
+  --color-accent-dark: #d16500;
+
+  /* Neutral Shades */
+  --color-white: #ffffff;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #eeeeee;
+  --color-gray-300: #e0e0e0;
+  --color-gray-400: #bdbdbd;
+  --color-gray-500: #9e9e9e;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+
+  /* Semantic Colors - Using WattGlow Palette */
+  --color-success: var(--wg-8-green);
+  --color-info: var(--wg-3-primary-blue);
+  --color-warning: var(--wg-7-primary-yellow);
+  --color-error: var(--wg-2-primary-red);
+
+  /* Background Colors */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-50);
+  --bg-dark: var(--color-primary);
+  --bg-accent: var(--color-accent);
+
+  /* Text Colors */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-500);
+  --text-inverse: var(--color-white);
+
+  /* ===== TYPOGRAPHY SYSTEM ===== */
+  /* Font Families */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Poppins', var(--font-primary);
+
+  /* Font Sizes - Modular Scale (1.25 ratio) */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+
+  /* ===== SPACING SYSTEM ===== */
+  /* Base: 8px scale for perfect alignment */
+  --space-0: 0;
+  --space-1: 0.5rem; /* 8px */
+  --space-2: 1rem; /* 16px */
+  --space-3: 1.5rem; /* 24px */
+  --space-4: 2rem; /* 32px */
+  --space-5: 2.5rem; /* 40px */
+  --space-6: 3rem; /* 48px */
+  --space-8: 4rem; /* 64px */
+  --space-10: 5rem; /* 80px */
+  --space-12: 6rem; /* 96px */
+  --space-16: 8rem; /* 128px */
+
+  /* Section Spacing - Consistent across all sections */
+  --section-padding-y: var(--space-12);
+  --section-padding-x: var(--space-4);
+  --section-gap: var(--space-8);
+
+  /* ===== LAYOUT SYSTEM ===== */
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  /* Max width for all content sections */
+  --max-width: var(--container-xl);
+
+  /* Grid System */
+  --grid-gap: var(--space-6);
+  --grid-gap-sm: var(--space-4);
+
+  /* ===== VISUAL DESIGN ===== */
+  /* Border Radius - Consistent shapes */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-full: 9999px; /* Perfect circles */
+
+  /* Card radius - used everywhere */
+  --card-radius: var(--radius-xl);
+  --button-radius: var(--radius-full);
+
+  /* Shadows - Elevation system */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+  /* Card shadow - reused everywhere */
+  --card-shadow: var(--shadow-md);
+  --card-shadow-hover: var(--shadow-xl);
+
+  /* Accent shadows */
+  --shadow-accent: 0 10px 30px -5px rgba(255, 183, 77, 0.3);
+  --shadow-accent-hover: 0 15px 40px -5px rgba(255, 183, 77, 0.4);
+
+  /* ===== ANIMATION SYSTEM ===== */
+  /* Timing Functions - One easing for entire site */
+  --ease-primary: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Durations - Consistent timing */
+  --duration-instant: 150ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 800ms;
+
+  /* Standard transition - used everywhere */
+  --transition-all: all var(--duration-normal) var(--ease-primary);
+  --transition-transform: transform var(--duration-normal) var(--ease-primary);
+  --transition-opacity: opacity var(--duration-normal) var(--ease-primary);
+  --transition-colors:
+    background-color var(--duration-normal) var(--ease-primary),
+    color var(--duration-normal) var(--ease-primary),
+    border-color var(--duration-normal) var(--ease-primary);
+
+  /* ===== Z-INDEX SYSTEM ===== */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* ==========================================
+   BASE STYLES - Applied Globally
+   ========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Hierarchy - Consistent across all sections */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Apply gradient to content headers (excluding dark backgrounds, footer, stats, and projects sections) */
+h1:not(.text-white):not(footer h1):not(footer *):not(.stats-section h1):not(.stats-section *):not(.projects-section h1):not(.projects-section *),
+h2:not(.text-white):not(footer h2):not(footer *):not(.stats-section h2):not(.stats-section *):not(.projects-section h2):not(.projects-section *),
+h3:not(.text-white):not(footer h3):not(footer *):not(.stats-section h3):not(.stats-section *):not(.projects-section h3):not(.projects-section *),
+h4:not(.text-white):not(footer h4):not(footer *):not(.stats-section h4):not(.stats-section *):not(.projects-section h4):not(.projects-section *) {
+  background: linear-gradient(
+    135deg,
+    var(--wg-1-deep-blue) 0%,
+    var(--wg-3-primary-blue) 25%,
+    var(--wg-7-primary-yellow) 50%,
+    var(--wg-5-orange) 75%,
+    var(--wg-8-green) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Keep footer, stats, and projects section headers with solid color */
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+.stats-section h1, .stats-section h2, .stats-section h3, .stats-section h4, .stats-section h5, .stats-section h6,
+.projects-section h1, .projects-section h2, .projects-section h3, .projects-section h4, .projects-section h5, .projects-section h6 {
+  background: none;
+  -webkit-text-fill-color: inherit;
+  color: inherit;
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  margin: 0 0 var(--space-4) 0;
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* ==========================================
+   LAYOUT COMPONENTS - Reused Everywhere
+   ========================================== */
+
+/* Container - Same width everywhere */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+}
+
+/* Section - Consistent padding top/bottom */
+.section {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+.section-alt {
+  background-color: var(--bg-secondary);
+}
+
+/* Grid System - Reusable grid layouts */
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ==========================================
+   CARD COMPONENT - Used Everywhere
+   ========================================== */
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--card-radius);
+  padding: var(--space-6);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-all);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Card with shine effect */
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  transition: left var(--duration-slow) var(--ease-primary);
+  opacity: 0;
+}
+
+.card:hover::before {
+  left: 100%;
+  opacity: 1;
+}
+
+/* ==========================================
+   BUTTON SYSTEM - Two Styles Only
+   ========================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-display);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: var(--transition-all);
+  white-space: nowrap;
+}
+
+/* Primary Button - Main CTAs */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-accent);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-accent-hover);
+  color: var(--text-inverse);
+}
+
+/* Secondary Button - Alternative actions */
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: var(--text-inverse);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+/* ==========================================
+   ICON SYSTEM - Consistent Styling
+   ========================================== */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.icon-sm {
+  font-size: var(--font-size-lg);
+}
+
+.icon-md {
+  font-size: var(--font-size-2xl);
+}
+
+.icon-lg {
+  font-size: var(--font-size-4xl);
+}
+
+.icon-xl {
+  font-size: var(--font-size-5xl);
+}
+
+/* ==========================================
+   BADGE COMPONENT
+   ========================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+}
+
+.badge-accent {
+  background: rgba(255, 183, 77, 0.1);
+  color: var(--color-accent-dark);
+}
+
+/* ==========================================
+   SCROLL ANIMATIONS - One Style
+   ========================================== */
+
+/* Base animation - fade + slight translate up */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  animation: fadeSlideUp var(--duration-slower) var(--ease-primary) forwards;
+  opacity: 0;
+}
+
+/* Staggered delays - for sequential items */
+.delay-1 {
+  animation-delay: 100ms;
+}
+.delay-2 {
+  animation-delay: 200ms;
+}
+.delay-3 {
+  animation-delay: 300ms;
+}
+.delay-4 {
+  animation-delay: 400ms;
+}
+.delay-5 {
+  animation-delay: 500ms;
+}
+.delay-6 {
+  animation-delay: 600ms;
+}
+
+/* ==========================================
+   HOVER EFFECTS - Consistent Everywhere
+   ========================================== */
+
+.hover-lift {
+  transition: var(--transition-transform);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+.hover-scale {
+  transition: var(--transition-transform);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: var(--transition-all);
+}
+
+.hover-glow:hover {
+  filter: drop-shadow(0 0 20px var(--color-accent));
+}
+
+/* ==========================================
+   GRADIENT UTILITIES
+   ========================================== */
+
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-dark) 0%,
+    var(--color-accent) 50%,
+    var(--color-info) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: var(--space-8);
+    --grid-gap: var(--space-4);
+    --font-size-5xl: 2.25rem;
+    --font-size-4xl: 1.875rem;
+    --font-size-3xl: 1.5rem;
+  }
+
+  h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.text-white {
+  color: var(--text-inverse);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+/* Spacing Utilities */
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-2 {
+  margin-bottom: var(--space-2);
+}
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+.mb-6 {
+  margin-bottom: var(--space-6);
+}
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+.mt-2 {
+  margin-top: var(--space-2);
+}
+.mt-4 {
+  margin-top: var(--space-4);
+}
+.mt-6 {
+  margin-top: var(--space-6);
+}
+.mt-8 {
+  margin-top: var(--space-8);
+}
