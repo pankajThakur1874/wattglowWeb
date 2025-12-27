@@ -4,24 +4,22 @@ import { ScrollAnimation } from '../../components/common/Animations/ScrollAnimat
 import { AnimatedCounter } from '../../components/common/Animations/AnimatedCounter';
 import { Button } from '../../components/common/UI/Button';
 import { WhatSetsUsApart } from '../../components/common/Sections/WhatSetsUsApart';
+import { FAQSection } from '../../components/common/Sections/FAQSection';
 import { SITE_URL, getAssetPath } from '../../utils/constants';
 import { stats } from '../../data/stats';
 
 const faqs = [
   {
-    id: 1,
     question: 'How much space does a ground-mounted solar plant require?',
     answer:
       'The space requirement for a ground-mounted solar plant varies depending on the system size and other factors.',
   },
   {
-    id: 2,
     question: 'How much electricity does a ground-mounted solar plant generate?',
     answer:
       'The amount of electricity generated depends on factors such as location, plant size, and sunlight exposure.',
   },
   {
-    id: 3,
     question: 'Is there any subsidy available for ground-mounted solar systems in India?',
     answer:
       'Yes, subsidies are available for ground-mounted solar systems based on various state and central government policies in India.',
@@ -212,39 +210,7 @@ function GroundMountedPage() {
       <br />
 
       {/* FAQ Section */}
-      <div className="container my-5">
-        <ScrollAnimation animation="fade-slide-up">
-          <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-        </ScrollAnimation>
-        <div className="accordion" id="faqAccordion">
-          {faqs.map((faq, index) => (
-            <ScrollAnimation key={faq.id} animation="fade-slide-up" delay={index}>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id={`faq${faq.id}`}>
-                  <button
-                    className={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target={`#collapse${faq.id}`}
-                    aria-expanded={index === 0 ? 'true' : 'false'}
-                    aria-controls={`collapse${faq.id}`}
-                  >
-                    {faq.question}
-                  </button>
-                </h2>
-                <div
-                  id={`collapse${faq.id}`}
-                  className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
-                  aria-labelledby={`faq${faq.id}`}
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div className="accordion-body">{faq.answer}</div>
-                </div>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-      </div>
+      <FAQSection faqs={faqs} accordionId="groundMountedFaqAccordion" />
     </>
   );
 }

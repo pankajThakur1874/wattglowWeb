@@ -10,14 +10,12 @@ export function Navbar() {
   const dropdownRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
   const collapseRef = useRef<HTMLDivElement | null>(null);
 
-  // Function to close the hamburger menu
   const closeMobileMenu = () => {
     if (collapseRef.current) {
       const bootstrap = (window as any).bootstrap;
       if (bootstrap) {
         const collapseInstance = bootstrap.Collapse.getInstance(collapseRef.current);
         if (collapseInstance) {
-          // Check if the collapse is currently shown by checking the element's class
           if (collapseRef.current.classList.contains('show')) {
             collapseInstance.hide();
           }
@@ -34,7 +32,6 @@ export function Navbar() {
     return location.pathname.startsWith(path);
   };
 
-  // Initialize Bootstrap dropdowns after component mounts
   useEffect(() => {
     const positionDropdown = (toggle: HTMLElement, menu: HTMLElement) => {
       const rect = toggle.getBoundingClientRect();
@@ -144,12 +141,6 @@ export function Navbar() {
             ref={(el) => {
               if (el) {
                 dropdownRefs.current[item.label] = el;
-                // #region agent log
-                setTimeout(() => {
-                  const menu = el.nextElementSibling as HTMLElement;
-                  fetch('http://127.0.0.1:7243/ingest/689acc4f-6fb5-4fe6-a0b0-3c76fbb96c99',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Navbar.tsx:98',message:'Dropdown ref set',data:{label:item.label,id:dropdownId,hasMenu:!!menu,menuClasses:menu?.className},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-                }, 100);
-                // #endregion
               }
             }}
           >

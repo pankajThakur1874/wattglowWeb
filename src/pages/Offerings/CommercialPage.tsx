@@ -4,6 +4,7 @@ import { ScrollAnimation } from '../../components/common/Animations/ScrollAnimat
 import { AnimatedCounter } from '../../components/common/Animations/AnimatedCounter';
 import { Button } from '../../components/common/UI/Button';
 import { WhatSetsUsApart } from '../../components/common/Sections/WhatSetsUsApart';
+import { FAQSection } from '../../components/common/Sections/FAQSection';
 import { SITE_URL } from '../../utils/constants';
 import { stats } from '../../data/stats';
 import { offeringContent } from '../../data/offerings';
@@ -83,39 +84,7 @@ function CommercialPage() {
       <br />
 
       {/* FAQ Section */}
-      <div className="container my-5">
-        <ScrollAnimation animation="fade-slide-up">
-          <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-        </ScrollAnimation>
-        <div className="accordion" id="faqAccordion">
-          {commercial.faqs.map((faq, index) => (
-            <ScrollAnimation key={index} animation="fade-slide-up" delay={index}>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id={`faq${index + 1}`}>
-                  <button
-                    className={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target={`#collapse${index + 1}`}
-                    aria-expanded={index === 0 ? 'true' : 'false'}
-                    aria-controls={`collapse${index + 1}`}
-                  >
-                    {faq.question}
-                  </button>
-                </h2>
-                <div
-                  id={`collapse${index + 1}`}
-                  className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
-                  aria-labelledby={`faq${index + 1}`}
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div className="accordion-body">{faq.answer}</div>
-                </div>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-      </div>
+      <FAQSection faqs={commercial.faqs} accordionId="commercialFaqAccordion" />
     </>
   );
 }
