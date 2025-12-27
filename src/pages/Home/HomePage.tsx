@@ -125,7 +125,7 @@ function HomePage() {
                           strokeWidth="8"
                           strokeLinecap="round"
                           strokeDasharray="339.292"
-                          strokeDashoffset="339.292"
+                          strokeDashoffset="0"
                           transform="rotate(-90 60 60)"
                         />
                         <defs>
@@ -176,7 +176,7 @@ function HomePage() {
                           strokeWidth="8"
                           strokeLinecap="round"
                           strokeDasharray="339.292"
-                          strokeDashoffset="339.292"
+                          strokeDashoffset="0"
                           transform="rotate(-90 60 60)"
                         />
                         <defs>
@@ -231,9 +231,9 @@ function HomePage() {
         <div className="container">
           <ScrollAnimation animation="fade-slide-up">
             <div className="text-center mx-auto mb-5" style={{ maxWidth: '600px' }}>
-              <h1 className="mb-4">
+              <h3 className="mb-4">
                 Empowering Sustainable Future through Innovative Renewable Solutions
-              </h1>
+              </h3>
             </div>
           </ScrollAnimation>
           <div className="row g-4">
