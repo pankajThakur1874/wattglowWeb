@@ -2785,9 +2785,35 @@ a:focus {
 
 /* Benefits image sizing */
 .benefits-image {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
+}
+
+/* Column with image should have minimum height */
+.column {
+  min-height: 300px;
+}
+
+@media (min-width: 992px) {
+  .column:has(.benefits-image) {
+    display: flex;
+    align-items: stretch;
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 991px) {
+  .benefits-image {
+    max-height: 400px;
+    height: auto;
+  }
+
+  .column {
+    min-height: auto;
+  }
 }
 
 /* CTA section spacing */
