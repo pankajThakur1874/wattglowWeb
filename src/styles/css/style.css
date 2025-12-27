@@ -1764,7 +1764,9 @@ footer div.top-2.bg-footer-color {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
-  width: 640px;
+  max-width: 640px;
+  width: 100%;
+  padding: 0 1rem;
 }
 .content_sustainability {
   padding: 20px 30px; /* Adjust padding as needed */
@@ -2710,4 +2712,446 @@ img {
 .btn:focus,
 a:focus {
   box-shadow: 0 0 0 3px rgba(255, 186, 0, 0.4);
+}
+
+/* ==================================================================
+   CAROUSEL MOBILE OPTIMIZATION
+   ================================================================== */
+
+/* Carousel dots styling for mobile */
+@media (max-width: 768px) {
+  .carousel .slick-dots,
+  .header-carousel .slick-dots,
+  .testimonial-carousel .slick-dots,
+  .logo-carousel .slick-dots {
+    bottom: 20px;
+  }
+
+  .carousel .slick-dots li button,
+  .header-carousel .slick-dots li button,
+  .testimonial-carousel .slick-dots li button,
+  .logo-carousel .slick-dots li button {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Larger arrow buttons for touch */
+  .slick-prev,
+  .slick-next {
+    width: 44px;
+    height: 44px;
+    z-index: 10;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 32px;
+  }
+}
+
+/* Hero carousel height responsive */
+@media (max-width: 768px) {
+  .header-carousel .owl-carousel-item {
+    min-height: 400px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-carousel .owl-carousel-item {
+    min-height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-carousel .owl-carousel-item {
+    min-height: 250px !important;
+  }
+
+  .carousel .slick-dots,
+  .header-carousel .slick-dots {
+    bottom: 10px;
+  }
+}
+
+/* ==================================================================
+   HOMEPAGE MOBILE OPTIMIZATION
+   ================================================================== */
+
+/* Offerings section spacing */
+.offerings-section-spacing {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* Benefits image sizing */
+.benefits-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CTA section spacing */
+.cta-section-spacing {
+  padding: 5rem 0;
+  margin: 4rem 0;
+}
+
+/* Circular progress SVG responsiveness */
+.circular-progress-wrapper {
+  width: 120px;
+  height: 120px;
+}
+
+.circular-progress-svg {
+  width: 120px;
+  height: 120px;
+}
+
+@media (max-width: 768px) {
+  .offerings-section-spacing {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-section-spacing {
+    padding: 3rem 0;
+    margin: 2rem 0;
+  }
+
+  .circular-progress-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circular-progress-svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .offerings-section-spacing {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-section-spacing {
+    padding: 2rem 0;
+    margin: 1.5rem 0;
+  }
+
+  .circular-progress-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .circular-progress-svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section-spacing {
+    padding: 1.5rem 0;
+    margin: 1rem 0;
+  }
+}
+
+/* ==================================================================
+   CONTACT PAGE MOBILE OPTIMIZATION
+   ================================================================== */
+
+/* Map container responsive height */
+.map-container {
+  height: 850px;
+}
+
+.contact-message-textarea {
+  height: 100px;
+  min-height: 100px;
+}
+
+@media (max-width: 992px) {
+  .map-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 400px;
+  }
+
+  /* Mobile-friendly form inputs */
+  .form-control,
+  .form-select {
+    font-size: 16px !important; /* Prevent auto-zoom on iOS */
+    padding: 12px;
+  }
+
+  .contact-message-textarea {
+    min-height: 120px;
+  }
+
+  /* Ensure proper touch targets for form inputs */
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-container {
+    height: 300px;
+  }
+
+  .contact-message-textarea {
+    min-height: 100px;
+  }
+}
+
+/* ==================================================================
+   FOOTER MOBILE OPTIMIZATION
+   ================================================================== */
+
+@media (max-width: 768px) {
+  .footer .section {
+    width: 100% !important;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .footer-stats {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .social-icons-enhanced {
+    justify-content: center;
+  }
+
+  .social-icons-enhanced a,
+  .footer .social-icons img {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .footer-cta-section {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .btn-footer-cta,
+  .footer-cta-section .btn,
+  .footer-cta-section a {
+    width: 100% !important;
+    text-align: center;
+    min-height: 44px;
+  }
+
+  .google-review-badge {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-icon {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer .section {
+    padding: 1rem;
+  }
+
+  .footer-stat-item {
+    padding: 0.75rem;
+  }
+}
+
+/* ==================================================================
+   NAVBAR MOBILE OPTIMIZATION
+   ================================================================== */
+
+@media (max-width: 991px) {
+  /* Touch-friendly toggle button */
+  .navbar-toggler {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+    border: 2px solid rgba(33, 41, 107, 0.2);
+    border-radius: 0.375rem;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(33, 41, 107, 0.25);
+    outline: none;
+  }
+
+  /* Smooth transition for mobile menu */
+  .navbar-collapse {
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.98);
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Better touch targets for nav links */
+  .navbar-nav .nav-link {
+    padding: 1rem !important;
+    font-size: 1.1rem;
+    margin: 0.25rem 0;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:active {
+    background-color: rgba(33, 41, 107, 0.05);
+  }
+
+  /* Dropdown menu improvements */
+  .navbar-nav .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    padding-left: 1rem;
+    background: transparent;
+  }
+
+  .navbar-nav .dropdown-item {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+  }
+
+  .navbar-nav .dropdown-item:hover {
+    background-color: rgba(33, 41, 107, 0.08);
+  }
+}
+
+/* ==================================================================
+   MOBILE RESPONSIVE ENHANCEMENTS - 480px Breakpoint
+   ================================================================== */
+
+/* Ultra-small mobile devices (phones in portrait) */
+@media (max-width: 480px) {
+  /* Typography adjustments */
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  /* Container padding reduction */
+  .container-fluid {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Button sizing for touch */
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  /* Card spacing */
+  .card-premium {
+    padding: 1rem !important;
+    margin-bottom: 1rem;
+  }
+
+  /* Section spacing */
+  section {
+    padding: 2rem 0;
+  }
+
+  /* Form container */
+  .form-container {
+    padding: 0 0.5rem;
+    gap: 15px;
+  }
+}
+
+/* ==================================================================
+   RESPONSIVE UTILITY CLASSES
+   ================================================================== */
+
+/* Mobile-specific padding utilities */
+@media (max-width: 768px) {
+  .p-mobile {
+    padding: 1rem !important;
+  }
+
+  .px-mobile {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .py-mobile {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .mt-mobile {
+    margin-top: 1rem !important;
+  }
+
+  .mb-mobile {
+    margin-bottom: 1rem !important;
+  }
+
+  .mx-mobile {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  .my-mobile {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Hide on mobile */
+  .hide-mobile {
+    display: none !important;
+  }
+
+  /* Show only on mobile */
+  .show-mobile {
+    display: block !important;
+  }
+
+  /* Text alignment */
+  .text-center-mobile {
+    text-align: center !important;
+  }
+
+  /* Full width on mobile */
+  .w-100-mobile {
+    width: 100% !important;
+  }
 }

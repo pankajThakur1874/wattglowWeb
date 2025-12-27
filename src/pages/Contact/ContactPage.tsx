@@ -61,7 +61,7 @@ function ContactPage() {
                 <form onSubmit={handleSubmit}>
                   <div className="row g-3">
                     {/* Name Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <input
                           type="text"
@@ -69,13 +69,14 @@ function ContactPage() {
                           id="name"
                           name="name"
                           placeholder="Your Name"
+                          autoComplete="name"
                           required
                         />
                         <label htmlFor="name">Your Name</label>
                       </div>
                     </div>
                     {/* Email Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <input
                           type="email"
@@ -83,13 +84,15 @@ function ContactPage() {
                           id="email"
                           name="email"
                           placeholder="Your Email"
+                          inputMode="email"
+                          autoComplete="email"
                           required
                         />
                         <label htmlFor="email">Your Email</label>
                       </div>
                     </div>
                     {/* Agenda Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <input
                           type="text"
@@ -103,7 +106,7 @@ function ContactPage() {
                       </div>
                     </div>
                     {/* Company Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <input
                           type="text"
@@ -111,13 +114,14 @@ function ContactPage() {
                           id="company"
                           name="company"
                           placeholder="Your Company"
+                          autoComplete="organization"
                           required
                         />
                         <label htmlFor="company">Your Company</label>
                       </div>
                     </div>
                     {/* Address Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <input
                           type="text"
@@ -125,22 +129,23 @@ function ContactPage() {
                           id="address"
                           name="address"
                           placeholder="Your Address"
+                          autoComplete="street-address"
                           required
                         />
                         <label htmlFor="address">Address</label>
                       </div>
                     </div>
                     {/* Country Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
-                        <select className="form-control" id="country" name="country" required>
+                        <select className="form-control" id="country" name="country" autoComplete="country-name" required>
                           <option value="India">India</option>
                         </select>
                         <label htmlFor="country">Country</label>
                       </div>
                     </div>
                     {/* State Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <select className="form-control" id="state" name="state" required>
                           <option value="" disabled>
@@ -155,7 +160,7 @@ function ContactPage() {
                       </div>
                     </div>
                     {/* Pincode Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <input
                           type="text"
@@ -163,15 +168,17 @@ function ContactPage() {
                           id="pincode"
                           name="pincode"
                           placeholder="Your PinCode"
-                          required
+                          inputMode="numeric"
                           pattern="^\d{6}$"
+                          autoComplete="postal-code"
                           title="Please enter a valid 6-digit pin code"
+                          required
                         />
                         <label htmlFor="pincode">PinCode</label>
                       </div>
                     </div>
                     {/* Phone Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <input
                           type="tel"
@@ -179,15 +186,17 @@ function ContactPage() {
                           id="phone"
                           name="phone"
                           placeholder="Your Phone"
-                          required
+                          inputMode="tel"
                           pattern="^\d{10}$"
+                          autoComplete="tel"
                           title="Please enter a valid 10-digit phone number"
+                          required
                         />
                         <label htmlFor="phone">Phone</label>
                       </div>
                     </div>
                     {/* Type Field */}
-                    <div className="col-md-6">
+                    <div className="col-12 col-md-6">
                       <div className="form-floating">
                         <select className="form-control" id="type" name="type" required>
                           <option value="" disabled>
@@ -209,11 +218,10 @@ function ContactPage() {
                     <div className="col-12">
                       <div className="form-floating">
                         <textarea
-                          className="form-control"
+                          className="form-control contact-message-textarea"
                           placeholder="Leave a message here"
                           id="message"
                           name="message"
-                          style={{ height: '100px' }}
                           required
                         ></textarea>
                         <label htmlFor="message">Message</label>
@@ -234,7 +242,7 @@ function ContactPage() {
               </div>
             </div>
             {/* Google Map Section */}
-            <div className="col-lg-6 pe-lg-0" style={{ height: '850px' }}>
+            <div className="col-lg-6 pe-lg-0 map-container">
               <div className="position-relative h-100">
                 <iframe
                   className="position-absolute imageStyle"

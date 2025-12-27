@@ -99,41 +99,17 @@ function AboutPage() {
         </ScrollAnimation>
         <br />
 
-        {/* Cards - First Row */}
-        <div className="career-section body-carrer">
-          {whatSetsUsApart.slice(0, 3).map((item, index) => (
-            <ScrollAnimation key={item.id} animation="fade-scale" delay={index}>
-              <div className="career-card" style={{height: '100%'}}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-        <br />
-
-        {/* Cards - Second Row */}
-        <div className="career-section body-carrer">
-          {whatSetsUsApart.slice(3, 6).map((item, index) => (
-            <ScrollAnimation key={item.id} animation="fade-scale" delay={index}>
-              <div className="career-card" style={{height: '100%'}}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-        <br />
-
-        {/* Cards - Third Row */}
-        <div className="career-section body-carrer">
-          {whatSetsUsApart.slice(6, 7).map((item) => (
-            <ScrollAnimation key={item.id} animation="fade-scale">
-              <div className="career-card">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </ScrollAnimation>
+        {/* Responsive Card Grid */}
+        <div className="row g-4">
+          {whatSetsUsApart.map((item, index) => (
+            <div key={item.id} className="col-12 col-md-6 col-lg-4">
+              <ScrollAnimation animation="fade-scale" delay={index % 3}>
+                <div className="career-card h-100">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </ScrollAnimation>
+            </div>
           ))}
         </div>
       </div>

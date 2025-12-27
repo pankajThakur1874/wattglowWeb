@@ -27,9 +27,13 @@ export const HeroCarousel = memo(function HeroCarousel({ slides }: HeroCarouselP
     autoplay: true,
     autoplaySpeed: 5000,
     fade: true,
-    pauseOnHover: false,
+    pauseOnHover: true,
     arrows: false,
     cssEase: 'ease-in-out',
+    swipe: true,
+    swipeToSlide: true,
+    touchThreshold: 10,
+    accessibility: true,
   };
 
   return (

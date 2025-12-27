@@ -20,9 +20,13 @@ export const LogoCarousel = memo(function LogoCarousel({
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     arrows: false,
+    swipe: true,
+    swipeToSlide: true,
+    touchThreshold: 10,
+    accessibility: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -40,6 +44,7 @@ export const LogoCarousel = memo(function LogoCarousel({
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
+          dots: true,
         },
       },
     ],

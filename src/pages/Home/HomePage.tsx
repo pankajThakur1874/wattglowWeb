@@ -268,7 +268,7 @@ function HomePage() {
       </div>
 
       {/* Explore Our Offerings Section */}
-      <div className="container-xxl py-5" style={{ marginTop: '4rem', marginBottom: '4rem' }}>
+      <div className="container-xxl py-5 offerings-section-spacing">
         <ScrollAnimation animation="fade-slide-up">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: '800px' }}>
             <h1 className="display-4 mb-4 text-gradient">Explore Our Offerings</h1>
@@ -348,7 +348,7 @@ function HomePage() {
               </div>
             </div>
             <div className="column">
-              <img src={getAssetPath('/assets/images/solarP.png')} height="100%" width="100%" alt="Solar Panels" />
+              <img src={getAssetPath('/assets/images/solarP.png')} className="benefits-image" alt="Solar Panels" />
             </div>
             <div className="column">
               <div className="benefits-section center-text">
@@ -481,12 +481,10 @@ function HomePage() {
 
       {/* CTA Section */}
       <section
-        className="cta-section fade-slide-up"
+        className="cta-section cta-section-spacing fade-slide-up"
         data-animate
         style={{
           background: 'linear-gradient(135deg, #113b5b 0%, #1a4d6f 50%, #2a5f82 100%)',
-          padding: '5rem 0',
-          margin: '4rem 0',
           position: 'relative',
           overflow: 'hidden',
         }}

@@ -25,6 +25,10 @@ export const TestimonialCarousel = memo(function TestimonialCarousel({
     pauseOnHover: true,
     centerMode: false,
     arrows: true,
+    swipe: true,
+    swipeToSlide: true,
+    touchThreshold: 10,
+    accessibility: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -37,6 +41,15 @@ export const TestimonialCarousel = memo(function TestimonialCarousel({
         settings: {
           slidesToShow: 1,
           centerMode: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          arrows: false,
+          dots: true,
         },
       },
     ],
