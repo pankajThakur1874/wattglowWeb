@@ -2258,6 +2258,84 @@ footer div.top-2.bg-footer-color {
   font-size: 1em;
   color: #e0f2fe;
 }
+
+/* Mobile responsive styles for stats section */
+@media (max-width: 992px) {
+  .stats-section {
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    flex: 1 1 45%;
+    min-width: 200px;
+  }
+
+  .stat-item i {
+    font-size: 2.5em;
+  }
+
+  .stat-item h1 {
+    font-size: 2rem;
+  }
+
+  .stat-item h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .stat-item {
+    flex: 1 1 100%;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-item i {
+    font-size: 2.5em;
+  }
+
+  .stat-item h1 {
+    font-size: 2.5rem;
+  }
+
+  .stat-item h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-section {
+    padding: 1.5rem 0.75rem;
+    gap: 1.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .stat-item {
+    padding: 1rem 0.5rem;
+  }
+
+  .stat-item i {
+    font-size: 2em;
+    margin-bottom: 0.75rem;
+  }
+
+  .stat-item h1 {
+    font-size: 2rem;
+  }
+
+  .stat-item h3 {
+    font-size: 0.95rem;
+  }
+}
 .whatsapp-icon {
   position: fixed;
   bottom: 20px;
