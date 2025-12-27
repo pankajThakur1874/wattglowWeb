@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 interface UseCounterOptions {
   start?: number;
@@ -14,33 +14,42 @@ export function useCounter({
   isVisible,
 }: UseCounterOptions): number {
   const [count, setCount] = useState(start);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const hasAnimatedRef = useRef(false);
 
   useEffect(() => {
-    if (!isVisible || hasAnimated) return;
+    if (!isVisible || hasAnimatedRef.current) return;
 
-    setHasAnimated(true);
-    const startTime = Date.now();
-    const endTime = startTime + duration;
+    // Small delay to ensure component is fully mounted
+    const startDelay = setTimeout(() => {
+      hasAnimatedRef.current = true;
+      const startTime = Date.now();
+      const endTime = startTime + duration;
 
-    const timer = setInterval(() => {
-      const now = Date.now();
-      const progress = Math.min((now - startTime) / duration, 1);
+      const timer = setInterval(() => {
+        const now = Date.now();
+        const progress = Math.min((now - startTime) / duration, 1);
 
-      // Easing function (easeOutQuad)
-      const easeProgress = progress * (2 - progress);
-      const current = Math.floor(start + (end - start) * easeProgress);
+        // Easing function (easeOutQuad)
+        const easeProgress = progress * (2 - progress);
+        const current = Math.floor(start + (end - start) * easeProgress);
 
-      setCount(current);
+        setCount(current);
 
-      if (now >= endTime) {
-        setCount(end);
+        if (now >= endTime) {
+          setCount(end);
+          clearInterval(timer);
+        }
+      }, 16); // ~60fps
+
+      return () => {
         clearInterval(timer);
-      }
-    }, 16); // ~60fps
+      };
+    }, 200);
 
-    return () => clearInterval(timer);
-  }, [start, end, duration, isVisible, hasAnimated]);
+    return () => {
+      clearTimeout(startDelay);
+    };
+  }, [start, end, duration, isVisible]);
 
   return count;
 }

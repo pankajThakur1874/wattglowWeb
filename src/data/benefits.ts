@@ -24,7 +24,7 @@ export const benefits = [
     icon: 'fa fa-calculator',
     title: 'Return on investment',
     description:
-      "Solar panels aren't just an expense; they're a smart investment. With significant savings, the system typically pays for itself in just 4-5 years.",
+      "Solar panels are a smart investment, delivering savings and paying for themselves in 4–5 years.",
   },
   {
     id: '5',

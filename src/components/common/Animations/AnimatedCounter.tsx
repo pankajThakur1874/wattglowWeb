@@ -1,5 +1,4 @@
-import { memo } from 'react';
-import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
+import { memo, useRef } from 'react';
 import { useCounter } from '../../../hooks/useCounter';
 
 interface AnimatedCounterProps {
@@ -8,6 +7,7 @@ interface AnimatedCounterProps {
   duration?: number;
   suffix?: string;
   className?: string;
+  isVisible?: boolean;
 }
 
 export const AnimatedCounter = memo(function AnimatedCounter({
@@ -16,16 +16,12 @@ export const AnimatedCounter = memo(function AnimatedCounter({
   duration = 2000,
   suffix = '',
   className = '',
+  isVisible = true,
 }: AnimatedCounterProps) {
-  const [ref, isVisible] = useIntersectionObserver({
-    threshold: 0.5,
-    freezeOnceVisible: true,
-  });
-
   const count = useCounter({ start, end, duration, isVisible });
 
   return (
-    <span ref={ref} className={className}>
+    <span className={className}>
       {count}
       {suffix}
     </span>

@@ -396,27 +396,27 @@ function HomePage() {
 
       {/* Stats Section */}
       <br />
-      <br />
-      <br />
       <ScrollAnimation animation="fade-slide-up">
         <div className="stats-section">
           {stats.map((stat, index) => (
-            <ScrollAnimation
+            <div
               key={stat.id}
-              animation="fade-scale"
-              delay={index}
               className="stat-item"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <i className={`${stat.icon} fa-3x`}></i>
-              <h1 className="mb-0">
+              <i className={`${stat.icon} fa-3x text-white`}></i>
+              <h1 className="mb-0 text-white">
                 <AnimatedCounter
                   end={typeof stat.value === 'number' ? stat.value : 0}
                   suffix={stat.suffix}
+                  className="text-white"
+                  isVisible={true}
+                  duration={2500}
                 />
               </h1>
               <br />
-              <h3>{stat.label}</h3>
-            </ScrollAnimation>
+              <h3 className="text-white">{stat.label}</h3>
+            </div>
           ))}
         </div>
       </ScrollAnimation>

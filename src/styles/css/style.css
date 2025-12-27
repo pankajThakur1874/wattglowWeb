@@ -188,7 +188,7 @@ tr:nth-child(even) {
   display: flex;
   justify-content: center;
   padding: 2.5rem 0;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .benefits-wrapper {
@@ -310,6 +310,15 @@ tr:nth-child(even) {
 .column {
   float: left;
   width: 33.33%;
+  background: transparent;
+}
+
+/* Specific styling for middle column with image */
+.column:nth-child(2) {
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Clear floats after the columns */
@@ -326,20 +335,15 @@ tr:nth-child(even) {
 
 /* 3D Shadow Effect for solarP.png images */
 img[src*='solarP.png'] {
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.3),
-    0 5px 15px rgba(0, 0, 0, 0.2);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  border-radius: 0.5rem;
+  background: transparent !important;
+  mix-blend-mode: multiply;
 }
 
 img[src*='solarP.png']:hover {
   transform: scale(1.02);
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.5),
-    0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .fw-medium {
@@ -2212,6 +2216,15 @@ footer div.top-2.bg-footer-color {
   box-shadow: 0 12px 48px rgba(17, 59, 91, 0.3);
 }
 
+.stats-section h1,
+.stats-section h2,
+.stats-section h3,
+.stats-section h4,
+.stats-section i,
+.stats-section span {
+  color: #ffffff !important;
+}
+
 .stat-item {
   display: flex;
   flex-direction: column;
@@ -2226,7 +2239,7 @@ footer div.top-2.bg-footer-color {
 
 .stat-item i {
   font-size: 3em;
-  color: #fef9c3;
+  color: #fef9c3 !important;
   margin-bottom: 1rem;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
