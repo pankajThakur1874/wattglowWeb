@@ -241,7 +241,6 @@ h4:not(.text-white):not(footer h4):not(footer *):not(.stats-section h4):not(.sta
   );
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* Keep footer, stats, and projects section headers with solid color */

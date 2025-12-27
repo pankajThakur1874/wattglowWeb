@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { ScrollAnimation } from '../Animations/ScrollAnimation';
 
 export interface FAQItem {
@@ -19,6 +19,12 @@ export const FAQSection = memo(function FAQSection({
   accordionId = 'faqAccordion',
   className = '',
 }: FAQSectionProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleItem = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <div className={`container my-5 ${className}`}>
       <style>{`
@@ -27,7 +33,7 @@ export const FAQSection = memo(function FAQSection({
           background-color: #ffffff !important;
           font-weight: 600 !important;
         }
-        #${accordionId} .accordion-button:not(.collapsed) {
+        #${accordionId} .accordion-button[aria-expanded="true"] {
           color: #21296b !important;
           background-color: #f6f7f8 !important;
           box-shadow: none !important;
@@ -42,39 +48,49 @@ export const FAQSection = memo(function FAQSection({
           color: #1a2a36 !important;
           background-color: #f6f7f8 !important;
         }
+        #${accordionId} .accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
+        }
+        #${accordionId} .accordion-content.open {
+          max-height: 1000px;
+          transition: max-height 0.3s ease-in;
+        }
       `}</style>
       <ScrollAnimation animation="fade-slide-up">
         <h2 className="text-center mb-4">{title}</h2>
       </ScrollAnimation>
       <div className="accordion" id={accordionId}>
-        {faqs.map((faq, index) => (
-          <ScrollAnimation key={index} animation="fade-slide-up" delay={index}>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id={`faq${index + 1}`}>
-                <button
-                  className={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target={`#collapse${index + 1}`}
-                  aria-expanded={index === 0 ? 'true' : 'false'}
-                  aria-controls={`collapse${index + 1}`}
+        {faqs.map((faq, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <ScrollAnimation key={index} animation="fade-slide-up" delay={index}>
+              <div className="accordion-item">
+                <h2 className="accordion-header" id={`faq${index + 1}`}>
+                  <button
+                    className="accordion-button"
+                    type="button"
+                    onClick={() => toggleItem(index)}
+                    aria-expanded={isOpen}
+                    aria-controls={`collapse${index + 1}`}
+                  >
+                    {faq.question}
+                  </button>
+                </h2>
+                <div
+                  id={`collapse${index + 1}`}
+                  className={`accordion-content ${isOpen ? 'open' : ''}`}
+                  aria-labelledby={`faq${index + 1}`}
                 >
-                  {faq.question}
-                </button>
-              </h2>
-              <div
-                id={`collapse${index + 1}`}
-                className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
-                aria-labelledby={`faq${index + 1}`}
-                data-bs-parent={`#${accordionId}`}
-              >
-                <div className="accordion-body">
-                  {faq.answer}
+                  <div className="accordion-body" style={{visibility: 'visible'}}>
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
-            </div>
-          </ScrollAnimation>
-        ))}
+            </ScrollAnimation>
+          );
+        })}
       </div>
     </div>
   );
