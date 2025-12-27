@@ -8,6 +8,24 @@ export function Navbar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
+  const collapseRef = useRef<HTMLDivElement | null>(null);
+
+  // Function to close the hamburger menu
+  const closeMobileMenu = () => {
+    if (collapseRef.current) {
+      const bootstrap = (window as any).bootstrap;
+      if (bootstrap) {
+        const collapseInstance = bootstrap.Collapse.getInstance(collapseRef.current);
+        if (collapseInstance) {
+          // Check if the collapse is currently shown by checking the element's class
+          if (collapseRef.current.classList.contains('show')) {
+            collapseInstance.hide();
+          }
+        }
+      }
+      setIsOpen(false);
+    }
+  };
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -140,7 +158,12 @@ export function Navbar() {
           <ul className="dropdown-menu bg-Div-light" aria-labelledby={dropdownId}>
             {item.dropdown.map((subItem) => (
               <li key={subItem.path}>
-                <Link className="dropdown-item text-gray-800 hover:text-blue-600" to={subItem.path} style={{ color: '#1a2a36' }}>
+                <Link 
+                  className="dropdown-item text-gray-800 hover:text-blue-600" 
+                  to={subItem.path} 
+                  style={{ color: '#1a2a36' }}
+                  onClick={closeMobileMenu}
+                >
                   {subItem.label}
                 </Link>
               </li>
@@ -152,16 +175,43 @@ export function Navbar() {
 
     return (
       <li key={item.label} className="nav-item">
-        <Link className={`nav-link text-gray-800 hover:text-blue-600 ${isActive(item.path) ? 'active text-blue-600' : ''}`} to={item.path} style={{ color: '#1a2a36' }}>
+        <Link 
+          className={`nav-link text-gray-800 hover:text-blue-600 ${isActive(item.path) ? 'active text-blue-600' : ''}`} 
+          to={item.path} 
+          style={{ color: '#1a2a36' }}
+          onClick={closeMobileMenu}
+        >
           {item.label}
         </Link>
       </li>
     );
   };
 
+  // Sync isOpen state with Bootstrap collapse events
+  useEffect(() => {
+    if (collapseRef.current) {
+      const handleShow = () => setIsOpen(true);
+      const handleHide = () => setIsOpen(false);
+
+      collapseRef.current.addEventListener('shown.bs.collapse', handleShow);
+      collapseRef.current.addEventListener('hidden.bs.collapse', handleHide);
+
+      return () => {
+        if (collapseRef.current) {
+          collapseRef.current.removeEventListener('shown.bs.collapse', handleShow);
+          collapseRef.current.removeEventListener('hidden.bs.collapse', handleHide);
+        }
+      };
+    }
+  }, []);
+
   return (
     <nav className="top-0 navbar navbar-expand-lg navbar-light sticky-top p-1 bg-Div-light">
-      <Link to="/" className="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+      <Link 
+        to="/" 
+        className="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"
+        onClick={closeMobileMenu}
+      >
         <img
           src={getAssetPath('/assets/images/WattGlow.png')}
           alt="WattGlow Power - Solar EPC Company Logo"
@@ -175,11 +225,16 @@ export function Navbar() {
         data-bs-toggle="collapse"
         data-bs-target="#navbarCollapse"
         aria-label="Toggle navigation menu"
+        aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarCollapse">
+      <div 
+        className="collapse navbar-collapse" 
+        id="navbarCollapse"
+        ref={collapseRef}
+      >
         <ul className="navbar-nav ms-auto p-4 p-lg-0">{navigationItems.map(renderNavItem)}</ul>
       </div>
     </nav>
