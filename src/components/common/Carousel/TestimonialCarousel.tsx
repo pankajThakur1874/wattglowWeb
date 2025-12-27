@@ -40,14 +40,14 @@ export const TestimonialCarousel = memo(function TestimonialCarousel({
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          centerMode: true,
+          centerMode: false,
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          centerMode: true,
+          centerMode: false,
           arrows: false,
           dots: true,
         },

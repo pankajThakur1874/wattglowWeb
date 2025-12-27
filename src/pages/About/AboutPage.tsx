@@ -79,83 +79,72 @@ function AboutPage() {
       />
 
       {/* Introduction */}
-      <div className="content_sustainability">
+      <div className="content_sustainability px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <ScrollAnimation animation="fade-slide-up">
-          <p>{aboutContent.intro}</p>
+          <p className="text-base sm:text-lg leading-relaxed">{aboutContent.intro}</p>
         </ScrollAnimation>
       </div>
-      <br />
 
       {/* What Sets Us Apart Section */}
-      <div className="content_sustainability align-items-center">
+      <div className="content_sustainability px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <ScrollAnimation animation="fade-slide-up">
-          <div style={{ textAlign: 'center' }}>
-            <h1>What Sets Us Apart</h1>
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">What Sets Us Apart</h1>
           </div>
         </ScrollAnimation>
-        <br />
         <ScrollAnimation animation="fade-slide-up" delay={1}>
-          <p>{aboutContent.setsApart}</p>
+          <p className="text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">{aboutContent.setsApart}</p>
         </ScrollAnimation>
-        <br />
 
         {/* Responsive Card Grid */}
-        <div className="row g-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {whatSetsUsApart.map((item, index) => (
-            <div key={item.id} className="col-12 col-md-6 col-lg-4">
+            <div key={item.id}>
               <ScrollAnimation animation="fade-scale" delay={index % 3}>
-                <div className="career-card h-100">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                <div className="career-card h-full p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4">{item.title}</h3>
+                  <p className="text-sm sm:text-base leading-relaxed">{item.description}</p>
                 </div>
               </ScrollAnimation>
             </div>
           ))}
         </div>
       </div>
-      <br />
 
       {/* Our Mission */}
-      <div className="content_sustainability">
+      <div className="content_sustainability px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <ScrollAnimation animation="fade-slide-up">
-          <div style={{ textAlign: 'center' }}>
-            <h1>Our Mission</h1>
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Our Mission</h1>
           </div>
         </ScrollAnimation>
-        <br />
         <ScrollAnimation animation="fade-slide-up" delay={1}>
-          <p>{mission}</p>
+          <p className="text-base sm:text-lg leading-relaxed">{mission}</p>
         </ScrollAnimation>
       </div>
-      <br />
 
       {/* Our Vision */}
-      <div className="content_sustainability">
+      <div className="content_sustainability px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <ScrollAnimation animation="fade-slide-up">
-          <div style={{ textAlign: 'center' }}>
-            <h1>Our Vision</h1>
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Our Vision</h1>
           </div>
         </ScrollAnimation>
-        <br />
         <ScrollAnimation animation="fade-slide-up" delay={1}>
-          {vision.split('\n\n').map((paragraph, index) => (
-            <p key={index}>
-              {paragraph}
-              {index < 2 && (
-                <>
-                  <br />
-                  <br />
-                </>
-              )}
-            </p>
-          ))}
+          <div className="space-y-4 sm:space-y-6">
+            {vision.split('\n\n').map((paragraph, index) => (
+              <p key={index} className="text-base sm:text-lg leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </ScrollAnimation>
       </div>
-      <br />
 
       {/* What Sets Us Apart - Icon Grid */}
-      <WhatSetsUsApart />
-      <br />
+      <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <WhatSetsUsApart />
+      </div>
     </>
   );
 }

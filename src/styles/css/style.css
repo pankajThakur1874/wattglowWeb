@@ -1,4 +1,35 @@
+/********** Tailwind CSS **********/
+@import 'tailwindcss';
+
 /********** Template CSS **********/
+/* Override Tailwind base styles for navbar links to ensure visibility */
+/* Use very specific selectors and explicit color values */
+nav.navbar .navbar-nav .nav-link,
+nav.navbar .navbar-nav .nav-link:visited,
+nav.navbar .navbar-nav .nav-link:link,
+nav.navbar .navbar-nav .nav-link:any-link,
+nav.navbar .navbar-nav .dropdown-item,
+nav.navbar .navbar-nav .dropdown-item:visited,
+nav.navbar .navbar-nav .dropdown-item:link,
+nav.navbar .navbar-nav .dropdown-item:any-link,
+.navbar .navbar-nav a.nav-link,
+.navbar .navbar-nav a.dropdown-item {
+  color: #1a2a36 !important; /* var(--dark) explicit value */
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+nav.navbar .navbar-nav .nav-link:hover,
+nav.navbar .navbar-nav .nav-link.active,
+nav.navbar .navbar-nav .nav-link:focus,
+nav.navbar .navbar-nav .dropdown-item:hover,
+nav.navbar .navbar-nav .dropdown-item:focus,
+.navbar .navbar-nav a.nav-link:hover,
+.navbar .navbar-nav a.nav-link.active {
+  color: #21296b !important; /* var(--primary) explicit value */
+}
 :root {
   /* WattGlow Brand Colors */
   --wg-1-deep-blue: #21296b;
@@ -30,6 +61,8 @@
 
 /* Animated solar energy gradient background - Applied to html for full coverage */
 html {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
   background: linear-gradient(
     135deg,
     var(--solar-light-green) 0%,
@@ -51,7 +84,6 @@ html {
   object-fit: cover;
   object-position: center;
   will-change: transform;
-  transform: translateZ(0); /* Force GPU acceleration */
 }
 
 .img-300 {
@@ -96,6 +128,8 @@ body {
   /* Inherit gradient from html */
   background: transparent;
   min-height: 100vh;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
   position: relative;
 }
 
@@ -451,6 +485,7 @@ img[src*='solarP.png']:hover {
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
+  max-width: 100vw !important;
   z-index: 1030 !important;
   transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.95) !important;
@@ -458,6 +493,8 @@ img[src*='solarP.png']:hover {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   /* Override Bootstrap sticky-top behavior */
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
 }
 
 /* Override bg-Div-light background when applied to navbar */
@@ -573,6 +610,27 @@ footer .bg-footer-color.sticky-top {
 }
 
 @media (max-width: 991.98px) {
+  .navbar {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .navbar .navbar-brand {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    max-width: calc(100vw - 60px) !important;
+  }
+
+  .navbar .navbar-brand img {
+    max-width: 100px !important;
+    width: auto !important;
+  }
+
+  .navbar-toggler {
+    margin-right: 0.5rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+
   .navbar .navbar-nav .nav-link {
     margin-right: 0;
     padding: 10px 0;
@@ -584,37 +642,142 @@ footer .bg-footer-color.sticky-top {
 }
 
 @media (min-width: 992px) {
+  .navbar .nav-item.dropdown {
+    position: relative !important;
+    overflow: visible !important;
+    z-index: 999999 !important;
+  }
+  
+  .navbar .navbar-nav {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 999999 !important;
+  }
+  
+  .navbar .navbar-collapse {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 999999 !important;
+  }
+  
+  .navbar-collapse {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 999999 !important;
+  }
+
   .navbar .nav-item .dropdown-menu {
-    display: block;
+    display: none !important;
     border: none;
     margin-top: 0;
-    top: 150%;
     opacity: 0;
     visibility: hidden;
-    transition: 0.5s;
+    transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 8px 24px rgba(33, 41, 107, 0.15);
     border-radius: 0.5rem;
+    position: fixed !important;
+    z-index: 999999 !important;
+    min-width: 200px;
+    padding: 0.5rem 0;
+    transform: translateY(0);
+    overflow: visible !important;
   }
 
-  .navbar .nav-item:hover .dropdown-menu {
-    top: 100%;
-    visibility: visible;
-    transition: 0.5s;
-    opacity: 1;
+  /* Show dropdown on hover */
+  .navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999999 !important;
+  }
+
+  /* Show dropdown when Bootstrap adds 'show' class (click) - highest priority */
+  .navbar .nav-item .dropdown-menu.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    z-index: 999999 !important;
+  }
+
+  /* Show dropdown when aria-expanded is true */
+  .navbar .nav-item .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    z-index: 999999 !important;
+  }
+
+  /* Ensure dropdown stays visible when parent is hovered or clicked */
+  .navbar .nav-item.dropdown:hover .dropdown-menu.show,
+  .navbar .nav-item.dropdown .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999999 !important;
+  }
+  
+  /* Force z-index on all navbar dropdown states - highest priority override */
+  .navbar .dropdown-menu,
+  .navbar .nav-item .dropdown-menu,
+  .navbar .dropdown-menu.show,
+  .navbar .nav-item.dropdown .dropdown-menu,
+  .navbar .nav-item.dropdown:hover .dropdown-menu,
+  .navbar .nav-item .dropdown-toggle[aria-expanded="true"] + .dropdown-menu,
+  .navbar .nav-item.dropdown:hover .dropdown-menu.show {
+    z-index: 999999 !important;
+  }
+
+  .navbar .dropdown-item {
+    color: #1a2a36 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    padding: 0.5rem 1.5rem;
+    white-space: nowrap;
+  }
+
+  .navbar .dropdown-item:hover,
+  .navbar .dropdown-item:focus {
+    color: #21296b !important;
+    background-color: rgba(33, 41, 107, 0.08);
+  }
+
+  .navbar .dropdown-item:active {
+    color: #21296b !important;
+    background-color: rgba(33, 41, 107, 0.15);
   }
 }
 
 /*** Header ***/
+/* Ensure carousel is below navbar dropdown - CRITICAL */
+.header-carousel,
+.header-carousel.position-relative,
+.container-fluid.p-0:has(.header-carousel),
+.container-fluid:has(.header-carousel) {
+  position: relative;
+  z-index: 1 !important;
+}
+
+/* Ensure slick carousel components are below navbar */
+.slick-slider,
+.slick-list,
+.slick-track,
+.slick-slide {
+  z-index: 1 !important;
+  position: relative;
+}
+
 .header-carousel .owl-carousel-item {
   position: relative;
   height: 600px;
   overflow: hidden;
   will-change: transform;
-  transform: translateZ(0); /* Force GPU acceleration */
   backface-visibility: hidden;
+  z-index: 1 !important; /* Ensure carousel is below navbar dropdown */
 }
 
 .header-carousel .owl-carousel-item img,
@@ -627,8 +790,8 @@ footer .bg-footer-color.sticky-top {
   top: 0;
   left: 0;
   will-change: transform;
-  transform: translateZ(0); /* Force GPU acceleration */
   backface-visibility: hidden;
+  z-index: 1 !important; /* Ensure images/videos are below navbar dropdown */
 }
 
 .owl-carousel-inner {
@@ -640,7 +803,7 @@ footer .bg-footer-color.sticky-top {
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, rgba(17, 59, 91, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
-  z-index: 1;
+  z-index: 1 !important; /* Ensure carousel inner is below navbar dropdown */
 }
 
 /* Responsive carousel heights */
@@ -1415,7 +1578,8 @@ footer div.top-2.bg-footer-color {
   bottom: auto !important;
   z-index: 1 !important;
 }
-.dropdown-menu {
+/* General dropdown menu styles - only apply when not in navbar */
+.dropdown-menu:not(.navbar .dropdown-menu) {
   opacity: 0;
   visibility: hidden;
   transition:
@@ -1424,10 +1588,25 @@ footer div.top-2.bg-footer-color {
   transform: translateY(10px);
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
+.nav-item.dropdown:hover .dropdown-menu:not(.navbar .dropdown-menu) {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* Global navbar dropdown z-index override - must be above EVERYTHING */
+.navbar .dropdown-menu,
+.navbar .nav-item .dropdown-menu,
+.navbar .dropdown-menu.show,
+.navbar .nav-item.dropdown .dropdown-menu,
+.navbar .nav-item.dropdown:hover .dropdown-menu,
+.navbar .nav-item .dropdown-toggle[aria-expanded="true"] + .dropdown-menu,
+.navbar .nav-item.dropdown:hover .dropdown-menu.show,
+nav.navbar .dropdown-menu,
+nav.navbar .nav-item .dropdown-menu,
+nav.navbar .dropdown-menu.show {
+  z-index: 999999 !important;
+  position: fixed !important;
 }
 .owl-carousel .owl-carousel-item {
   overflow: hidden; /* Prevent overflow */
@@ -1769,15 +1948,20 @@ footer div.top-2.bg-footer-color {
   padding: 0 1rem;
 }
 .content_sustainability {
-  padding: 20px 30px; /* Adjust padding as needed */
+  /* Padding is now handled by Tailwind classes */
   max-width: 1000px;
   margin: 0 auto;
-  /* font-family: Arial, sans-serif;
-    line-height: 1.6; */
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+}
+
+/* Responsive max-width for smaller screens */
+@media (max-width: 1024px) {
+  .content_sustainability {
+    max-width: 100%;
+  }
 }
 
 /* Main Footer */
@@ -2164,6 +2348,8 @@ footer div.top-2.bg-footer-color {
   border-radius: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .channel-partner-section h2 {
@@ -2185,12 +2371,15 @@ footer div.top-2.bg-footer-color {
   align-items: center;
   justify-content: center;
   gap: 80px;
+  flex-wrap: wrap;
 }
 
 .logo img {
   max-width: 650px;
   height: auto;
   padding-left: 215px; /* Adjust the padding as needed */
+  width: 100%;
+  max-width: 100%;
 }
 
 .text p {
@@ -2204,6 +2393,79 @@ footer div.top-2.bg-footer-color {
 .text span {
   color: #1a3d73; /* Adjust color as needed */
   font-weight: bold;
+}
+
+/* Mobile responsive styles for channel-partner section */
+@media (max-width: 768px) {
+  .channel-partner-section {
+    padding: 2rem 1rem;
+    margin: 1rem 0.5rem;
+    max-width: calc(100vw - 1rem);
+  }
+
+  .channel-partner-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    max-width: 200px;
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+
+  .text {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .text p {
+    font-size: 16px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .channel-partner-section {
+    padding: 1.5rem 0.75rem;
+    margin: 1rem 0.25rem;
+  }
+
+  .channel-partner-section h1 {
+    font-size: 1.25rem;
+  }
+
+  .content {
+    gap: 1.5rem;
+  }
+
+  .logo img {
+    max-width: 150px;
+  }
+
+  .text p {
+    font-size: 14px;
+  }
 }
 
 .stats-section {
@@ -2349,6 +2611,8 @@ footer div.top-2.bg-footer-color {
   border-radius: 50%;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
   transition: all 0.3s ease;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
 }
 
 .whatsapp-icon:hover {
@@ -2392,7 +2656,6 @@ footer div.top-2.bg-footer-color {
   object-position: center;
   display: block;
   will-change: transform;
-  transform: translateZ(0); /* Force GPU acceleration */
 }
 .imageStyle {
   object-fit: cover;
@@ -2715,6 +2978,38 @@ a:focus {
 }
 
 /* ==================================================================
+   CONTAINER MOBILE OPTIMIZATION
+   ================================================================== */
+
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    overflow-x: hidden !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-fluid {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* ==================================================================
    CAROUSEL MOBILE OPTIMIZATION
    ================================================================== */
 
@@ -2746,6 +3041,47 @@ a:focus {
   .slick-prev:before,
   .slick-next:before {
     font-size: 32px;
+  }
+
+  /* Testimonial carousel mobile optimization */
+  .testimonial-carousel {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .testimonial-carousel .slick-slide {
+    padding: 0 0.5rem;
+  }
+
+  .testimonial-carousel .slick-list {
+    margin: 0 -0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .testimonial-carousel .p-3 {
+    padding: 1rem !important;
+  }
+
+  .testimonial-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-carousel .slick-slide {
+    padding: 0 0.25rem;
+  }
+
+  .testimonial-carousel .slick-list {
+    margin: 0 -0.25rem;
+    padding: 0 0.25rem;
+  }
+
+  .testimonial-carousel .p-3 {
+    padding: 0.75rem !important;
   }
 }
 
@@ -2987,12 +3323,25 @@ a:focus {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .whatsapp-icon {
     bottom: 15px;
     right: 15px;
+    width: 55px;
+    height: 55px;
+    max-width: calc(100vw - 30px);
+    max-height: calc(100vh - 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-icon {
+    bottom: 10px;
+    right: 10px;
     width: 50px;
     height: 50px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
   }
 
   .footer .section {
@@ -3047,22 +3396,51 @@ a:focus {
     background-color: rgba(33, 41, 107, 0.05);
   }
 
-  /* Dropdown menu improvements */
+  /* Dropdown menu improvements - Hidden by default on mobile */
   .navbar-nav .dropdown-menu {
     border: none;
     box-shadow: none;
     padding-left: 1rem;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px);
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    display: none !important;
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  /* Show dropdown when Bootstrap adds 'show' class */
+  .navbar-nav .dropdown-menu.show {
+    display: block !important;
+  }
+
+  /* Show dropdown when aria-expanded is true */
+  .navbar-nav .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+    display: block !important;
   }
 
   .navbar-nav .dropdown-item {
     padding: 0.75rem 1rem;
     font-size: 1rem;
     border-radius: 0.25rem;
+    color: #1a2a36 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
   }
 
-  .navbar-nav .dropdown-item:hover {
+  .navbar-nav .dropdown-item:hover,
+  .navbar-nav .dropdown-item:focus {
     background-color: rgba(33, 41, 107, 0.08);
+    color: #21296b !important;
+  }
+
+  .navbar-nav .dropdown-item:active {
+    background-color: rgba(33, 41, 107, 0.15);
+    color: #21296b !important;
   }
 }
 

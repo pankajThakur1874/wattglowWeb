@@ -61,12 +61,7 @@ function HomePage() {
 
       {/* About Section Enhanced */}
       <section className="about-section-enhanced">
-        <div className="about-side-text mobile-hide">
-          <h2 className="about-side-label fade-slide-right" data-animate>
-            about us
-          </h2>
-        </div>
-
+       
         <div className="container-xxl">
           <div className="container about-enhanced">
             <div className="about-flex-container">
@@ -308,8 +303,8 @@ function HomePage() {
       <div className="channel-partner-section">
         <h1>CHANNEL PARTNER</h1>
         <div className="content">
-          <div className="logo">
-            <img src={getAssetPath('/assets/images/pahal-solar-logo.png')} alt="Pahal Solar Logo" />
+          <div >
+            <img width="50%" height="50%" style={{ margin: `0 auto`}} src={getAssetPath('/assets/images/pahal-solar-logo.png')} alt="Pahal Solar Logo" />
           </div>
           <div className="text">
             <br />
